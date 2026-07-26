@@ -1,0 +1,583 @@
+{
+  "$schema": "./projects.schema.md",
+  "source": "behance-browser-export",
+  "syncedAt": "2026-07-26T15:53:10.182Z",
+  "profile": {
+    "user": "sofiaferraz1",
+    "url": "https://www.behance.net/sofiaferraz1"
+  },
+  "projects": [
+    {
+      "id": "flor-de-lorien",
+      "behanceId": 252337527,
+      "url": "https://www.behance.net/gallery/252337527/Flor-de-Lorien",
+      "year": "",
+      "featured": true,
+      "placeholder": "01",
+      "cover": {
+        "src": "https://mir-s3-cdn-cf.behance.net/projects/original/9d2aca223209815.Y3JvcCwyMzUwLDE4MzgsMjQ0LDE3NA.jpg"
+      },
+      "gallery": [
+        {
+          "src": "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/a76abe252337527.6a5203e5d10cd.png",
+          "alt": ""
+        },
+        {
+          "src": "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/2de5d3252337527.6a5203e5cfe6a.png",
+          "alt": ""
+        },
+        {
+          "src": "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/4e5315252337527.6a5203e5cf54d.png",
+          "alt": ""
+        },
+        {
+          "src": "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/9a8f1e252337527.6a5203e5cd637.png",
+          "alt": ""
+        },
+        {
+          "src": "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/31fed6252337527.6a5203e5cda3a.png",
+          "alt": ""
+        },
+        {
+          "src": "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/8b4b0b252337527.6a5203e5cde63.png",
+          "alt": ""
+        },
+        {
+          "src": "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/21d8c4252337527.6a5203e5d14fd.png",
+          "alt": ""
+        },
+        {
+          "src": "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/0a64fb252337527.6a5203e5d0c6b.png",
+          "alt": ""
+        },
+        {
+          "src": "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/3a62f3252337527.6a5203e5cf9f6.png",
+          "alt": ""
+        },
+        {
+          "src": "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/e0cb9a252337527.6a5203e5ccd64.png",
+          "alt": ""
+        },
+        {
+          "src": "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/5fb379252337527.6a5203e5cf062.png",
+          "alt": ""
+        },
+        {
+          "src": "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/73f1ea252337527.6a4d1413cab26.jpg",
+          "alt": ""
+        },
+        {
+          "src": "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/4ea341252337527.6a4d1413cb352.png",
+          "alt": ""
+        },
+        {
+          "src": "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/9486a4252337527.6a5203e5ce306.png",
+          "alt": ""
+        },
+        {
+          "src": "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/aa8ef6252337527.6a5203e5ce7b3.png",
+          "alt": ""
+        },
+        {
+          "src": "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/c4bee1252337527.6a5203e5cd232.png",
+          "alt": ""
+        },
+        {
+          "src": "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/d57bed252337527.6a5203e5cec4b.png",
+          "alt": ""
+        },
+        {
+          "src": "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/b8a2a9252337527.6a5203e5d031b.png",
+          "alt": ""
+        },
+        {
+          "src": "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/1a18a2252337527.6a5203e5d0838.png",
+          "alt": ""
+        },
+        {
+          "src": "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/1cb5b7252337527.6a520b1b0553b.png",
+          "alt": ""
+        }
+      ],
+      "meta": {
+        "client": "Flor de Lórien",
+        "role": "Brand Identity, Illustration",
+        "services": [
+          "Brand Identity",
+          "Illustration",
+          "Packaging"
+        ]
+      },
+      "i18n": {
+        "en-US": {
+          "title": "Flor de Lórien",
+          "category": "Brand Identity · Candles & Home Fragrance",
+          "summary": "A candle and soap brand inspired by the delicacy of nature and the magic of the Lórien forest.",
+          "body": [
+            "Flor de Lórien is a candle and soap maker. Inspired by the delicacy of nature and the magical atmosphere of the Lórien forest, this brand was born to transform small moments of the day into experiences of calm, comfort, and connection.",
+            "Flor de Lórien is a brand of handcrafted candles that invites you to slow down. Each fragrance, detail, and visual element was designed to awaken sensations, creating an environment where time seems to pass more slowly.",
+            "The challenge of this project was to translate this sensory universe into an elegant, timeless, and delicate visual identity, balancing botanical, artisanal, and sophisticated references. The visual system combines refined typography, original illustrations inspired by the flora of the Tolkien universe, and a soft color palette, resulting in a brand that conveys warmth, naturalness, and exclusivity.",
+            "The illustration was inspired by the flower of Lórien and the elven Mallorn leaves. The drawing was initially developed by hand, in graphite, and later vectorized in Adobe Illustrator, preserving its details and organic lines."
+          ]
+        },
+        "pt-BR": {
+          "title": "Flor de Lórien",
+          "category": "Identidade de Marca · Velas e Perfumaria de Ambiente",
+          "summary": "Uma marca de velas e sabonetes inspirada na delicadeza da natureza e na magia da floresta de Lórien.",
+          "body": [
+            "Flor de Lórien é uma marca de velas artesanais que convida a desacelerar. Cada fragrância, detalhe e elemento visual foi pensado para despertar sensações, criando um ambiente onde o tempo parece passar mais devagar.",
+            "O desafio deste projeto foi traduzir esse universo sensorial em uma identidade visual elegante, atemporal e delicada, equilibrando referências botânicas, artesanais e sofisticadas. O sistema visual combina tipografia refinada, ilustrações autorais inspiradas na flora do universo Tolkien e uma paleta de cores suaves, resultando em uma marca que transmite acolhimento, naturalidade e exclusividade.",
+            "A ilustração foi inspirada na flor de Lórien e nas folhas élficas Mallorn. O desenho foi desenvolvido inicialmente à mão, em grafite, e posteriormente vetorizado no Adobe Illustrator, preservando seus detalhes e traços orgânicos."
+          ]
+        },
+        "es-ES": {
+          "title": "Flor de Lórien",
+          "category": "Identidad de Marca · Velas y Perfumería de Hogar",
+          "summary": "Una marca de velas y jabones inspirada en la delicadeza de la naturaleza y la magia del bosque de Lórien.",
+          "body": [
+            "Flor de Lórien es una marca de velas y jabones artesanales. Inspirada en la delicadeza de la naturaleza y la atmósfera mágica del bosque de Lórien, esta marca nació para transformar pequeños momentos del día en experiencias de calma, confort y conexión.",
+            "Flor de Lórien es una marca de velas artesanales que invita a bajar el ritmo. Cada fragancia, detalle y elemento visual fue pensado para despertar sensaciones, creando un ambiente donde el tiempo parece transcurrir más despacio.",
+            "El reto de este proyecto fue traducir ese universo sensorial en una identidad visual elegante, atemporal y delicada, equilibrando referencias botánicas, artesanales y sofisticadas. El sistema visual combina tipografía refinada, ilustraciones originales inspiradas en la flora del universo de Tolkien y una paleta de colores suaves, dando como resultado una marca que transmite calidez, naturalidad y exclusividad.",
+            "La ilustración se inspiró en la flor de Lórien y en las hojas élficas de Mallorn. El dibujo se desarrolló inicialmente a mano, en grafito, y después se vectorizó en Adobe Illustrator, conservando sus detalles y trazos orgánicos."
+          ]
+        }
+      }
+    },
+    {
+      "id": "origin-rebranding-modular-homes-brand",
+      "behanceId": 244700639,
+      "url": "https://www.behance.net/gallery/244700639/Origin-Rebranding-Modular-Homes-Brand",
+      "year": "",
+      "featured": false,
+      "placeholder": "02",
+      "cover": {
+        "src": "https://mir-s3-cdn-cf.behance.net/projects/404/3d8b87244700639.Y3JvcCwxNTk4LDEyNDksMTY2LDA.png"
+      },
+      "gallery": [],
+      "meta": {
+        "client": "Origin",
+        "role": "Rebranding",
+        "services": [
+          "Rebranding",
+          "Brand Identity"
+        ]
+      },
+      "i18n": {
+        "en-US": {
+          "title": "Origin | Rebranding - Modular homes brand",
+          "category": "Rebranding · Brand Identity",
+          "summary": "See the full case study on Behance.",
+          "body": []
+        },
+        "pt-BR": {
+          "title": "Origin | Rebranding - Modular homes brand",
+          "category": "Rebranding · Brand Identity",
+          "summary": "Veja o estudo de caso completo no Behance.",
+          "body": []
+        },
+        "es-ES": {
+          "title": "Origin | Rebranding - Modular homes brand",
+          "category": "Rebranding · Brand Identity",
+          "summary": "Ve el estudio de caso completo en Behance.",
+          "body": []
+        }
+      }
+    },
+    {
+      "id": "rigueras-branding-and-visual-identity",
+      "behanceId": 243441511,
+      "url": "https://www.behance.net/gallery/243441511/Rigueras-Branding-And-Visual-Identity",
+      "year": "",
+      "featured": false,
+      "placeholder": "03",
+      "cover": {
+        "src": "https://mir-s3-cdn-cf.behance.net/projects/404/189edf243441511.Y3JvcCwzODM1LDMwMDAsMzMyLDA.png"
+      },
+      "gallery": [],
+      "meta": {
+        "client": "Rigueras",
+        "role": "Branding, Visual Identity",
+        "services": [
+          "Branding",
+          "Visual Identity"
+        ]
+      },
+      "i18n": {
+        "en-US": {
+          "title": "RIGUERAS | Branding and Visual Identity",
+          "category": "Branding · Visual Identity",
+          "summary": "See the full case study on Behance.",
+          "body": []
+        },
+        "pt-BR": {
+          "title": "RIGUERAS | Branding and Visual Identity",
+          "category": "Branding · Visual Identity",
+          "summary": "Veja o estudo de caso completo no Behance.",
+          "body": []
+        },
+        "es-ES": {
+          "title": "RIGUERAS | Branding and Visual Identity",
+          "category": "Branding · Visual Identity",
+          "summary": "Ve el estudio de caso completo en Behance.",
+          "body": []
+        }
+      }
+    },
+    {
+      "id": "prime-lights",
+      "behanceId": 240643629,
+      "url": "https://www.behance.net/gallery/240643629/Prime-Lights",
+      "year": "",
+      "featured": false,
+      "placeholder": "04",
+      "cover": {
+        "src": "https://mir-s3-cdn-cf.behance.net/projects/404/0d3287240643629.Y3JvcCwxMzgyLDEwODEsMjQ2LDA.png"
+      },
+      "gallery": [],
+      "meta": {
+        "client": "Prime Lights",
+        "role": "Visual Identity, Branding",
+        "services": [
+          "Visual Identity",
+          "Branding"
+        ]
+      },
+      "i18n": {
+        "en-US": {
+          "title": "Prime Lights | Identidade visual e Branding",
+          "category": "Visual Identity · Branding",
+          "summary": "See the full case study on Behance.",
+          "body": []
+        },
+        "pt-BR": {
+          "title": "Prime Lights | Identidade visual e Branding",
+          "category": "Visual Identity · Branding",
+          "summary": "Veja o estudo de caso completo no Behance.",
+          "body": []
+        },
+        "es-ES": {
+          "title": "Prime Lights | Identidade visual e Branding",
+          "category": "Visual Identity · Branding",
+          "summary": "Ve el estudio de caso completo en Behance.",
+          "body": []
+        }
+      }
+    },
+    {
+      "id": "veterinary-visual-identity",
+      "behanceId": 237361771,
+      "url": "https://www.behance.net/gallery/237361771/Veterinary-Visual-Identity",
+      "year": "",
+      "featured": false,
+      "placeholder": "05",
+      "cover": {
+        "src": "https://mir-s3-cdn-cf.behance.net/projects/404/47a8cf237361771.Y3JvcCwxMTc2LDkyMCwxMTAsMA.png"
+      },
+      "gallery": [],
+      "meta": {
+        "client": "",
+        "role": "Visual Identity, Branding",
+        "services": [
+          "Visual Identity",
+          "Branding"
+        ]
+      },
+      "i18n": {
+        "en-US": {
+          "title": "Visual identity | Branding | Veterinary",
+          "category": "Visual Identity · Branding",
+          "summary": "See the full case study on Behance.",
+          "body": []
+        },
+        "pt-BR": {
+          "title": "Visual identity | Branding | Veterinary",
+          "category": "Visual Identity · Branding",
+          "summary": "Veja o estudo de caso completo no Behance.",
+          "body": []
+        },
+        "es-ES": {
+          "title": "Visual identity | Branding | Veterinary",
+          "category": "Visual Identity · Branding",
+          "summary": "Ve el estudio de caso completo en Behance.",
+          "body": []
+        }
+      }
+    },
+    {
+      "id": "kinsana",
+      "behanceId": 236499211,
+      "url": "https://www.behance.net/gallery/236499211/Kinsana",
+      "year": "",
+      "featured": false,
+      "placeholder": "01",
+      "cover": {
+        "src": "https://mir-s3-cdn-cf.behance.net/projects/404/d5c2a0236499211.Y3JvcCw5MDAsNzA0LDAsMA.png"
+      },
+      "gallery": [],
+      "meta": {
+        "client": "Kinsana",
+        "role": "Visual Identity, Branding",
+        "services": [
+          "Visual Identity",
+          "Branding"
+        ]
+      },
+      "i18n": {
+        "en-US": {
+          "title": "Kinsana | Visual identity & Branding",
+          "category": "Visual Identity · Branding",
+          "summary": "See the full case study on Behance.",
+          "body": []
+        },
+        "pt-BR": {
+          "title": "Kinsana | Visual identity & Branding",
+          "category": "Visual Identity · Branding",
+          "summary": "Veja o estudo de caso completo no Behance.",
+          "body": []
+        },
+        "es-ES": {
+          "title": "Kinsana | Visual identity & Branding",
+          "category": "Visual Identity · Branding",
+          "summary": "Ve el estudio de caso completo en Behance.",
+          "body": []
+        }
+      }
+    },
+    {
+      "id": "sorriso",
+      "behanceId": 207126063,
+      "url": "https://www.behance.net/gallery/207126063/Sorriso",
+      "year": "",
+      "featured": false,
+      "placeholder": "02",
+      "cover": {
+        "src": "https://mir-s3-cdn-cf.behance.net/projects/404/3ce919207126063.Y3JvcCwzODM1LDMwMDAsODUsMA.png"
+      },
+      "gallery": [],
+      "meta": {
+        "client": "Sorriso",
+        "role": "Visual Identity",
+        "services": [
+          "Visual Identity"
+        ]
+      },
+      "i18n": {
+        "en-US": {
+          "title": "SORRISO | IDENTIDADE VISUAL",
+          "category": "Visual Identity",
+          "summary": "See the full case study on Behance.",
+          "body": []
+        },
+        "pt-BR": {
+          "title": "SORRISO | IDENTIDADE VISUAL",
+          "category": "Visual Identity",
+          "summary": "Veja o estudo de caso completo no Behance.",
+          "body": []
+        },
+        "es-ES": {
+          "title": "SORRISO | IDENTIDADE VISUAL",
+          "category": "Visual Identity",
+          "summary": "Ve el estudio de caso completo en Behance.",
+          "body": []
+        }
+      }
+    },
+    {
+      "id": "doceria-social-media",
+      "behanceId": 204839107,
+      "url": "https://www.behance.net/gallery/204839107/Doceria-Social-Media",
+      "year": "2024",
+      "featured": false,
+      "placeholder": "03",
+      "cover": {
+        "src": "https://mir-s3-cdn-cf.behance.net/projects/404/da6545204839107.Y3JvcCwxMzgyLDEwODEsMjcwLDA.png"
+      },
+      "gallery": [],
+      "meta": {
+        "client": "Doceria",
+        "role": "Social Media",
+        "services": [
+          "Social Media"
+        ]
+      },
+      "i18n": {
+        "en-US": {
+          "title": "Posts social media 2024 - Doceria",
+          "category": "Social Media",
+          "summary": "See the full case study on Behance.",
+          "body": []
+        },
+        "pt-BR": {
+          "title": "Posts social media 2024 - Doceria",
+          "category": "Social Media",
+          "summary": "Veja o estudo de caso completo no Behance.",
+          "body": []
+        },
+        "es-ES": {
+          "title": "Posts social media 2024 - Doceria",
+          "category": "Social Media",
+          "summary": "Ve el estudio de caso completo en Behance.",
+          "body": []
+        }
+      }
+    },
+    {
+      "id": "off-the-record",
+      "behanceId": 202422519,
+      "url": "https://www.behance.net/gallery/202422519/Off-The-Record",
+      "year": "",
+      "featured": false,
+      "placeholder": "04",
+      "cover": {
+        "src": "https://mir-s3-cdn-cf.behance.net/projects/404/2fb51b202422519.Y3JvcCwxMzgyLDEwODEsMTg0LDA.png"
+      },
+      "gallery": [],
+      "meta": {
+        "client": "Off the Record",
+        "role": "Visual Identity",
+        "services": [
+          "Visual Identity"
+        ]
+      },
+      "i18n": {
+        "en-US": {
+          "title": "Visual Identity | Off the record | Identidade Visual",
+          "category": "Visual Identity",
+          "summary": "See the full case study on Behance.",
+          "body": []
+        },
+        "pt-BR": {
+          "title": "Visual Identity | Off the record | Identidade Visual",
+          "category": "Visual Identity",
+          "summary": "Veja o estudo de caso completo no Behance.",
+          "body": []
+        },
+        "es-ES": {
+          "title": "Visual Identity | Off the record | Identidade Visual",
+          "category": "Visual Identity",
+          "summary": "Ve el estudio de caso completo en Behance.",
+          "body": []
+        }
+      }
+    },
+    {
+      "id": "logofolio",
+      "behanceId": 202106147,
+      "url": "https://www.behance.net/gallery/202106147/Logofolio",
+      "year": "2024",
+      "featured": false,
+      "placeholder": "05",
+      "cover": {
+        "src": "https://mir-s3-cdn-cf.behance.net/projects/404/45b3e9202106147.Y3JvcCwxMzgyLDEwODEsMjAxLDA.png"
+      },
+      "gallery": [],
+      "meta": {
+        "client": "",
+        "role": "Logo Design",
+        "services": [
+          "Logo Design"
+        ]
+      },
+      "i18n": {
+        "en-US": {
+          "title": "Logofolio | Logo design | 2024",
+          "category": "Logo Design",
+          "summary": "See the full case study on Behance.",
+          "body": []
+        },
+        "pt-BR": {
+          "title": "Logofolio | Logo design | 2024",
+          "category": "Logo Design",
+          "summary": "Veja o estudo de caso completo no Behance.",
+          "body": []
+        },
+        "es-ES": {
+          "title": "Logofolio | Logo design | 2024",
+          "category": "Logo Design",
+          "summary": "Ve el estudio de caso completo en Behance.",
+          "body": []
+        }
+      }
+    },
+    {
+      "id": "holidough-brief",
+      "behanceId": 160653543,
+      "url": "https://www.behance.net/gallery/160653543/Holidough-Brief",
+      "year": "",
+      "featured": false,
+      "placeholder": "01",
+      "cover": {
+        "src": "https://mir-s3-cdn-cf.behance.net/projects/404/167859160653543.Y3JvcCw1MTEzLDQwMDAsMjE1LDA.png"
+      },
+      "gallery": [],
+      "meta": {
+        "client": "Holidough (Briefclub exercise)",
+        "role": "Brand Concept",
+        "services": [
+          "Brand Identity",
+          "Concept"
+        ]
+      },
+      "i18n": {
+        "en-US": {
+          "title": "Holidough - Brief by Briefclub",
+          "category": "Brand Identity · Concept",
+          "summary": "See the full case study on Behance.",
+          "body": []
+        },
+        "pt-BR": {
+          "title": "Holidough - Brief by Briefclub",
+          "category": "Brand Identity · Concept",
+          "summary": "Veja o estudo de caso completo no Behance.",
+          "body": []
+        },
+        "es-ES": {
+          "title": "Holidough - Brief by Briefclub",
+          "category": "Brand Identity · Concept",
+          "summary": "Ve el estudio de caso completo en Behance.",
+          "body": []
+        }
+      }
+    },
+    {
+      "id": "hibis-tea-brief",
+      "behanceId": 160247305,
+      "url": "https://www.behance.net/gallery/160247305/Hibis-Tea-Brief",
+      "year": "",
+      "featured": false,
+      "placeholder": "02",
+      "cover": {
+        "src": "https://mir-s3-cdn-cf.behance.net/projects/404/110e6f160247305.Y3JvcCwxMjE3LDk1MiwzNTIsMA.png"
+      },
+      "gallery": [],
+      "meta": {
+        "client": "Hibis Tea (brandbrief exercise)",
+        "role": "Brand Concept",
+        "services": [
+          "Brand Identity",
+          "Concept"
+        ]
+      },
+      "i18n": {
+        "en-US": {
+          "title": "Hibis tea - brief by brandbrief",
+          "category": "Brand Identity · Concept",
+          "summary": "See the full case study on Behance.",
+          "body": []
+        },
+        "pt-BR": {
+          "title": "Hibis tea - brief by brandbrief",
+          "category": "Brand Identity · Concept",
+          "summary": "Veja o estudo de caso completo no Behance.",
+          "body": []
+        },
+        "es-ES": {
+          "title": "Hibis tea - brief by brandbrief",
+          "category": "Brand Identity · Concept",
+          "summary": "Ve el estudio de caso completo en Behance.",
+          "body": []
+        }
+      }
+    }
+  ]
+}
