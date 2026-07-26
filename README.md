@@ -156,6 +156,28 @@ gallery, a next-project link, and a CTA. Unknown ids get a graceful, localised
 not-found state. `project.html#<id>` also works, as a fallback for hosts that
 rewrite clean URLs.
 
+### Current data: real, but images need verifying
+
+`assets/data/projects.json` is populated with Sofia's real Behance profile
+(`behance.net/sofiaferraz1`) and 12 real projects, pulled via the browser
+export above. One (*Flor de Lórien*) has real bilingual (EN/PT) case-study
+text and a full 20-image gallery; the other 11 have real titles, covers, and
+links but no extracted body copy — rather than invent design rationale and
+attribute it to Sofia for real client work, those cards link straight to
+Behance instead.
+
+**Open question you need to check yourself:** all covers are hotlinked
+directly from Behance's CDN (`mir-s3-cdn-cf.behance.net`). That may or may not
+work — Behance can enforce referrer/hotlink protection that blocks images
+embedded on other domains, and this was built in a sandbox whose network
+blocks all of `behance.net`, so it was never possible to confirm from here.
+The site **degrades gracefully either way** — a failed image falls back to
+the CSS placeholder automatically, never a broken-image icon — but you should
+open the site somewhere with normal internet access and check whether the
+real photos actually show up. If they don't, download the images and put them
+in `assets/images/`, then point `cover.src` / `gallery[].src` at the local
+copies instead of the Behance URLs.
+
 ---
 
 ## Craft & interactions

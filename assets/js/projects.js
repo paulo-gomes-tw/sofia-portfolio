@@ -82,6 +82,22 @@
     } catch (e) { return ''; }
   }
 
+  // Real covers are hotlinked from Behance's CDN, which this site doesn't
+  // control — a URL can 404, expire, or be blocked by hotlink protection at
+  // any time. If an <img> fails to load, drop back to the art-directed CSS
+  // placeholder instead of showing a broken-image icon.
+  global.__sfImgFallback = function (img) {
+    const wrap = img.closest('.media');
+    if (!wrap) return;
+    wrap.classList.remove('media--photo');
+    img.remove();
+    if (!wrap.querySelector('.media__glow')) {
+      const glow = document.createElement('span');
+      glow.className = 'media__glow';
+      wrap.insertBefore(glow, wrap.firstChild);
+    }
+  };
+
   function mediaMarkup(project, opts) {
     const o = opts || {};
     const cover = project.cover && safeUrl(project.cover.src || project.cover);
@@ -89,7 +105,8 @@
     const cls = 'media media--' + esc(project.placeholder || '01');
     if (cover) {
       return '<span class="' + cls + ' media--photo">' +
-             '<img src="' + esc(cover) + '" alt="' + alt + '" loading="lazy" decoding="async" />' +
+             '<img src="' + esc(cover) + '" alt="' + alt + '" loading="lazy" decoding="async" ' +
+             'onerror="window.__sfImgFallback(this)" />' +
              '</span>';
     }
     // art-directed placeholder (no broken image, ever)
@@ -217,7 +234,8 @@
           ? '<section class="project__gallery shell" aria-label="' + esc(t('project.gallery')) + '">' +
               gallery.map((src, i) =>
                 '<figure class="project__shot" data-reveal>' +
-                  '<img src="' + esc(src) + '" alt="' + esc(title + ' — ' + (i + 1)) + '" loading="lazy" decoding="async" />' +
+                  '<img src="' + esc(src) + '" alt="' + esc(title + ' — ' + (i + 1)) + '" loading="lazy" decoding="async" ' +
+                  'onerror="this.closest(\'figure\').style.display=\'none\'" />' +
                 '</figure>'
               ).join('') +
             '</section>'
