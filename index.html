@@ -1,0 +1,590 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sofia Ferraz — Brand & Art Direction Studio</title>
+  <meta name="description" content="Sofia Ferraz is an independent brand and art director based in Lisbon, shaping considered visual identities for houses that value elegance, intention, and lasting presence." />
+  <meta name="author" content="Sofia Ferraz" />
+  <meta name="theme-color" content="#F8F7F4" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Sofia Ferraz — Brand & Art Direction Studio" />
+  <meta property="og:description" content="Considered visual identities for houses that value elegance, intention, and lasting presence." />
+  <meta property="og:locale" content="en_GB" />
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/styles.css" />
+
+  <script>
+    // Progressive enhancement flag — content is fully visible without JS.
+    document.documentElement.classList.remove('no-js');
+    document.documentElement.classList.add('js');
+    // Safety net: if the enhancement script fails to run, never leave
+    // reveal-animated content stuck hidden.
+    window.addEventListener('load', function () {
+      window.setTimeout(function () {
+        if (!window.__sfReady) {
+          document.querySelectorAll('[data-reveal], .hero__title .line')
+            .forEach(function (el) { el.classList.add('is-in'); });
+        }
+      }, 600);
+    });
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Ambient decorative layers -->
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor" aria-hidden="true" data-cursor>
+    <span class="cursor__dot"></span>
+    <span class="cursor__ring"></span>
+  </div>
+
+  <!-- ─────────────────────────  HEADER  ───────────────────────── -->
+  <header class="site-header" data-header>
+    <div class="shell site-header__inner">
+      <a class="brand" href="#top" aria-label="Sofia Ferraz — home">
+        <span class="brand__mark" aria-hidden="true">SF</span>
+        <span class="brand__name">Sofia&nbsp;Ferraz</span>
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="#about">About</a></li>
+          <li><a class="nav__link" href="#services">Services</a></li>
+          <li><a class="nav__link" href="#work">Work</a></li>
+          <li><a class="nav__link" href="#words">Words</a></li>
+        </ul>
+      </nav>
+
+      <a class="btn btn--ghost nav__cta" href="#contact" data-magnetic>
+        <span>Get in touch</span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu" data-menu-toggle>
+        <span class="menu-toggle__bar"></span>
+        <span class="menu-toggle__bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobile-menu" data-mobile-menu aria-hidden="true">
+    <nav class="mobile-menu__nav" aria-label="Mobile">
+      <a class="mobile-menu__link" href="#about"><span>01</span> About</a>
+      <a class="mobile-menu__link" href="#services"><span>02</span> Services</a>
+      <a class="mobile-menu__link" href="#work"><span>03</span> Work</a>
+      <a class="mobile-menu__link" href="#words"><span>04</span> Words</a>
+      <a class="mobile-menu__link" href="#contact"><span>05</span> Contact</a>
+    </nav>
+    <div class="mobile-menu__foot">
+      <a href="mailto:hello@sofiaferraz.studio">hello@sofiaferraz.studio</a>
+      <span>Lisbon — Worldwide</span>
+    </div>
+  </div>
+
+  <main id="main">
+    <span id="top"></span>
+
+    <!-- ─────────────────────────  HERO  ───────────────────────── -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="shell hero__inner">
+        <p class="eyebrow hero__eyebrow" data-reveal>
+          <span class="eyebrow__line"></span>
+          Independent brand &amp; art director
+        </p>
+
+        <h1 class="hero__title" id="hero-title">
+          <span class="line" data-reveal><span>Design with</span></span>
+          <span class="line" data-reveal><span><em>intention,</em> built to</span></span>
+          <span class="line" data-reveal><span>quietly <em>endure.</em></span></span>
+        </h1>
+
+        <div class="hero__meta" data-reveal>
+          <p class="hero__lede">
+            I shape considered visual identities for houses that value elegance
+            over noise — from the first mark to the finished world it lives in.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--solid" href="#work" data-magnetic><span>View selected work</span></a>
+            <a class="btn btn--text" href="#contact"><span>Start a project</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13L13 3M13 3H5M13 3V11" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="shell">
+        <div class="hero__figure" data-reveal data-parallax>
+          <div class="media media--portrait media--hero" role="img" aria-label="Editorial portrait — a study in warm light and quiet composition">
+            <div class="media__glow"></div>
+            <span class="media__index">Ed. 01</span>
+          </div>
+          <span class="hero__caption">Atelier study — Lisbon, 2025</span>
+        </div>
+      </div>
+
+      <!-- expertise marquee -->
+      <div class="marquee" aria-hidden="true" data-reveal>
+        <div class="marquee__track">
+          <span>Brand Identity</span><span class="dot">•</span>
+          <span>Art Direction</span><span class="dot">•</span>
+          <span>Editorial &amp; Print</span><span class="dot">•</span>
+          <span>Packaging</span><span class="dot">•</span>
+          <span>Digital Experience</span><span class="dot">•</span>
+          <span>Creative Strategy</span><span class="dot">•</span>
+          <span>Brand Identity</span><span class="dot">•</span>
+          <span>Art Direction</span><span class="dot">•</span>
+          <span>Editorial &amp; Print</span><span class="dot">•</span>
+          <span>Packaging</span><span class="dot">•</span>
+          <span>Digital Experience</span><span class="dot">•</span>
+          <span>Creative Strategy</span><span class="dot">•</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────  ABOUT  ───────────────────────── -->
+    <section class="about section" id="about" aria-labelledby="about-title">
+      <div class="shell about__inner">
+        <div class="about__media" data-reveal data-parallax>
+          <div class="media media--about" role="img" aria-label="Sofia Ferraz at work in the studio">
+            <div class="media__glow"></div>
+            <span class="media__index">Portrait</span>
+          </div>
+          <div class="about__badge" aria-hidden="true">
+            <span>Est.</span>
+            <strong>2015</strong>
+          </div>
+        </div>
+
+        <div class="about__body">
+          <p class="eyebrow" data-reveal><span class="eyebrow__line"></span>About</p>
+          <h2 class="about__title" id="about-title" data-reveal>
+            A studio of one, obsessed with the
+            <em>details others overlook.</em>
+          </h2>
+          <div class="about__text" data-reveal>
+            <p>
+              I&rsquo;m Sofia Ferraz — a brand and art director working between
+              Lisbon and the rest of the world. For a decade I&rsquo;ve helped
+              founders, makers, and cultural houses translate what they believe
+              into something people can see, hold, and trust.
+            </p>
+            <p>
+              My work lives at the meeting point of strategy and craft: restrained
+              palettes, confident type, and imagery that breathes. Nothing loud,
+              nothing borrowed — only identities designed to feel inevitable.
+            </p>
+          </div>
+
+          <ul class="stats" data-reveal>
+            <li class="stat">
+              <span class="stat__num" data-count="10" data-suffix="">10</span>
+              <span class="stat__label">Years in practice</span>
+            </li>
+            <li class="stat">
+              <span class="stat__num" data-count="60" data-suffix="+">60+</span>
+              <span class="stat__label">Brands shaped</span>
+            </li>
+            <li class="stat">
+              <span class="stat__num" data-count="4" data-suffix="">4</span>
+              <span class="stat__label">Continents served</span>
+            </li>
+          </ul>
+
+          <p class="about__sign" data-reveal aria-hidden="true">Sofia</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────  SERVICES  ───────────────────────── -->
+    <section class="services section" id="services" aria-labelledby="services-title">
+      <div class="shell">
+        <div class="section-head">
+          <p class="eyebrow" data-reveal><span class="eyebrow__line"></span>Services</p>
+          <h2 class="section-title" id="services-title" data-reveal>
+            Five ways I help a brand
+            <em>arrive fully formed.</em>
+          </h2>
+        </div>
+
+        <ol class="services__list" data-reveal-group>
+          <li class="service" data-reveal>
+            <span class="service__no">01</span>
+            <div class="service__main">
+              <h3 class="service__title">Brand Identity</h3>
+              <p class="service__desc">
+                Logotypes, marks, colour, and type systems built as a coherent
+                whole — the foundation every other decision rests upon.
+              </p>
+            </div>
+            <ul class="service__tags">
+              <li>Logo &amp; Mark</li><li>Type System</li><li>Guidelines</li>
+            </ul>
+            <span class="service__arrow" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H5M13 3V11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </li>
+
+          <li class="service" data-reveal>
+            <span class="service__no">02</span>
+            <div class="service__main">
+              <h3 class="service__title">Art Direction</h3>
+              <p class="service__desc">
+                The look and feel across every touchpoint — photography, styling,
+                and composition directed with a single, unmistakable point of view.
+              </p>
+            </div>
+            <ul class="service__tags">
+              <li>Photography</li><li>Styling</li><li>Campaigns</li>
+            </ul>
+            <span class="service__arrow" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H5M13 3V11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </li>
+
+          <li class="service" data-reveal>
+            <span class="service__no">03</span>
+            <div class="service__main">
+              <h3 class="service__title">Editorial &amp; Print</h3>
+              <p class="service__desc">
+                Books, magazines, and collateral where paper, grid, and typography
+                carry as much meaning as the words themselves.
+              </p>
+            </div>
+            <ul class="service__tags">
+              <li>Layout</li><li>Typesetting</li><li>Production</li>
+            </ul>
+            <span class="service__arrow" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H5M13 3V11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </li>
+
+          <li class="service" data-reveal>
+            <span class="service__no">04</span>
+            <div class="service__main">
+              <h3 class="service__title">Digital Experience</h3>
+              <p class="service__desc">
+                Websites and interfaces that extend the identity online —
+                unhurried, tactile, and designed around how people actually read.
+              </p>
+            </div>
+            <ul class="service__tags">
+              <li>Web Design</li><li>Prototyping</li><li>Motion</li>
+            </ul>
+            <span class="service__arrow" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H5M13 3V11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </li>
+
+          <li class="service" data-reveal>
+            <span class="service__no">05</span>
+            <div class="service__main">
+              <h3 class="service__title">Creative Strategy</h3>
+              <p class="service__desc">
+                Naming, positioning, and verbal identity — the thinking that gives
+                the visuals a reason to exist and a story worth telling.
+              </p>
+            </div>
+            <ul class="service__tags">
+              <li>Naming</li><li>Positioning</li><li>Voice</li>
+            </ul>
+            <span class="service__arrow" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H5M13 3V11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────  WORK  ───────────────────────── -->
+    <section class="work section" id="work" aria-labelledby="work-title">
+      <div class="shell">
+        <div class="section-head section-head--split">
+          <div>
+            <p class="eyebrow" data-reveal><span class="eyebrow__line"></span>Selected work</p>
+            <h2 class="section-title" id="work-title" data-reveal>
+              A few worlds<br />built with care.
+            </h2>
+          </div>
+          <p class="section-head__note" data-reveal>
+            Each project is a long conversation about restraint. A small selection
+            of recent identities, chosen for the range they show.
+          </p>
+        </div>
+
+        <div class="gallery" data-reveal-group>
+          <!-- item 1 (large) -->
+          <article class="work-card work-card--wide" data-reveal>
+            <a class="work-card__link" href="#contact" aria-label="Maison Léra — Brand identity">
+              <span class="work-card__media media media--01">
+                <span class="media__glow"></span>
+                <span class="work-card__reveal">View project
+                  <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13L13 3M13 3H5M13 3V11" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+              </span>
+              <span class="work-card__meta">
+                <span class="work-card__title">Maison&nbsp;Léra</span>
+                <span class="work-card__cat">Brand Identity · Fragrance</span>
+                <span class="work-card__year">2025</span>
+              </span>
+            </a>
+          </article>
+
+          <!-- item 2 -->
+          <article class="work-card" data-reveal>
+            <a class="work-card__link" href="#contact" aria-label="Atelier Nord — Art direction">
+              <span class="work-card__media media media--02">
+                <span class="media__glow"></span>
+                <span class="work-card__reveal">View project
+                  <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13L13 3M13 3H5M13 3V11" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+              </span>
+              <span class="work-card__meta">
+                <span class="work-card__title">Atelier&nbsp;Nord</span>
+                <span class="work-card__cat">Art Direction · Furniture</span>
+                <span class="work-card__year">2024</span>
+              </span>
+            </a>
+          </article>
+
+          <!-- item 3 -->
+          <article class="work-card" data-reveal>
+            <a class="work-card__link" href="#contact" aria-label="Verão — Editorial design">
+              <span class="work-card__media media media--03">
+                <span class="media__glow"></span>
+                <span class="work-card__reveal">View project
+                  <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13L13 3M13 3H5M13 3V11" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+              </span>
+              <span class="work-card__meta">
+                <span class="work-card__title">Verão</span>
+                <span class="work-card__cat">Editorial · Culture Journal</span>
+                <span class="work-card__year">2024</span>
+              </span>
+            </a>
+          </article>
+
+          <!-- item 4 -->
+          <article class="work-card" data-reveal>
+            <a class="work-card__link" href="#contact" aria-label="Grão — Packaging design">
+              <span class="work-card__media media media--04">
+                <span class="media__glow"></span>
+                <span class="work-card__reveal">View project
+                  <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13L13 3M13 3H5M13 3V11" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+              </span>
+              <span class="work-card__meta">
+                <span class="work-card__title">Grão</span>
+                <span class="work-card__cat">Packaging · Specialty Coffee</span>
+                <span class="work-card__year">2023</span>
+              </span>
+            </a>
+          </article>
+
+          <!-- item 5 (large) -->
+          <article class="work-card work-card--wide" data-reveal>
+            <a class="work-card__link" href="#contact" aria-label="Praia Club — Digital experience">
+              <span class="work-card__media media media--05">
+                <span class="media__glow"></span>
+                <span class="work-card__reveal">View project
+                  <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13L13 3M13 3H5M13 3V11" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+              </span>
+              <span class="work-card__meta">
+                <span class="work-card__title">Praia&nbsp;Club</span>
+                <span class="work-card__cat">Digital · Hospitality</span>
+                <span class="work-card__year">2023</span>
+              </span>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────  APPROACH BANNER  ───────────────────────── -->
+    <section class="pull" aria-label="Philosophy">
+      <div class="shell">
+        <blockquote class="pull__quote" data-reveal>
+          <p>
+            “Good design should feel <em>inevitable</em> — as if the brand could
+            never have looked any other way.”
+          </p>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────  WORDS / REVIEWS  ───────────────────────── -->
+    <section class="words section" id="words" aria-labelledby="words-title">
+      <div class="shell">
+        <div class="section-head">
+          <p class="eyebrow" data-reveal><span class="eyebrow__line"></span>Kind words</p>
+          <h2 class="section-title" id="words-title" data-reveal>
+            Trusted by founders who
+            <em>sweat the small things.</em>
+          </h2>
+        </div>
+
+        <div class="reviews" data-reveal-group>
+          <figure class="review" data-reveal>
+            <blockquote class="review__quote">
+              Sofia gave our house a language we didn&rsquo;t know we were missing.
+              Every detail feels considered, and nothing feels forced.
+            </blockquote>
+            <figcaption class="review__by">
+              <span class="review__avatar" aria-hidden="true">IM</span>
+              <span>
+                <strong>Inês Marques</strong>
+                <em>Founder, Maison Léra</em>
+              </span>
+            </figcaption>
+          </figure>
+
+          <figure class="review" data-reveal>
+            <blockquote class="review__quote">
+              Working with Sofia is calm and exacting in equal measure. She
+              protected the idea and elevated it — the response has been remarkable.
+            </blockquote>
+            <figcaption class="review__by">
+              <span class="review__avatar" aria-hidden="true">TL</span>
+              <span>
+                <strong>Tomás Lund</strong>
+                <em>Creative Lead, Atelier Nord</em>
+              </span>
+            </figcaption>
+          </figure>
+
+          <figure class="review" data-reveal>
+            <blockquote class="review__quote">
+              The identity still feels fresh three years on. That kind of longevity
+              is exactly what we hoped for and rarely find.
+            </blockquote>
+            <figcaption class="review__by">
+              <span class="review__avatar" aria-hidden="true">CR</span>
+              <span>
+                <strong>Clara Reis</strong>
+                <em>Editor-in-Chief, Verão</em>
+              </span>
+            </figcaption>
+          </figure>
+        </div>
+
+        <ul class="clients" data-reveal aria-label="Selected clients">
+          <li>Maison&nbsp;Léra</li>
+          <li>Atelier&nbsp;Nord</li>
+          <li>Verão</li>
+          <li>Grão</li>
+          <li>Praia&nbsp;Club</li>
+          <li>Studio&nbsp;Bloom</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────  CONTACT  ───────────────────────── -->
+    <section class="contact section" id="contact" aria-labelledby="contact-title">
+      <div class="shell contact__inner">
+        <div class="contact__intro">
+          <p class="eyebrow" data-reveal><span class="eyebrow__line"></span>Contact</p>
+          <h2 class="contact__title" id="contact-title" data-reveal>
+            Let&rsquo;s make something
+            <em>timeless.</em>
+          </h2>
+          <p class="contact__lede" data-reveal>
+            I take on a small number of projects each season so each one gets my
+            full attention. Tell me a little about yours.
+          </p>
+
+          <div class="contact__details" data-reveal>
+            <a class="contact__email" href="mailto:hello@sofiaferraz.studio" data-magnetic>
+              hello@sofiaferraz.studio
+            </a>
+            <div class="contact__row">
+              <div>
+                <span class="contact__label">Based in</span>
+                <span class="contact__value">Lisbon, Portugal</span>
+              </div>
+              <div>
+                <span class="contact__label">Availability</span>
+                <span class="contact__value contact__value--dot">Booking Q1 2026</span>
+              </div>
+            </div>
+            <ul class="socials">
+              <li><a href="#" aria-label="Instagram">Instagram</a></li>
+              <li><a href="#" aria-label="Behance">Behance</a></li>
+              <li><a href="#" aria-label="LinkedIn">LinkedIn</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <form class="contact__form" data-reveal data-form novalidate>
+          <div class="field">
+            <input type="text" id="f-name" name="name" placeholder=" " autocomplete="name" required />
+            <label for="f-name">Your name</label>
+          </div>
+          <div class="field">
+            <input type="email" id="f-email" name="email" placeholder=" " autocomplete="email" required />
+            <label for="f-email">Email address</label>
+          </div>
+          <div class="field">
+            <input type="text" id="f-company" name="company" placeholder=" " autocomplete="organization" />
+            <label for="f-company">Company <span>(optional)</span></label>
+          </div>
+          <div class="field">
+            <textarea id="f-message" name="message" rows="4" placeholder=" " required></textarea>
+            <label for="f-message">Tell me about your project</label>
+          </div>
+          <button class="btn btn--solid btn--block" type="submit" data-magnetic>
+            <span>Send enquiry</span>
+          </button>
+          <p class="form-note" data-form-note role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ─────────────────────────  FOOTER  ───────────────────────── -->
+  <footer class="site-footer">
+    <div class="shell">
+      <div class="site-footer__top">
+        <a class="footer-brand" href="#top" aria-label="Sofia Ferraz — back to top">
+          <span class="footer-brand__mark" aria-hidden="true">SF</span>
+          <span class="footer-brand__word">Sofia Ferraz</span>
+        </a>
+        <a class="to-top" href="#top" data-magnetic>
+          <span>Back to top</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 13V3M8 3L3 8M8 3L13 8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+      <div class="site-footer__grid">
+        <p class="footer-tag">
+          Brand &amp; art direction for houses that value elegance over noise.
+        </p>
+        <nav class="footer-nav" aria-label="Footer">
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#work">Work</a>
+          <a href="#words">Words</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+
+      <div class="site-footer__base">
+        <span>© <span data-year>2026</span> Sofia Ferraz Studio. All rights reserved.</span>
+        <span>Designed &amp; art-directed in Lisbon.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
