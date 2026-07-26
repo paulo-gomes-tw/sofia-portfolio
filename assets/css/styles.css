@@ -278,7 +278,7 @@ em { font-style: italic; }
 .nav__link.is-active::after { transform: scaleX(1); transform-origin: left; }
 
 @media (max-width: 900px) {
-  .nav, .nav__cta { display: none; }
+  .nav, .nav__cta, .nav__discovery { display: none; }
 }
 
 /* ----------  Menu toggle (mobile)  ---------- */
@@ -316,7 +316,8 @@ em { font-style: italic; }
   padding: calc(var(--header-h) + 2rem) var(--shell-pad) 2.5rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
+  overflow-y: auto;
   transform: translateY(-100%);
   visibility: hidden;
   transition: transform 0.6s var(--ease), visibility 0s linear 0.6s;
@@ -343,11 +344,33 @@ em { font-style: italic; }
   letter-spacing: 0.2em;
   color: var(--terracotta);
 }
+.mobile-menu__ctas {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-top: clamp(1.5rem, 4vw, 2.5rem);
+  max-width: 22rem;
+}
+.mobile-menu__social {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+  margin-top: clamp(1.5rem, 4vw, 2.25rem);
+}
+.mobile-menu__social a {
+  display: flex;
+  color: var(--muted);
+  transition: color 0.35s var(--ease);
+}
+.mobile-menu__social a:hover { color: var(--terracotta-d); }
+
 .mobile-menu__foot {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 0.5rem;
+  margin-top: auto;
+  padding-top: clamp(1.5rem, 4vw, 2.5rem);
   color: var(--muted);
   font-size: var(--step--1);
   letter-spacing: 0.04em;
@@ -896,15 +919,13 @@ body.menu-open { overflow: hidden; }
 }
 @media (prefers-reduced-motion: reduce) { .contact__value--dot::before { animation: none; } }
 
-.socials { display: flex; gap: 1.5rem; }
+.socials { display: flex; align-items: center; gap: 1.1rem; }
 .socials a {
-  position: relative;
+  display: flex;
   color: var(--muted);
-  font-size: var(--step--1);
-  letter-spacing: 0.03em;
-  transition: color 0.35s var(--ease);
+  transition: color 0.35s var(--ease), transform 0.35s var(--ease);
 }
-.socials a:hover { color: var(--ink); }
+.socials a:hover { color: var(--terracotta-d); transform: translateY(-2px); }
 
 /* form */
 .contact__form {
@@ -1205,6 +1226,35 @@ body.menu-open { overflow: hidden; }
 }
 @media (max-width: 420px) {
   .lang__globe { display: none; }
+}
+
+/* ============================================================
+   HEADER SOCIAL ICONS
+   ============================================================ */
+.nav-social {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding-right: clamp(0.4rem, 1vw, 0.85rem);
+  margin-right: clamp(0.4rem, 1vw, 0.85rem);
+  border-right: 1px solid var(--border);
+}
+.nav-social a {
+  display: flex;
+  color: var(--muted);
+  transition: color 0.35s var(--ease), transform 0.35s var(--ease);
+}
+.nav-social a:hover { color: var(--terracotta-d); transform: translateY(-1px); }
+
+/* Discovery-call button sits next to Get in touch; keep the pair tight */
+.nav__discovery { white-space: nowrap; }
+
+/* Icons drop first on medium screens to declutter; nav links and both
+   buttons stay inline until the single collapse into the hamburger menu
+   (kept in sync with the .nav/.nav__cta breakpoint below — no dead zone
+   where actions are hidden but the hamburger isn't shown yet). */
+@media (max-width: 1180px) {
+  .nav-social { display: none; }
 }
 
 /* keep the mobile-menu label text upright (it sits in an <i>) */
