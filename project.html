@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en-US" class="no-js">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Project — Sofia Ferraz</title>
+  <meta name="description" content="A selected project by Sofia Ferraz — independent brand and art director based in Lisbon." />
+  <meta name="theme-color" content="#F8F7F4" />
+  <meta name="robots" content="index, follow" />
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/styles.css" />
+
+  <script>
+    document.documentElement.classList.remove('no-js');
+    document.documentElement.classList.add('js');
+    window.addEventListener('load', function () {
+      window.setTimeout(function () {
+        if (!window.__sfReady) {
+          document.querySelectorAll('[data-reveal]').forEach(function (el) { el.classList.add('is-in'); });
+        }
+      }, 800);
+    });
+  </script>
+</head>
+<body class="is-project">
+  <a class="skip-link" href="#main" data-i18n="nav.skip">Skip to content</a>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor" aria-hidden="true" data-cursor>
+    <span class="cursor__dot"></span>
+    <span class="cursor__ring"></span>
+  </div>
+
+  <header class="site-header is-scrolled" data-header>
+    <div class="shell site-header__inner">
+      <a class="brand" href="index.html" data-i18n-attr="aria-label:nav.home" aria-label="Sofia Ferraz — home">
+        <span class="brand__mark" aria-hidden="true">SF</span>
+        <span class="brand__name">Sofia&nbsp;Ferraz</span>
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="index.html#about" data-i18n="nav.about">About</a></li>
+          <li><a class="nav__link" href="index.html#services" data-i18n="nav.services">Services</a></li>
+          <li><a class="nav__link" href="index.html#work" data-i18n="nav.work">Work</a></li>
+          <li><a class="nav__link" href="index.html#words" data-i18n="nav.words">Words</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <div class="lang" data-lang-switcher>
+          <button class="lang__toggle" type="button" aria-expanded="false" aria-haspopup="listbox"
+                  aria-controls="lang-list" data-i18n-attr="aria-label:lang.label" aria-label="Language" data-lang-toggle>
+            <svg class="lang__globe" width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <circle cx="8" cy="8" r="6.25" stroke="currentColor" stroke-width="1.2"/>
+              <path d="M1.9 6.1h12.2M1.9 9.9h12.2" stroke="currentColor" stroke-width="1.2"/>
+              <path d="M8 1.75c-1.8 2-2.6 4-2.6 6.25S6.2 12.25 8 14.25c1.8-2 2.6-4 2.6-6.25S9.8 3.75 8 1.75Z" stroke="currentColor" stroke-width="1.2"/>
+            </svg>
+            <span class="lang__code" data-lang-current>EN</span>
+            <svg class="lang__chev" width="10" height="10" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+              <path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <ul class="lang__list" id="lang-list" role="listbox" data-i18n-attr="aria-label:lang.label" aria-label="Language" data-lang-list hidden>
+            <li role="option" aria-selected="true"  data-locale="en-US" tabindex="-1"><span>EN</span> English</li>
+            <li role="option" aria-selected="false" data-locale="pt-BR" tabindex="-1"><span>PT</span> Português</li>
+            <li role="option" aria-selected="false" data-locale="es-ES" tabindex="-1"><span>ES</span> Español</li>
+          </ul>
+        </div>
+
+        <a class="btn btn--ghost nav__cta" href="index.html#contact" data-magnetic>
+          <span data-i18n="nav.cta">Get in touch</span>
+        </a>
+
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu"
+                data-i18n-attr="aria-label:nav.menuOpen" aria-label="Open menu" data-menu-toggle>
+          <span class="menu-toggle__bar"></span>
+          <span class="menu-toggle__bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu" data-mobile-menu aria-hidden="true">
+    <nav class="mobile-menu__nav" aria-label="Mobile">
+      <a class="mobile-menu__link" href="index.html#about"><span>01</span> <i data-i18n="nav.about">About</i></a>
+      <a class="mobile-menu__link" href="index.html#services"><span>02</span> <i data-i18n="nav.services">Services</i></a>
+      <a class="mobile-menu__link" href="index.html#work"><span>03</span> <i data-i18n="nav.work">Work</i></a>
+      <a class="mobile-menu__link" href="index.html#words"><span>04</span> <i data-i18n="nav.words">Words</i></a>
+      <a class="mobile-menu__link" href="index.html#contact"><span>05</span> <i data-i18n="nav.contact">Contact</i></a>
+    </nav>
+    <div class="mobile-menu__foot">
+      <a href="mailto:hello@sofiaferraz.studio">hello@sofiaferraz.studio</a>
+      <span>Lisbon — Worldwide</span>
+    </div>
+  </div>
+
+  <!-- Rendered from assets/data/projects.json by assets/js/project-page.js -->
+  <main id="main" data-project-mount>
+    <div class="shell project-loading">
+      <p data-i18n="work.loading">Loading projects…</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell">
+      <div class="site-footer__grid">
+        <p class="footer-tag" data-i18n="footer.tag">
+          Brand &amp; art direction for houses that value elegance over noise.
+        </p>
+        <nav class="footer-nav" aria-label="Footer">
+          <a href="index.html#about" data-i18n="nav.about">About</a>
+          <a href="index.html#services" data-i18n="nav.services">Services</a>
+          <a href="index.html#work" data-i18n="nav.work">Work</a>
+          <a href="index.html#words" data-i18n="nav.words">Words</a>
+          <a href="index.html#contact" data-i18n="nav.contact">Contact</a>
+        </nav>
+      </div>
+      <div class="site-footer__base">
+        <span>© <span data-year>2026</span> <span data-i18n="footer.rights">Sofia Ferraz Studio. All rights reserved.</span></span>
+        <span data-i18n="footer.madeIn">Designed &amp; art-directed in Lisbon.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/data/projects.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/projects.js"></script>
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

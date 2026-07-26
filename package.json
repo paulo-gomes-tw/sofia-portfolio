@@ -1,0 +1,22 @@
+{
+  "name": "sofia-ferraz-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Premium editorial portfolio for Sofia Ferraz — brand & art direction studio",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "serve": "python3 -m http.server 3000",
+    "build:data": "node scripts/build-data.mjs",
+    "sync:behance": "node scripts/sync-behance.mjs",
+    "sync:behance:dry": "node scripts/sync-behance.mjs --dry-run --detail"
+  },
+  "keywords": [
+    "portfolio",
+    "brand-identity",
+    "art-direction"
+  ],
+  "license": "UNLICENSED"
+}

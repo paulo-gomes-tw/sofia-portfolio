@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="en-US" class="no-js">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sofia Ferraz — Brand & Art Direction Studio</title>
+  <title>Sofia Ferraz — Brand &amp; Art Direction Studio</title>
   <meta name="description" content="Sofia Ferraz is an independent brand and art director based in Lisbon, shaping considered visual identities for houses that value elegance, intention, and lasting presence." />
   <meta name="author" content="Sofia Ferraz" />
   <meta name="theme-color" content="#F8F7F4" />
@@ -12,7 +12,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Sofia Ferraz — Brand & Art Direction Studio" />
   <meta property="og:description" content="Considered visual identities for houses that value elegance, intention, and lasting presence." />
-  <meta property="og:locale" content="en_GB" />
+  <meta property="og:locale" content="en_US" />
 
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
 
@@ -27,7 +27,7 @@
     // Progressive enhancement flag — content is fully visible without JS.
     document.documentElement.classList.remove('no-js');
     document.documentElement.classList.add('js');
-    // Safety net: if the enhancement script fails to run, never leave
+    // Safety net: if the enhancement scripts fail to run, never leave
     // reveal-animated content stuck hidden.
     window.addEventListener('load', function () {
       window.setTimeout(function () {
@@ -35,12 +35,12 @@
           document.querySelectorAll('[data-reveal], .hero__title .line')
             .forEach(function (el) { el.classList.add('is-in'); });
         }
-      }, 600);
+      }, 800);
     });
   </script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#main" data-i18n="nav.skip">Skip to content</a>
 
   <!-- Ambient decorative layers -->
   <div class="grain" aria-hidden="true"></div>
@@ -52,39 +52,70 @@
   <!-- ─────────────────────────  HEADER  ───────────────────────── -->
   <header class="site-header" data-header>
     <div class="shell site-header__inner">
-      <a class="brand" href="#top" aria-label="Sofia Ferraz — home">
+      <a class="brand" href="#top" data-i18n-attr="aria-label:nav.home" aria-label="Sofia Ferraz — home">
         <span class="brand__mark" aria-hidden="true">SF</span>
         <span class="brand__name">Sofia&nbsp;Ferraz</span>
       </a>
 
       <nav class="nav" aria-label="Primary">
         <ul class="nav__list">
-          <li><a class="nav__link" href="#about">About</a></li>
-          <li><a class="nav__link" href="#services">Services</a></li>
-          <li><a class="nav__link" href="#work">Work</a></li>
-          <li><a class="nav__link" href="#words">Words</a></li>
+          <li><a class="nav__link" href="#about" data-i18n="nav.about">About</a></li>
+          <li><a class="nav__link" href="#services" data-i18n="nav.services">Services</a></li>
+          <li><a class="nav__link" href="#work" data-i18n="nav.work">Work</a></li>
+          <li><a class="nav__link" href="#words" data-i18n="nav.words">Words</a></li>
         </ul>
       </nav>
 
-      <a class="btn btn--ghost nav__cta" href="#contact" data-magnetic>
-        <span>Get in touch</span>
-      </a>
+      <div class="header__actions">
+        <!-- ── Language switcher ── -->
+        <div class="lang" data-lang-switcher>
+          <button
+            class="lang__toggle"
+            type="button"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-controls="lang-list"
+            data-i18n-attr="aria-label:lang.label"
+            aria-label="Language"
+            data-lang-toggle>
+            <svg class="lang__globe" width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <circle cx="8" cy="8" r="6.25" stroke="currentColor" stroke-width="1.2"/>
+              <path d="M1.9 6.1h12.2M1.9 9.9h12.2" stroke="currentColor" stroke-width="1.2"/>
+              <path d="M8 1.75c-1.8 2-2.6 4-2.6 6.25S6.2 12.25 8 14.25c1.8-2 2.6-4 2.6-6.25S9.8 3.75 8 1.75Z" stroke="currentColor" stroke-width="1.2"/>
+            </svg>
+            <span class="lang__code" data-lang-current>EN</span>
+            <svg class="lang__chev" width="10" height="10" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+              <path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <ul class="lang__list" id="lang-list" role="listbox" data-i18n-attr="aria-label:lang.label" aria-label="Language" data-lang-list hidden>
+            <li role="option" aria-selected="true"  data-locale="en-US" tabindex="-1"><span>EN</span> English</li>
+            <li role="option" aria-selected="false" data-locale="pt-BR" tabindex="-1"><span>PT</span> Português</li>
+            <li role="option" aria-selected="false" data-locale="es-ES" tabindex="-1"><span>ES</span> Español</li>
+          </ul>
+        </div>
 
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu" data-menu-toggle>
-        <span class="menu-toggle__bar"></span>
-        <span class="menu-toggle__bar"></span>
-      </button>
+        <a class="btn btn--ghost nav__cta" href="#contact" data-magnetic>
+          <span data-i18n="nav.cta">Get in touch</span>
+        </a>
+
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu"
+                data-i18n-attr="aria-label:nav.menuOpen" aria-label="Open menu" data-menu-toggle>
+          <span class="menu-toggle__bar"></span>
+          <span class="menu-toggle__bar"></span>
+        </button>
+      </div>
     </div>
   </header>
 
   <!-- Mobile menu -->
   <div class="mobile-menu" id="mobile-menu" data-mobile-menu aria-hidden="true">
     <nav class="mobile-menu__nav" aria-label="Mobile">
-      <a class="mobile-menu__link" href="#about"><span>01</span> About</a>
-      <a class="mobile-menu__link" href="#services"><span>02</span> Services</a>
-      <a class="mobile-menu__link" href="#work"><span>03</span> Work</a>
-      <a class="mobile-menu__link" href="#words"><span>04</span> Words</a>
-      <a class="mobile-menu__link" href="#contact"><span>05</span> Contact</a>
+      <a class="mobile-menu__link" href="#about"><span>01</span> <i data-i18n="nav.about">About</i></a>
+      <a class="mobile-menu__link" href="#services"><span>02</span> <i data-i18n="nav.services">Services</i></a>
+      <a class="mobile-menu__link" href="#work"><span>03</span> <i data-i18n="nav.work">Work</i></a>
+      <a class="mobile-menu__link" href="#words"><span>04</span> <i data-i18n="nav.words">Words</i></a>
+      <a class="mobile-menu__link" href="#contact"><span>05</span> <i data-i18n="nav.contact">Contact</i></a>
     </nav>
     <div class="mobile-menu__foot">
       <a href="mailto:hello@sofiaferraz.studio">hello@sofiaferraz.studio</a>
@@ -100,23 +131,23 @@
       <div class="shell hero__inner">
         <p class="eyebrow hero__eyebrow" data-reveal>
           <span class="eyebrow__line"></span>
-          Independent brand &amp; art director
+          <span data-i18n="hero.eyebrow">Independent brand &amp; art director</span>
         </p>
 
-        <h1 class="hero__title" id="hero-title">
+        <h1 class="hero__title" id="hero-title" data-i18n-lines="hero.titleLines">
           <span class="line" data-reveal><span>Design with</span></span>
           <span class="line" data-reveal><span><em>intention,</em> built to</span></span>
           <span class="line" data-reveal><span>quietly <em>endure.</em></span></span>
         </h1>
 
         <div class="hero__meta" data-reveal>
-          <p class="hero__lede">
+          <p class="hero__lede" data-i18n="hero.lede">
             I shape considered visual identities for houses that value elegance
             over noise — from the first mark to the finished world it lives in.
           </p>
           <div class="hero__actions">
-            <a class="btn btn--solid" href="#work" data-magnetic><span>View selected work</span></a>
-            <a class="btn btn--text" href="#contact"><span>Start a project</span>
+            <a class="btn btn--solid" href="#work" data-magnetic><span data-i18n="hero.cta1">View selected work</span></a>
+            <a class="btn btn--text" href="#contact"><span data-i18n="hero.cta2">Start a project</span>
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13L13 3M13 3H5M13 3V11" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
           </div>
@@ -125,17 +156,19 @@
 
       <div class="shell">
         <div class="hero__figure" data-reveal data-parallax>
-          <div class="media media--portrait media--hero" role="img" aria-label="Editorial portrait — a study in warm light and quiet composition">
+          <div class="media media--portrait media--hero" role="img"
+               data-i18n-attr="aria-label:hero.imageAlt"
+               aria-label="Editorial portrait — a study in warm light and quiet composition">
             <div class="media__glow"></div>
             <span class="media__index">Ed. 01</span>
           </div>
-          <span class="hero__caption">Atelier study — Lisbon, 2025</span>
+          <span class="hero__caption" data-i18n="hero.caption">Atelier study — Lisbon, 2025</span>
         </div>
       </div>
 
       <!-- expertise marquee -->
       <div class="marquee" aria-hidden="true" data-reveal>
-        <div class="marquee__track">
+        <div class="marquee__track" data-marquee>
           <span>Brand Identity</span><span class="dot">•</span>
           <span>Art Direction</span><span class="dot">•</span>
           <span>Editorial &amp; Print</span><span class="dot">•</span>
@@ -156,30 +189,32 @@
     <section class="about section" id="about" aria-labelledby="about-title">
       <div class="shell about__inner">
         <div class="about__media" data-reveal data-parallax>
-          <div class="media media--about" role="img" aria-label="Sofia Ferraz at work in the studio">
+          <div class="media media--about" role="img"
+               data-i18n-attr="aria-label:about.imageAlt"
+               aria-label="Sofia Ferraz at work in the studio">
             <div class="media__glow"></div>
             <span class="media__index">Portrait</span>
           </div>
           <div class="about__badge" aria-hidden="true">
-            <span>Est.</span>
+            <span data-i18n="about.badgeEst">Est.</span>
             <strong>2015</strong>
           </div>
         </div>
 
         <div class="about__body">
-          <p class="eyebrow" data-reveal><span class="eyebrow__line"></span>About</p>
-          <h2 class="about__title" id="about-title" data-reveal>
+          <p class="eyebrow" data-reveal><span class="eyebrow__line"></span><span data-i18n="about.eyebrow">About</span></p>
+          <h2 class="about__title" id="about-title" data-reveal data-i18n-html="about.title">
             A studio of one, obsessed with the
             <em>details others overlook.</em>
           </h2>
           <div class="about__text" data-reveal>
-            <p>
+            <p data-i18n="about.p1">
               I&rsquo;m Sofia Ferraz — a brand and art director working between
               Lisbon and the rest of the world. For a decade I&rsquo;ve helped
               founders, makers, and cultural houses translate what they believe
               into something people can see, hold, and trust.
             </p>
-            <p>
+            <p data-i18n="about.p2">
               My work lives at the meeting point of strategy and craft: restrained
               palettes, confident type, and imagery that breathes. Nothing loud,
               nothing borrowed — only identities designed to feel inevitable.
@@ -189,15 +224,15 @@
           <ul class="stats" data-reveal>
             <li class="stat">
               <span class="stat__num" data-count="10" data-suffix="">10</span>
-              <span class="stat__label">Years in practice</span>
+              <span class="stat__label" data-i18n="about.stat1">Years in practice</span>
             </li>
             <li class="stat">
               <span class="stat__num" data-count="60" data-suffix="+">60+</span>
-              <span class="stat__label">Brands shaped</span>
+              <span class="stat__label" data-i18n="about.stat2">Brands shaped</span>
             </li>
             <li class="stat">
               <span class="stat__num" data-count="4" data-suffix="">4</span>
-              <span class="stat__label">Continents served</span>
+              <span class="stat__label" data-i18n="about.stat3">Continents served</span>
             </li>
           </ul>
 
@@ -210,8 +245,8 @@
     <section class="services section" id="services" aria-labelledby="services-title">
       <div class="shell">
         <div class="section-head">
-          <p class="eyebrow" data-reveal><span class="eyebrow__line"></span>Services</p>
-          <h2 class="section-title" id="services-title" data-reveal>
+          <p class="eyebrow" data-reveal><span class="eyebrow__line"></span><span data-i18n="services.eyebrow">Services</span></p>
+          <h2 class="section-title" id="services-title" data-reveal data-i18n-html="services.title">
             Five ways I help a brand
             <em>arrive fully formed.</em>
           </h2>
@@ -221,13 +256,13 @@
           <li class="service" data-reveal>
             <span class="service__no">01</span>
             <div class="service__main">
-              <h3 class="service__title">Brand Identity</h3>
-              <p class="service__desc">
+              <h3 class="service__title" data-i18n="services.1.title">Brand Identity</h3>
+              <p class="service__desc" data-i18n="services.1.desc">
                 Logotypes, marks, colour, and type systems built as a coherent
                 whole — the foundation every other decision rests upon.
               </p>
             </div>
-            <ul class="service__tags">
+            <ul class="service__tags" data-i18n-list="services.1.tags">
               <li>Logo &amp; Mark</li><li>Type System</li><li>Guidelines</li>
             </ul>
             <span class="service__arrow" aria-hidden="true">
@@ -238,13 +273,13 @@
           <li class="service" data-reveal>
             <span class="service__no">02</span>
             <div class="service__main">
-              <h3 class="service__title">Art Direction</h3>
-              <p class="service__desc">
+              <h3 class="service__title" data-i18n="services.2.title">Art Direction</h3>
+              <p class="service__desc" data-i18n="services.2.desc">
                 The look and feel across every touchpoint — photography, styling,
                 and composition directed with a single, unmistakable point of view.
               </p>
             </div>
-            <ul class="service__tags">
+            <ul class="service__tags" data-i18n-list="services.2.tags">
               <li>Photography</li><li>Styling</li><li>Campaigns</li>
             </ul>
             <span class="service__arrow" aria-hidden="true">
@@ -255,13 +290,13 @@
           <li class="service" data-reveal>
             <span class="service__no">03</span>
             <div class="service__main">
-              <h3 class="service__title">Editorial &amp; Print</h3>
-              <p class="service__desc">
+              <h3 class="service__title" data-i18n="services.3.title">Editorial &amp; Print</h3>
+              <p class="service__desc" data-i18n="services.3.desc">
                 Books, magazines, and collateral where paper, grid, and typography
                 carry as much meaning as the words themselves.
               </p>
             </div>
-            <ul class="service__tags">
+            <ul class="service__tags" data-i18n-list="services.3.tags">
               <li>Layout</li><li>Typesetting</li><li>Production</li>
             </ul>
             <span class="service__arrow" aria-hidden="true">
@@ -272,13 +307,13 @@
           <li class="service" data-reveal>
             <span class="service__no">04</span>
             <div class="service__main">
-              <h3 class="service__title">Digital Experience</h3>
-              <p class="service__desc">
+              <h3 class="service__title" data-i18n="services.4.title">Digital Experience</h3>
+              <p class="service__desc" data-i18n="services.4.desc">
                 Websites and interfaces that extend the identity online —
                 unhurried, tactile, and designed around how people actually read.
               </p>
             </div>
-            <ul class="service__tags">
+            <ul class="service__tags" data-i18n-list="services.4.tags">
               <li>Web Design</li><li>Prototyping</li><li>Motion</li>
             </ul>
             <span class="service__arrow" aria-hidden="true">
@@ -289,13 +324,13 @@
           <li class="service" data-reveal>
             <span class="service__no">05</span>
             <div class="service__main">
-              <h3 class="service__title">Creative Strategy</h3>
-              <p class="service__desc">
+              <h3 class="service__title" data-i18n="services.5.title">Creative Strategy</h3>
+              <p class="service__desc" data-i18n="services.5.desc">
                 Naming, positioning, and verbal identity — the thinking that gives
                 the visuals a reason to exist and a story worth telling.
               </p>
             </div>
-            <ul class="service__tags">
+            <ul class="service__tags" data-i18n-list="services.5.tags">
               <li>Naming</li><li>Positioning</li><li>Voice</li>
             </ul>
             <span class="service__arrow" aria-hidden="true">
@@ -306,107 +341,40 @@
       </div>
     </section>
 
-    <!-- ─────────────────────────  WORK  ───────────────────────── -->
+    <!-- ─────────────────────────  WORK (dynamic)  ───────────────────────── -->
     <section class="work section" id="work" aria-labelledby="work-title">
       <div class="shell">
         <div class="section-head section-head--split">
           <div>
-            <p class="eyebrow" data-reveal><span class="eyebrow__line"></span>Selected work</p>
-            <h2 class="section-title" id="work-title" data-reveal>
+            <p class="eyebrow" data-reveal><span class="eyebrow__line"></span><span data-i18n="work.eyebrow">Selected work</span></p>
+            <h2 class="section-title" id="work-title" data-reveal data-i18n-html="work.title">
               A few worlds<br />built with care.
             </h2>
           </div>
-          <p class="section-head__note" data-reveal>
+          <p class="section-head__note" data-reveal data-i18n="work.note">
             Each project is a long conversation about restraint. A small selection
             of recent identities, chosen for the range they show.
           </p>
         </div>
 
-        <div class="gallery" data-reveal-group>
-          <!-- item 1 (large) -->
-          <article class="work-card work-card--wide" data-reveal>
-            <a class="work-card__link" href="#contact" aria-label="Maison Léra — Brand identity">
-              <span class="work-card__media media media--01">
-                <span class="media__glow"></span>
-                <span class="work-card__reveal">View project
-                  <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13L13 3M13 3H5M13 3V11" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </span>
-              </span>
-              <span class="work-card__meta">
-                <span class="work-card__title">Maison&nbsp;Léra</span>
-                <span class="work-card__cat">Brand Identity · Fragrance</span>
-                <span class="work-card__year">2025</span>
-              </span>
-            </a>
-          </article>
+        <!-- Populated from assets/data/projects.json (synced from Behance) -->
+        <div class="gallery" data-reveal-group data-work-gallery aria-busy="true">
+          <p class="work-loading" data-i18n="work.loading">Loading projects…</p>
+        </div>
 
-          <!-- item 2 -->
-          <article class="work-card" data-reveal>
-            <a class="work-card__link" href="#contact" aria-label="Atelier Nord — Art direction">
-              <span class="work-card__media media media--02">
-                <span class="media__glow"></span>
-                <span class="work-card__reveal">View project
-                  <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13L13 3M13 3H5M13 3V11" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </span>
-              </span>
-              <span class="work-card__meta">
-                <span class="work-card__title">Atelier&nbsp;Nord</span>
-                <span class="work-card__cat">Art Direction · Furniture</span>
-                <span class="work-card__year">2024</span>
-              </span>
-            </a>
-          </article>
+        <noscript>
+          <p class="work-noscript">
+            The project gallery needs JavaScript to load. You can browse the
+            full archive on <a href="https://www.behance.net/" rel="noopener noreferrer">Behance</a>,
+            or email <a href="mailto:hello@sofiaferraz.studio">hello@sofiaferraz.studio</a>.
+          </p>
+        </noscript>
 
-          <!-- item 3 -->
-          <article class="work-card" data-reveal>
-            <a class="work-card__link" href="#contact" aria-label="Verão — Editorial design">
-              <span class="work-card__media media media--03">
-                <span class="media__glow"></span>
-                <span class="work-card__reveal">View project
-                  <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13L13 3M13 3H5M13 3V11" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </span>
-              </span>
-              <span class="work-card__meta">
-                <span class="work-card__title">Verão</span>
-                <span class="work-card__cat">Editorial · Culture Journal</span>
-                <span class="work-card__year">2024</span>
-              </span>
-            </a>
-          </article>
-
-          <!-- item 4 -->
-          <article class="work-card" data-reveal>
-            <a class="work-card__link" href="#contact" aria-label="Grão — Packaging design">
-              <span class="work-card__media media media--04">
-                <span class="media__glow"></span>
-                <span class="work-card__reveal">View project
-                  <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13L13 3M13 3H5M13 3V11" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </span>
-              </span>
-              <span class="work-card__meta">
-                <span class="work-card__title">Grão</span>
-                <span class="work-card__cat">Packaging · Specialty Coffee</span>
-                <span class="work-card__year">2023</span>
-              </span>
-            </a>
-          </article>
-
-          <!-- item 5 (large) -->
-          <article class="work-card work-card--wide" data-reveal>
-            <a class="work-card__link" href="#contact" aria-label="Praia Club — Digital experience">
-              <span class="work-card__media media media--05">
-                <span class="media__glow"></span>
-                <span class="work-card__reveal">View project
-                  <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13L13 3M13 3H5M13 3V11" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </span>
-              </span>
-              <span class="work-card__meta">
-                <span class="work-card__title">Praia&nbsp;Club</span>
-                <span class="work-card__cat">Digital · Hospitality</span>
-                <span class="work-card__year">2023</span>
-              </span>
-            </a>
-          </article>
+        <div class="work-foot" data-work-foot hidden>
+          <a class="btn btn--text" data-work-archive href="#" target="_blank" rel="noopener noreferrer">
+            <span data-i18n="work.viewAll">View full archive on Behance</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13L13 3M13 3H5M13 3V11" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
         </div>
       </div>
     </section>
@@ -415,7 +383,7 @@
     <section class="pull" aria-label="Philosophy">
       <div class="shell">
         <blockquote class="pull__quote" data-reveal>
-          <p>
+          <p data-i18n-html="pull.quote">
             “Good design should feel <em>inevitable</em> — as if the brand could
             never have looked any other way.”
           </p>
@@ -427,8 +395,8 @@
     <section class="words section" id="words" aria-labelledby="words-title">
       <div class="shell">
         <div class="section-head">
-          <p class="eyebrow" data-reveal><span class="eyebrow__line"></span>Kind words</p>
-          <h2 class="section-title" id="words-title" data-reveal>
+          <p class="eyebrow" data-reveal><span class="eyebrow__line"></span><span data-i18n="words.eyebrow">Kind words</span></p>
+          <h2 class="section-title" id="words-title" data-reveal data-i18n-html="words.title">
             Trusted by founders who
             <em>sweat the small things.</em>
           </h2>
@@ -436,49 +404,49 @@
 
         <div class="reviews" data-reveal-group>
           <figure class="review" data-reveal>
-            <blockquote class="review__quote">
+            <blockquote class="review__quote" data-i18n="words.1.quote">
               Sofia gave our house a language we didn&rsquo;t know we were missing.
               Every detail feels considered, and nothing feels forced.
             </blockquote>
             <figcaption class="review__by">
               <span class="review__avatar" aria-hidden="true">IM</span>
               <span>
-                <strong>Inês Marques</strong>
-                <em>Founder, Maison Léra</em>
+                <strong data-i18n="words.1.name">Inês Marques</strong>
+                <em data-i18n="words.1.role">Founder, Maison Léra</em>
               </span>
             </figcaption>
           </figure>
 
           <figure class="review" data-reveal>
-            <blockquote class="review__quote">
+            <blockquote class="review__quote" data-i18n="words.2.quote">
               Working with Sofia is calm and exacting in equal measure. She
               protected the idea and elevated it — the response has been remarkable.
             </blockquote>
             <figcaption class="review__by">
               <span class="review__avatar" aria-hidden="true">TL</span>
               <span>
-                <strong>Tomás Lund</strong>
-                <em>Creative Lead, Atelier Nord</em>
+                <strong data-i18n="words.2.name">Tomás Lund</strong>
+                <em data-i18n="words.2.role">Creative Lead, Atelier Nord</em>
               </span>
             </figcaption>
           </figure>
 
           <figure class="review" data-reveal>
-            <blockquote class="review__quote">
+            <blockquote class="review__quote" data-i18n="words.3.quote">
               The identity still feels fresh three years on. That kind of longevity
               is exactly what we hoped for and rarely find.
             </blockquote>
             <figcaption class="review__by">
               <span class="review__avatar" aria-hidden="true">CR</span>
               <span>
-                <strong>Clara Reis</strong>
-                <em>Editor-in-Chief, Verão</em>
+                <strong data-i18n="words.3.name">Clara Reis</strong>
+                <em data-i18n="words.3.role">Editor-in-Chief, Verão</em>
               </span>
             </figcaption>
           </figure>
         </div>
 
-        <ul class="clients" data-reveal aria-label="Selected clients">
+        <ul class="clients" data-reveal data-i18n-attr="aria-label:words.clients" aria-label="Selected clients">
           <li>Maison&nbsp;Léra</li>
           <li>Atelier&nbsp;Nord</li>
           <li>Verão</li>
@@ -493,12 +461,12 @@
     <section class="contact section" id="contact" aria-labelledby="contact-title">
       <div class="shell contact__inner">
         <div class="contact__intro">
-          <p class="eyebrow" data-reveal><span class="eyebrow__line"></span>Contact</p>
-          <h2 class="contact__title" id="contact-title" data-reveal>
+          <p class="eyebrow" data-reveal><span class="eyebrow__line"></span><span data-i18n="contact.eyebrow">Contact</span></p>
+          <h2 class="contact__title" id="contact-title" data-reveal data-i18n-html="contact.title">
             Let&rsquo;s make something
             <em>timeless.</em>
           </h2>
-          <p class="contact__lede" data-reveal>
+          <p class="contact__lede" data-reveal data-i18n="contact.lede">
             I take on a small number of projects each season so each one gets my
             full attention. Tell me a little about yours.
           </p>
@@ -509,17 +477,17 @@
             </a>
             <div class="contact__row">
               <div>
-                <span class="contact__label">Based in</span>
-                <span class="contact__value">Lisbon, Portugal</span>
+                <span class="contact__label" data-i18n="contact.basedIn">Based in</span>
+                <span class="contact__value" data-i18n="contact.basedInValue">Lisbon, Portugal</span>
               </div>
               <div>
-                <span class="contact__label">Availability</span>
-                <span class="contact__value contact__value--dot">Booking Q1 2026</span>
+                <span class="contact__label" data-i18n="contact.availability">Availability</span>
+                <span class="contact__value contact__value--dot" data-i18n="contact.availabilityValue">Booking Q1 2026</span>
               </div>
             </div>
             <ul class="socials">
               <li><a href="#" aria-label="Instagram">Instagram</a></li>
-              <li><a href="#" aria-label="Behance">Behance</a></li>
+              <li><a href="#" aria-label="Behance" data-behance-link>Behance</a></li>
               <li><a href="#" aria-label="LinkedIn">LinkedIn</a></li>
             </ul>
           </div>
@@ -528,22 +496,22 @@
         <form class="contact__form" data-reveal data-form novalidate>
           <div class="field">
             <input type="text" id="f-name" name="name" placeholder=" " autocomplete="name" required />
-            <label for="f-name">Your name</label>
+            <label for="f-name" data-i18n="form.name">Your name</label>
           </div>
           <div class="field">
             <input type="email" id="f-email" name="email" placeholder=" " autocomplete="email" required />
-            <label for="f-email">Email address</label>
+            <label for="f-email" data-i18n="form.email">Email address</label>
           </div>
           <div class="field">
             <input type="text" id="f-company" name="company" placeholder=" " autocomplete="organization" />
-            <label for="f-company">Company <span>(optional)</span></label>
+            <label for="f-company"><span data-i18n="form.company">Company</span> <span data-i18n="form.optional">(optional)</span></label>
           </div>
           <div class="field">
             <textarea id="f-message" name="message" rows="4" placeholder=" " required></textarea>
-            <label for="f-message">Tell me about your project</label>
+            <label for="f-message" data-i18n="form.message">Tell me about your project</label>
           </div>
           <button class="btn btn--solid btn--block" type="submit" data-magnetic>
-            <span>Send enquiry</span>
+            <span data-i18n="form.submit">Send enquiry</span>
           </button>
           <p class="form-note" data-form-note role="status" aria-live="polite"></p>
         </form>
@@ -555,36 +523,40 @@
   <footer class="site-footer">
     <div class="shell">
       <div class="site-footer__top">
-        <a class="footer-brand" href="#top" aria-label="Sofia Ferraz — back to top">
+        <a class="footer-brand" href="#top" data-i18n-attr="aria-label:footer.backHome" aria-label="Sofia Ferraz — back to top">
           <span class="footer-brand__mark" aria-hidden="true">SF</span>
           <span class="footer-brand__word">Sofia Ferraz</span>
         </a>
         <a class="to-top" href="#top" data-magnetic>
-          <span>Back to top</span>
+          <span data-i18n="footer.toTop">Back to top</span>
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 13V3M8 3L3 8M8 3L13 8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
       </div>
 
       <div class="site-footer__grid">
-        <p class="footer-tag">
+        <p class="footer-tag" data-i18n="footer.tag">
           Brand &amp; art direction for houses that value elegance over noise.
         </p>
         <nav class="footer-nav" aria-label="Footer">
-          <a href="#about">About</a>
-          <a href="#services">Services</a>
-          <a href="#work">Work</a>
-          <a href="#words">Words</a>
-          <a href="#contact">Contact</a>
+          <a href="#about" data-i18n="nav.about">About</a>
+          <a href="#services" data-i18n="nav.services">Services</a>
+          <a href="#work" data-i18n="nav.work">Work</a>
+          <a href="#words" data-i18n="nav.words">Words</a>
+          <a href="#contact" data-i18n="nav.contact">Contact</a>
         </nav>
       </div>
 
       <div class="site-footer__base">
-        <span>© <span data-year>2026</span> Sofia Ferraz Studio. All rights reserved.</span>
-        <span>Designed &amp; art-directed in Lisbon.</span>
+        <span>© <span data-year>2026</span> <span data-i18n="footer.rights">Sofia Ferraz Studio. All rights reserved.</span></span>
+        <span data-i18n="footer.madeIn">Designed &amp; art-directed in Lisbon.</span>
       </div>
     </div>
   </footer>
 
+  <!-- data (generated) → i18n → renderers → interactions -->
+  <script src="assets/data/projects.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/projects.js"></script>
   <script src="assets/js/main.js" defer></script>
 </body>
 </html>
