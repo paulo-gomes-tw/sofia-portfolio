@@ -284,6 +284,7 @@
   applyLists(document);
   applyLines(document);
   applyMarquee(document);
+  observeReveals(document);
 
   /* ----------  Year  ---------- */
   document.querySelectorAll('[data-year]').forEach((el) => {
