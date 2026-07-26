@@ -90,47 +90,63 @@ assets/data/projects.json   ← canonical data (edit this / written by sync)
 assets/data/projects.js     ← generated wrapper (do not edit)
 ```
 
-### Why a sync script rather than calling Behance from the browser
+### Status: the public Behance API is gone
 
-This is a static site, so a browser-side API call would mean **shipping the API
-key to every visitor**, and Behance does not send CORS headers for cross-origin
-browser requests. Instead the fetch happens server-side, the normalised result is
-committed, and the site reads that. Consequences: no exposed secrets, no CORS,
-and the gallery still renders if Behance is down or rate-limiting.
+`behance.net/dev` — the self-serve developer portal — no longer exists (confirmed
+July 2026: it 404s). Adobe has not replaced it with an equivalent public signup
+flow. `scripts/sync-behance.mjs` is kept in the repo (and still works) for the
+day that changes, or if you get access through an approved Adobe partner account,
+but **it is not the supported path today.**
 
-### Running a sync
+### The supported path: browser export
 
-```bash
-export BEHANCE_USER=her-handle          # the part after behance.net/
-export BEHANCE_API_KEY=your-key         # or: export BEHANCE_TOKEN=oauth-token
+Behance renders its pages behind bot protection that returns `403` to any
+non-browser request — including from a hosting provider's build server, not just
+from a casual `curl`. So instead of fetching from *outside* the browser, two
+small scripts read the page from *inside* it — the same DOM your own logged-in
+tab already rendered, the same thing you'd copy by hand, just automated:
 
-npm run sync:behance:dry                # preview — fetches, writes nothing
-npm run sync:behance -- --detail        # write projects.json (+ prose & gallery)
-npm run build:data                      # regenerate the wrapper (sync does this too)
+```
+scripts/browser/extract-profile.js          → run once, on Sofia's profile page
+scripts/browser/extract-project-detail.js   → run per project, for prose + gallery
 ```
 
-Flags: `--dry-run`, `--detail` (pull per-project modules for prose + gallery
-images), `--limit=N`, `--locale=xx-XX` (which locale the Behance copy fills).
+**1. Get the project list.** Open `behance.net/<her-handle>`, scroll until every
+project has loaded, open DevTools → Console, paste in the full contents of
+`extract-profile.js`, press Enter. It prints JSON and copies it to your
+clipboard. Save it as `behance-export.json`.
 
-### Translations survive syncing
+**2. (Optional) Get full project pages.** For any project you want a rich detail
+page for, open it, paste in `extract-project-detail.js`, and save the output as
+`detail/<slug-or-id>.json` — e.g. `detail/flor-de-lorien.json`. Skip this and a
+project still gets a card + basic page from step 1 alone, just without body copy.
 
-Behance stores **one language per project**. So sync writes the Behance copy into
-the source locale (default `en-US`) and **preserves any `pt-BR` / `es-ES` blocks
-you have written by hand** under each project's `i18n` key. Your editorial choices
-for `featured` (full-width card), `placeholder`, and `meta` are preserved too.
+**3. Import.**
 
-### If the API is unavailable
+```bash
+npm run import:behance -- behance-export.json                    # list only
+npm run import:behance -- behance-export.json --detail-dir=detail  # + full pages
+npm run import:behance -- behance-export.json --dry-run          # preview first
+```
 
-Adobe closed public Behance API-key registration (around 2019–2020); keys are now
-issued only to approved developer accounts. If you cannot get one, the data format
-is the contract — anything that produces a valid `projects.json` works:
+This writes `assets/data/projects.json` and regenerates the wrapper — same
+output contract as the API sync, so nothing else on the site changes.
 
-1. **Edit `assets/data/projects.json` by hand**, then `npm run build:data`. Fully
-   supported; this is what the committed seed data does.
-2. **Export from Behance** and map the fields into the same shape.
-3. **Serverless proxy** — if you want live data, host a small function that holds
-   the token and returns the same JSON, then point `DATA_URL` in
-   `assets/js/projects.js` at it.
+### Translations and edits survive re-running either script
+
+Both `sync:behance` and `import:behance` **merge**, they don't overwrite: rerun
+either one later and your hand-written `pt-BR` / `es-ES` blocks, `featured`
+(full-width card), and `meta` (client / role / services) are preserved by
+matching on project id. The browser export only sees what's visible on the
+profile grid, so after the first import you'll likely want to open
+`assets/data/projects.json` and fill in `year`, `meta.role`, and translations —
+that's expected, not a bug.
+
+### If you'd rather skip both scripts
+
+The JSON file is the actual contract — anything that produces a valid
+`projects.json` works. Hand-editing it directly, then running `npm run
+build:data`, is just as supported; it's what the committed seed data is.
 
 ### Project pages
 

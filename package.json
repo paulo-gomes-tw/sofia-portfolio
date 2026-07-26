@@ -11,7 +11,8 @@
     "serve": "python3 -m http.server 3000",
     "build:data": "node scripts/build-data.mjs",
     "sync:behance": "node scripts/sync-behance.mjs",
-    "sync:behance:dry": "node scripts/sync-behance.mjs --dry-run --detail"
+    "sync:behance:dry": "node scripts/sync-behance.mjs --dry-run --detail",
+    "import:behance": "node scripts/import-behance-export.mjs"
   },
   "keywords": [
     "portfolio",
