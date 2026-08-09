@@ -5,22 +5,27 @@
 
 /* ----------  Design tokens  ---------- */
 :root {
-  /* palette */
-  --bg:          #F8F7F4;
-  --surface:     #FFFFFF;
-  --ink:         #181818;
-  --ink-soft:    #2A2A28;
-  --muted:       #6B6B6B;
-  --muted-2:     #8D8D86;
-  --border:      #ECEAE4;
-  --border-ink:  #DEDBD2;
+  /* palette — matched to the brand reference */
+  --bg:          #FAF1EC;   /* warm cream */
+  --surface:     #FFF8F5;
+  --ink:         #1E1613;
+  --ink-soft:    #2E2320;
+  --muted:       #7A6A64;
+  --muted-2:     #9A8880;
+  --border:      #EEDFD8;
+  --border-ink:  #E2CEC5;
+
+  --wine:        #7A0C1B;   /* deep burgundy — sections & accents */
+  --wine-d:      #5C0713;
+  --cream:       #F7EDE8;   /* text on wine / on the hero photo */
+  --navy:        #17293B;   /* hero photograph base tone */
 
   --terracotta:  #C46B4B;
   --terracotta-d:#A9512F;   /* darker — for text on light */
   --olive:       #8C8A63;
   --gold:        #C8A96A;
 
-  --accent:      var(--terracotta);
+  --accent:      var(--wine);
 
   /* type */
   --serif: "Instrument Serif", "Cormorant Garamond", Georgia, "Times New Roman", serif;
@@ -82,7 +87,7 @@ img, svg { display: block; max-width: 100%; }
 button { font: inherit; color: inherit; cursor: pointer; }
 em { font-style: italic; }
 
-::selection { background: var(--terracotta); color: #fff; }
+::selection { background: var(--wine); color: var(--cream); }
 
 /* ----------  Layout shell  ---------- */
 .shell {
@@ -212,6 +217,19 @@ em { font-style: italic; }
 
 .btn--block { width: 100%; --pad-y: 1.15rem; }
 
+/* Outline pill sitting on the hero photograph */
+.btn--hero {
+  --pad-x: 2.1rem;
+  background: transparent;
+  color: var(--cream);
+  border-color: rgba(247,237,232,0.65);
+}
+.btn--hero:hover {
+  background: var(--cream);
+  color: var(--wine);
+  border-color: var(--cream);
+}
+
 /* ----------  Header  ---------- */
 .site-header {
   position: fixed;
@@ -280,6 +298,23 @@ em { font-style: italic; }
 @media (max-width: 900px) {
   .nav, .nav__cta, .nav__discovery { display: none; }
 }
+
+/* Before the first scroll the header floats over the dark hero photograph,
+   so it flips to the cream-on-photo treatment. */
+.has-hero .site-header:not(.is-scrolled) { color: var(--cream); }
+.has-hero .site-header:not(.is-scrolled) .brand__mark { background: var(--cream); color: var(--wine); }
+.has-hero .site-header:not(.is-scrolled) .nav__link,
+.has-hero .site-header:not(.is-scrolled) .nav-social a { color: rgba(247,237,232,0.85); }
+.has-hero .site-header:not(.is-scrolled) .nav__link:hover,
+.has-hero .site-header:not(.is-scrolled) .nav-social a:hover { color: var(--cream); }
+.has-hero .site-header:not(.is-scrolled) .nav-social { border-right-color: rgba(247,237,232,0.3); }
+.has-hero .site-header:not(.is-scrolled) .nav__link::after { background: var(--cream); }
+.has-hero .site-header:not(.is-scrolled) .btn--ghost,
+.has-hero .site-header:not(.is-scrolled) .menu-toggle { border-color: rgba(247,237,232,0.55); color: var(--cream); }
+.has-hero .site-header:not(.is-scrolled) .btn--ghost:hover { background: var(--cream); color: var(--wine); border-color: var(--cream); }
+.has-hero .site-header:not(.is-scrolled) .menu-toggle__bar { background: var(--cream); }
+.has-hero .site-header:not(.is-scrolled) .btn--solid { background: var(--cream); color: var(--wine); }
+.has-hero .site-header:not(.is-scrolled) .btn--solid:hover { background: var(--wine); color: var(--cream); }
 
 /* ----------  Menu toggle (mobile)  ---------- */
 .menu-toggle {
@@ -381,60 +416,94 @@ body.menu-open { overflow: hidden; }
    HERO
    ============================================================ */
 .hero {
-  padding-top: calc(var(--header-h) + clamp(2rem, 6vw, 5rem));
-  padding-bottom: clamp(2rem, 5vw, 4rem);
   position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: flex-end;
+  min-height: clamp(560px, 88vh, 900px);
+  padding-top: calc(var(--header-h) + clamp(3rem, 10vw, 7rem));
+  padding-bottom: clamp(3rem, 8vw, 6rem);
+  overflow: hidden;
+  background: var(--navy);
 }
-.hero__inner { position: relative; z-index: 2; }
-.hero__eyebrow { margin-bottom: clamp(1.5rem, 4vw, 2.5rem); }
+
+/* Photographic backdrop. The gradient is the fallback layer: drop a real
+   photograph at assets/img/hero.jpg and it takes over automatically. */
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background-image:
+    url("../img/hero.jpg"),
+    radial-gradient(75% 90% at 68% 22%, rgba(126,158,178,0.55), transparent 62%),
+    radial-gradient(60% 70% at 18% 82%, rgba(12,22,32,0.9), transparent 65%),
+    linear-gradient(150deg, #24405A 0%, #17293B 48%, #0D1926 100%);
+  background-size: cover;
+  background-position: center 40%;
+  background-repeat: no-repeat;
+}
+.hero__scrim {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(90deg, rgba(9,18,28,0.82) 0%, rgba(9,18,28,0.55) 45%, rgba(9,18,28,0.28) 100%),
+    linear-gradient(0deg, rgba(9,18,28,0.7) 0%, transparent 55%);
+}
+
+.hero__inner { position: relative; z-index: 2; color: var(--cream); }
 
 .hero__title {
-  font-family: var(--serif);
-  font-size: var(--step-4);
-  line-height: 0.98;
-  letter-spacing: -0.015em;
-  max-width: 16ch;
-}
-.hero__title em { color: var(--terracotta-d); }
-.hero__title .line { display: block; overflow: hidden; }
-.hero__title .line > span { display: block; }
-
-.hero__meta {
-  margin-top: clamp(2rem, 5vw, 3.5rem);
   display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: clamp(1.5rem, 4vw, 3rem);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(1rem, 3vw, 2.5rem);
   align-items: end;
-  max-width: 940px;
+  color: var(--cream);
 }
-.hero__lede {
-  font-size: var(--step-1);
-  line-height: 1.5;
-  color: var(--ink-soft);
-  max-width: 34ch;
-  font-weight: 400;
+.hero__title-serif {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(2.6rem, 7vw, 5.6rem);
+  line-height: 1.02;
+  letter-spacing: -0.01em;
+  max-width: 12ch;
 }
-.hero__actions { display: flex; flex-wrap: wrap; gap: 1rem 1.5rem; align-items: center; }
+.hero__title-sans {
+  font-family: var(--sans);
+  font-weight: 300;
+  font-size: clamp(2rem, 5.4vw, 4.2rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  max-width: 14ch;
+}
+.hero__title-sans strong { font-weight: 700; display: block; }
 
-.hero__figure {
-  position: relative;
-  margin-top: clamp(3rem, 7vw, 5rem);
+.hero__lede {
+  margin-top: clamp(1.5rem, 4vw, 2.5rem);
+  font-size: var(--step-0);
+  line-height: 1.6;
+  color: rgba(247,237,232,0.86);
+  max-width: 46ch;
 }
-.hero__caption {
-  display: block;
-  margin-top: 1rem;
-  font-size: var(--step--1);
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--muted);
+.hero__actions {
+  margin-top: clamp(1.5rem, 4vw, 2.5rem);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.5rem;
+  align-items: center;
+}
+
+@media (max-width: 780px) {
+  .hero__title { grid-template-columns: 1fr; }
+  .hero__title-sans strong { display: inline; }
 }
 
 /* marquee */
 .marquee {
-  margin-top: clamp(3rem, 7vw, 5.5rem);
+  background: var(--bg);
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
-  padding-block: 1.15rem;
+  padding-block: clamp(0.9rem, 2vw, 1.35rem);
   overflow: hidden;
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
   mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
@@ -446,10 +515,10 @@ body.menu-open { overflow: hidden; }
   width: max-content;
   animation: marquee 34s linear infinite;
   font-family: var(--serif);
-  font-size: clamp(1.4rem, 3vw, 2.1rem);
-  color: var(--ink-soft);
+  font-size: clamp(1.3rem, 2.6vw, 1.9rem);
+  color: var(--wine);
 }
-.marquee__track .dot { color: var(--terracotta); font-size: 0.7em; }
+.marquee__track .dot { color: var(--wine); font-size: 0.7em; opacity: 0.75; }
 @keyframes marquee { to { transform: translateX(-50%); } }
 @media (prefers-reduced-motion: reduce) {
   .marquee__track { animation: none; }
@@ -495,30 +564,17 @@ body.menu-open { overflow: hidden; }
 }
 
 /* Distinct duotone compositions — evocative, palette-true */
-.media--portrait {
-  aspect-ratio: 4 / 5;
-  background:
-    linear-gradient(160deg, #D8A98C 0%, #C46B4B 42%, #8a4630 100%);
-}
-.media--portrait .media__glow {
-  background:
-    radial-gradient(60% 55% at 62% 30%, rgba(248,247,244,0.55), transparent 60%),
-    radial-gradient(80% 80% at 30% 90%, rgba(140,138,99,0.55), transparent 60%),
-    conic-gradient(from 200deg at 50% 40%, transparent, rgba(24,24,24,0.18), transparent 40%);
-}
-.media--hero { aspect-ratio: 16 / 10; }
-@media (min-width: 900px) {
-  .media--hero { aspect-ratio: 21 / 8; }
-}
-
+/* Studio portrait. As with the hero, the gradient is only a stand-in —
+   drop a real photograph at assets/img/about.jpg and it takes over. */
 .media--about {
-  aspect-ratio: 4 / 5;
-  background: linear-gradient(155deg, #B9B693 0%, #8C8A63 48%, #5f5d40 100%);
-}
-.media--about .media__glow {
-  background:
-    radial-gradient(55% 50% at 35% 28%, rgba(248,247,244,0.5), transparent 62%),
-    radial-gradient(70% 70% at 78% 82%, rgba(196,107,75,0.5), transparent 60%);
+  aspect-ratio: 5 / 4;
+  background-image:
+    url("../img/about.jpg"),
+    radial-gradient(60% 55% at 30% 25%, rgba(255,231,214,0.55), transparent 62%),
+    linear-gradient(155deg, #C79A7C 0%, #8E5B45 48%, #4A2A20 100%);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .media--01 { aspect-ratio: 16 / 10; background: linear-gradient(150deg, #E0BFA6, #C46B4B 55%, #7d3f28); }
@@ -539,10 +595,14 @@ body.menu-open { overflow: hidden; }
 /* ============================================================
    ABOUT
    ============================================================ */
+.about {
+  background: var(--wine);
+  color: var(--cream);
+}
 .about__inner {
   display: grid;
-  grid-template-columns: 0.85fr 1fr;
-  gap: clamp(2rem, 6vw, 6rem);
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: clamp(2rem, 6vw, 5rem);
   align-items: center;
 }
 .about__media { position: relative; }
@@ -557,50 +617,54 @@ body.menu-open { overflow: hidden; }
   display: grid;
   place-content: center;
   text-align: center;
-  box-shadow: 0 20px 40px -28px rgba(24,24,24,0.5);
+  box-shadow: 0 20px 40px -28px rgba(0,0,0,0.6);
 }
 .about__badge span { font-size: 0.66rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--muted); }
-.about__badge strong { font-family: var(--serif); font-size: 1.7rem; font-weight: 400; color: var(--ink); }
+.about__badge strong { font-family: var(--serif); font-size: 1.7rem; font-weight: 400; color: var(--wine); }
 
 .about__title {
   font-family: var(--serif);
-  font-size: var(--step-2);
-  line-height: 1.12;
+  font-style: italic;
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  line-height: 1.1;
   letter-spacing: -0.01em;
   margin-bottom: 1.6rem;
-  max-width: 20ch;
+  color: var(--cream);
 }
-.about__title em { color: var(--terracotta-d); }
-.about__text { color: var(--muted); display: grid; gap: 1.1rem; max-width: 52ch; }
-.about__text p { color: var(--ink-soft); }
+.about__text {
+  display: grid;
+  gap: 1.1rem;
+  max-width: 56ch;
+  font-size: var(--step--1);
+  line-height: 1.75;
+}
+.about__text p { color: rgba(247,237,232,0.88); }
 
 .stats {
   display: flex;
   flex-wrap: wrap;
-  gap: clamp(1.5rem, 4vw, 3.5rem);
-  margin-top: clamp(2rem, 4vw, 3rem);
-  padding-top: 2rem;
-  border-top: 1px solid var(--border);
+  gap: clamp(2rem, 8vw, 6rem);
+  margin-top: clamp(3rem, 7vw, 5rem);
+  padding-top: clamp(2rem, 4vw, 3rem);
+  border-top: 1px solid rgba(247,237,232,0.22);
 }
 .stat { display: flex; flex-direction: column; gap: 0.15rem; }
 .stat__num {
   font-family: var(--serif);
-  font-size: clamp(2.4rem, 5vw, 3.4rem);
+  font-size: clamp(2.6rem, 6vw, 4rem);
   line-height: 1;
-  color: var(--ink);
+  color: var(--cream);
 }
 .stat__label {
   font-size: var(--step--1);
-  color: var(--muted);
+  color: rgba(247,237,232,0.75);
   letter-spacing: 0.04em;
 }
-.about__sign {
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: clamp(2.2rem, 5vw, 3rem);
-  color: var(--terracotta);
-  margin-top: 1.8rem;
-  opacity: 0.9;
+
+@media (max-width: 860px) {
+  .about__inner { grid-template-columns: 1fr; }
+  .about__media { order: -1; max-width: 460px; }
+  .about__badge { right: 8px; }
 }
 
 /* ============================================================
@@ -1046,44 +1110,6 @@ body.menu-open { overflow: hidden; }
   color: var(--muted);
   font-size: var(--step--1);
   letter-spacing: 0.02em;
-}
-
-/* ============================================================
-   Custom cursor
-   ============================================================ */
-.cursor { display: none; }
-@media (hover: hover) and (pointer: fine) {
-  .cursor {
-    display: block;
-    position: fixed;
-    left: 0; top: 0;
-    z-index: 300;
-    pointer-events: none;
-    mix-blend-mode: difference;
-  }
-  .cursor__dot,
-  .cursor__ring {
-    position: absolute;
-    top: 0; left: 0;
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-  }
-  .cursor__dot { width: 6px; height: 6px; background: #fff; }
-  .cursor__ring {
-    width: 40px; height: 40px;
-    border: 1px solid rgba(255,255,255,0.6);
-    transition: width 0.35s var(--ease), height 0.35s var(--ease), background-color 0.35s var(--ease), opacity 0.35s var(--ease);
-  }
-  .cursor.is-hover .cursor__ring { width: 62px; height: 62px; background: rgba(255,255,255,0.12); }
-  .cursor.is-down .cursor__ring { width: 30px; height: 30px; }
-  /* hide native cursor only when custom is active */
-  body.cursor-on { cursor: none; }
-  body.cursor-on a,
-  body.cursor-on button { cursor: none; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .cursor { display: none !important; }
-  body.cursor-on { cursor: auto; }
 }
 
 /* ============================================================

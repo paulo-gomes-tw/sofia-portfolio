@@ -19,7 +19,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="assets/css/styles.css" />
 
@@ -39,15 +39,11 @@
     });
   </script>
 </head>
-<body>
+<body class="has-hero">
   <a class="skip-link" href="#main" data-i18n="nav.skip">Skip to content</a>
 
   <!-- Ambient decorative layers -->
   <div class="grain" aria-hidden="true"></div>
-  <div class="cursor" aria-hidden="true" data-cursor>
-    <span class="cursor__dot"></span>
-    <span class="cursor__ring"></span>
-  </div>
 
   <!-- ─────────────────────────  HEADER  ───────────────────────── -->
   <header class="site-header" data-header>
@@ -220,117 +216,108 @@
 
     <!-- ─────────────────────────  HERO  ───────────────────────── -->
     <section class="hero" aria-labelledby="hero-title">
-      <div class="shell hero__inner">
-        <p class="eyebrow hero__eyebrow" data-reveal>
-          <span class="eyebrow__line"></span>
-          <span data-i18n="hero.eyebrow">Independent brand &amp; art director</span>
-        </p>
+      <div class="hero__bg" role="img"
+           data-i18n-attr="aria-label:hero.imageAlt"
+           aria-label="Mãos desenhando um esboço de marca sobre a mesa do estúdio"></div>
+      <div class="hero__scrim" aria-hidden="true"></div>
 
-        <h1 class="hero__title" id="hero-title" data-i18n-lines="hero.titleLines">
-          <span class="line" data-reveal><span>Design with</span></span>
-          <span class="line" data-reveal><span><em>intention,</em> built to</span></span>
-          <span class="line" data-reveal><span>quietly <em>endure.</em></span></span>
+      <div class="shell hero__inner">
+        <h1 class="hero__title" id="hero-title">
+          <span class="hero__title-serif" data-reveal>
+            <span data-i18n="hero.titleSerif">Design estratégico</span>
+          </span>
+          <span class="hero__title-sans" data-reveal>
+            <span data-i18n-html="hero.titleSans">para marcas <strong>memoráveis.</strong></span>
+          </span>
         </h1>
 
-        <div class="hero__meta" data-reveal>
-          <p class="hero__lede" data-i18n="hero.lede">
-            I shape considered visual identities for houses that value elegance
-            over noise — from the first mark to the finished world it lives in.
-          </p>
-          <div class="hero__actions">
-            <a class="btn btn--solid" href="#work" data-magnetic><span data-i18n="hero.cta1">View selected work</span></a>
-            <a class="btn btn--text" href="#contact"><span data-i18n="hero.cta2">Start a project</span>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13L13 3M13 3H5M13 3V11" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-          </div>
-        </div>
-      </div>
+        <p class="hero__lede" data-reveal data-i18n="hero.lede">
+          Posicionamento estratégico e identidade visual para marcas que querem
+          ser percebidas como luxo no mercado.
+        </p>
 
-      <div class="shell">
-        <div class="hero__figure" data-reveal data-parallax>
-          <div class="media media--portrait media--hero" role="img"
-               data-i18n-attr="aria-label:hero.imageAlt"
-               aria-label="Editorial portrait — a study in warm light and quiet composition">
-            <div class="media__glow"></div>
-            <span class="media__index">Ed. 01</span>
-          </div>
-          <span class="hero__caption" data-i18n="hero.caption">Atelier study — Lisbon, 2025</span>
-        </div>
-      </div>
-
-      <!-- expertise marquee -->
-      <div class="marquee" aria-hidden="true" data-reveal>
-        <div class="marquee__track" data-marquee>
-          <span>Brand Identity</span><span class="dot">•</span>
-          <span>Art Direction</span><span class="dot">•</span>
-          <span>Editorial &amp; Print</span><span class="dot">•</span>
-          <span>Packaging</span><span class="dot">•</span>
-          <span>Digital Experience</span><span class="dot">•</span>
-          <span>Creative Strategy</span><span class="dot">•</span>
-          <span>Brand Identity</span><span class="dot">•</span>
-          <span>Art Direction</span><span class="dot">•</span>
-          <span>Editorial &amp; Print</span><span class="dot">•</span>
-          <span>Packaging</span><span class="dot">•</span>
-          <span>Digital Experience</span><span class="dot">•</span>
-          <span>Creative Strategy</span><span class="dot">•</span>
+        <div class="hero__actions" data-reveal>
+          <a class="btn btn--hero" href="#contact" data-magnetic>
+            <span data-i18n="hero.cta1">Quero uma marca autêntica</span>
+          </a>
         </div>
       </div>
     </section>
 
+    <!-- expertise marquee -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track" data-marquee>
+        <span>Estratégia</span><span class="dot">•</span>
+        <span>Identidade de marca</span><span class="dot">•</span>
+        <span>Embalagem</span><span class="dot">•</span>
+        <span>Design social mídia</span><span class="dot">•</span>
+        <span>Editorial</span><span class="dot">•</span>
+        <span>Estratégia</span><span class="dot">•</span>
+        <span>Identidade de marca</span><span class="dot">•</span>
+        <span>Embalagem</span><span class="dot">•</span>
+        <span>Design social mídia</span><span class="dot">•</span>
+        <span>Editorial</span><span class="dot">•</span>
+      </div>
+    </div>
+
     <!-- ─────────────────────────  ABOUT  ───────────────────────── -->
     <section class="about section" id="about" aria-labelledby="about-title">
       <div class="shell about__inner">
+        <div class="about__body">
+          <h2 class="about__title" id="about-title" data-reveal data-i18n="about.title">Sobre</h2>
+
+          <div class="about__text" data-reveal>
+            <p data-i18n="about.p1">
+              Olá! Sou Sofia Ferraz, designer especializada em Branding e
+              Identidade Visual.
+            </p>
+            <p data-i18n="about.p2">
+              Acredito que uma marca forte vai além de uma estética bonita: ela
+              precisa comunicar sua essência, transmitir valor e criar uma conexão
+              verdadeira com o público. Por isso, desenvolvo identidades visuais
+              estratégicas e autorais para marcas que desejam se posicionar de
+              forma mais sofisticada, autêntica e memorável no mercado.
+            </p>
+            <p data-i18n="about.p3">
+              Meu processo une estratégia, criatividade e um olhar atento aos
+              detalhes para transformar histórias, valores e objetivos em sistemas
+              visuais únicos, desde símbolos e tipografias até todos os elementos
+              que constroem uma presença de marca consistente.
+            </p>
+            <p data-i18n="about.p4">
+              Ao longo da minha trajetória, desenvolvi projetos para marcas do
+              Brasil, Estados Unidos, Portugal e Suécia, ajudando negócios a
+              fortalecerem sua imagem e a serem percebidos com mais valor pelo
+              público.
+            </p>
+          </div>
+        </div>
+
         <div class="about__media" data-reveal data-parallax>
           <div class="media media--about" role="img"
                data-i18n-attr="aria-label:about.imageAlt"
-               aria-label="Sofia Ferraz at work in the studio">
-            <div class="media__glow"></div>
-            <span class="media__index">Portrait</span>
-          </div>
+               aria-label="Sofia Ferraz trabalhando no notebook em seu estúdio"></div>
           <div class="about__badge" aria-hidden="true">
-            <span data-i18n="about.badgeEst">Est.</span>
-            <strong>2015</strong>
+            <span data-i18n="about.badgeEst">Desde</span>
+            <strong>2020</strong>
           </div>
-        </div>
-
-        <div class="about__body">
-          <p class="eyebrow" data-reveal><span class="eyebrow__line"></span><span data-i18n="about.eyebrow">About</span></p>
-          <h2 class="about__title" id="about-title" data-reveal data-i18n-html="about.title">
-            A studio of one, obsessed with the
-            <em>details others overlook.</em>
-          </h2>
-          <div class="about__text" data-reveal>
-            <p data-i18n="about.p1">
-              I&rsquo;m Sofia Ferraz — a brand and art director working between
-              Lisbon and the rest of the world. For a decade I&rsquo;ve helped
-              founders, makers, and cultural houses translate what they believe
-              into something people can see, hold, and trust.
-            </p>
-            <p data-i18n="about.p2">
-              My work lives at the meeting point of strategy and craft: restrained
-              palettes, confident type, and imagery that breathes. Nothing loud,
-              nothing borrowed — only identities designed to feel inevitable.
-            </p>
-          </div>
-
-          <ul class="stats" data-reveal>
-            <li class="stat">
-              <span class="stat__num" data-count="10" data-suffix="">10</span>
-              <span class="stat__label" data-i18n="about.stat1">Years in practice</span>
-            </li>
-            <li class="stat">
-              <span class="stat__num" data-count="60" data-suffix="+">60+</span>
-              <span class="stat__label" data-i18n="about.stat2">Brands shaped</span>
-            </li>
-            <li class="stat">
-              <span class="stat__num" data-count="4" data-suffix="">4</span>
-              <span class="stat__label" data-i18n="about.stat3">Continents served</span>
-            </li>
-          </ul>
-
-          <p class="about__sign" data-reveal aria-hidden="true">Sofia</p>
         </div>
       </div>
+
+      <ul class="stats shell" data-reveal>
+        <li class="stat">
+          <span class="stat__num" data-count="6" data-suffix="">6</span>
+          <span class="stat__label" data-i18n="about.stat1">Anos de atuação</span>
+        </li>
+        <li class="stat">
+          <span class="stat__num" data-count="40" data-suffix="+">40+</span>
+          <span class="stat__label" data-i18n="about.stat2">Marcas criadas</span>
+        </li>
+        <li class="stat">
+          <span class="stat__num" data-count="4" data-suffix="">4</span>
+          <span class="stat__label" data-i18n="about.stat3">Países atendidos</span>
+        </li>
+      </ul>
     </section>
 
     <!-- ─────────────────────────  SERVICES  ───────────────────────── -->

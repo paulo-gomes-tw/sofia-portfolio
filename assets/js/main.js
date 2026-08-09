@@ -245,7 +245,6 @@
       gallery.setAttribute('aria-busy', 'false');
       observeReveals(gallery);
       bindMagnetic(gallery);
-      bindCursorTargets(gallery);
     }
 
     if (projectMount) {
@@ -253,7 +252,6 @@
       if (window.I18N) window.I18N.apply(projectMount);
       observeReveals(projectMount);
       bindMagnetic(projectMount);
-      bindCursorTargets(projectMount);
     }
   }
 
@@ -422,46 +420,6 @@
     });
   }
   bindMagnetic(document);
-
-  /* ----------  Custom cursor  ---------- */
-  const cursor = document.querySelector('[data-cursor]');
-  const CURSOR_TARGETS = 'a, button, [data-magnetic], .work-card__media, .service, input, textarea, [role="option"]';
-
-  function bindCursorTargets(root) {
-    if (!cursor || !finePointer || prefersReduced) return;
-    (root || document).querySelectorAll(CURSOR_TARGETS).forEach((t) => {
-      if (t.hasAttribute('data-cursor-bound')) return;
-      t.setAttribute('data-cursor-bound', '');
-      t.addEventListener('pointerenter', () => cursor.classList.add('is-hover'));
-      t.addEventListener('pointerleave', () => cursor.classList.remove('is-hover'));
-    });
-  }
-
-  if (cursor && finePointer && !prefersReduced) {
-    document.body.classList.add('cursor-on');
-    const dot = cursor.querySelector('.cursor__dot');
-    const ring = cursor.querySelector('.cursor__ring');
-    let mx = window.innerWidth / 2, my = window.innerHeight / 2;
-    let rx = mx, ry = my;
-
-    window.addEventListener('pointermove', (e) => {
-      mx = e.clientX; my = e.clientY;
-      if (dot) dot.style.transform = 'translate(' + mx + 'px,' + my + 'px) translate(-50%,-50%)';
-    });
-
-    (function loop() {
-      rx += (mx - rx) * 0.18;
-      ry += (my - ry) * 0.18;
-      if (ring) ring.style.transform = 'translate(' + rx + 'px,' + ry + 'px) translate(-50%,-50%)';
-      requestAnimationFrame(loop);
-    })();
-
-    bindCursorTargets(document);
-    window.addEventListener('pointerdown', () => cursor.classList.add('is-down'));
-    window.addEventListener('pointerup', () => cursor.classList.remove('is-down'));
-    document.addEventListener('mouseleave', () => { cursor.style.opacity = '0'; });
-    document.addEventListener('mouseenter', () => { cursor.style.opacity = '1'; });
-  }
 
   /* ----------  Contact form (demo handling)  ---------- */
   const form = document.querySelector('[data-form]');
