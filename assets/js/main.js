@@ -48,7 +48,7 @@
     (root || document).querySelectorAll('[data-marquee]').forEach((el) => {
       const items = window.I18N.t('marquee.items');
       if (!Array.isArray(items)) return;
-      const one = items.map((i) => '<span>' + escapeHtml(i) + '</span><span class="dot">•</span>').join('');
+      const one = items.map((i) => '<span class="marquee__item">' + escapeHtml(i) + '<span class="dot">•</span></span>').join('');
       el.innerHTML = one + one; // duplicated so the loop is seamless
     });
   }
