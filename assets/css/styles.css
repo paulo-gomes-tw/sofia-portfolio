@@ -104,6 +104,7 @@ em { font-style: italic; }
   background: var(--surface);
   border-block: 1px solid var(--border);
 }
+.services { background: #faf4ef; }
 
 /* ----------  Grain & ambience  ---------- */
 .grain {
@@ -220,14 +221,14 @@ em { font-style: italic; }
 /* Outline pill sitting on the hero photograph */
 .btn--hero {
   --pad-x: 2.1rem;
-  background: transparent;
-  color: var(--cream);
-  border-color: rgba(247,237,232,0.65);
+  background: #b9d8fb;
+  color: #53030c;
+  border-color: #b9d8fb;
 }
 .btn--hero:hover {
-  background: var(--cream);
-  color: var(--wine);
-  border-color: var(--cream);
+  background: #53030c;
+  color: #b9d8fb;
+  border-color: #53030c;
 }
 
 /* ----------  Header  ---------- */
@@ -446,9 +447,7 @@ body.menu-open { overflow: hidden; }
   position: absolute;
   inset: 0;
   z-index: -1;
-  background:
-    linear-gradient(90deg, rgba(9,18,28,0.82) 0%, rgba(9,18,28,0.55) 45%, rgba(9,18,28,0.28) 100%),
-    linear-gradient(0deg, rgba(9,18,28,0.7) 0%, transparent 55%);
+  background: none;
 }
 
 .hero__inner { position: relative; z-index: 2; color: var(--cream); }
@@ -476,7 +475,7 @@ body.menu-open { overflow: hidden; }
   letter-spacing: -0.02em;
   max-width: 14ch;
 }
-.hero__title-sans strong { font-weight: 700; display: block; }
+.hero__title-sans strong { font-weight: 700; display: block; color: #b9d8fb; }
 
 .hero__lede {
   margin-top: clamp(1.5rem, 4vw, 2.5rem);
@@ -500,7 +499,7 @@ body.menu-open { overflow: hidden; }
 
 /* marquee */
 .marquee {
-  background: var(--bg);
+  background: #faf4ef;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
   padding-block: clamp(0.9rem, 2vw, 1.35rem);
@@ -516,9 +515,9 @@ body.menu-open { overflow: hidden; }
   animation: marquee 34s linear infinite;
   font-family: var(--serif);
   font-size: clamp(1.3rem, 2.6vw, 1.9rem);
-  color: var(--wine);
+  color: #53030c;
 }
-.marquee__track .dot { color: var(--wine); font-size: 0.7em; opacity: 0.75; }
+.marquee__track .dot { color: #b9d8fb; font-size: 1em; opacity: 1; }
 @keyframes marquee { to { transform: translateX(-50%); } }
 @media (prefers-reduced-motion: reduce) {
   .marquee__track { animation: none; }
@@ -1187,7 +1186,7 @@ body.menu-open { overflow: hidden; }
   border: 1px solid var(--border-ink);
   border-radius: 100px;
   background: transparent;
-  color: var(--ink);
+  color: #fff;
   font-size: var(--step--1);
   letter-spacing: 0.06em;
   line-height: 1;
