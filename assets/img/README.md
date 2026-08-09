@@ -6,7 +6,7 @@ o CSS cai automaticamente na camada de gradiente definida logo abaixo da
 
 | Arquivo               | Onde aparece            | Formato sugerido            |
 | --------------------- | ----------------------- | --------------------------- |
-| `hero.jpg`            | fundo do Hero           | paisagem, ≥ 2400px de largura |
+| `hero.png`            | fundo do Hero           | paisagem, ≥ 2400px de largura |
 | `about.jpg`           | retrato da seção Sobre  | 5:4, ≥ 1400px de largura      |
 
 Basta salvar os arquivos com esses nomes nesta pasta.
