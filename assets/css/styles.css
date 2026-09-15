@@ -617,15 +617,14 @@ body.menu-open { overflow: hidden; }
 }
 .about__inner {
   display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
+  grid-template-columns: 1fr 26rem;
   gap: clamp(2rem, 6vw, 5rem);
-  align-items: stretch;
+  align-items: start;
 }
 .about__media {
   position: relative;
-  height: 100%;
+  width: 100%;
   aspect-ratio: 4 / 5;
-  max-width: 100%;
   justify-self: end;
 }
 .about__badge {
@@ -657,8 +656,8 @@ body.menu-open { overflow: hidden; }
 .about__text {
   display: grid;
   gap: 1.1rem;
-  max-width: 56ch;
-  font-size: var(--step--1);
+  max-width: 68ch;
+  font-size: calc(var(--step--1) + 0.25rem);
   line-height: 1.75;
   text-align: justify;
 }
