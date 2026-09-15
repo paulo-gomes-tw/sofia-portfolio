@@ -1035,7 +1035,6 @@ body.menu-open { overflow: hidden; }
   flex-direction: column;
   justify-content: space-between;
   gap: clamp(1.8rem, 4vw, 3rem);
-  transition: transform 0.5s var(--ease), box-shadow 0.5s var(--ease);
 }
 .review::before { content: none; }
 .review__quote {
@@ -1045,6 +1044,14 @@ body.menu-open { overflow: hidden; }
   line-height: 1.55;
   color: var(--depo-quote);
   margin: 0;
+  text-align: justify;
+  text-justify: inter-word;
+  /* hifenização (o idioma do <html> é definido pelo i18n) evita
+     "rios" de espaço e mantém o texto justificado natural */
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphenate-limit-chars: 7 4 3;
+  text-wrap: pretty;
 }
 .review__by {
   display: flex;
@@ -1068,10 +1075,9 @@ body.menu-open { overflow: hidden; }
 .review__name strong { font-weight: 400; }
 .review__name em { font-style: normal; }
 .review__dash { color: var(--depo-ink); padding-inline: 0.15em; }
-@media (hover: hover) {
-  .review:hover { transform: translateY(-6px); box-shadow: 0 30px 60px -45px rgba(90,13,22,0.55); }
-}
 @media (max-width: 860px) { .reviews { grid-template-columns: 1fr; max-width: 40rem; } }
+/* em colunas estreitas o justificado abre buracos — volta ao alinhamento à esquerda */
+@media (max-width: 560px) { .review__quote { text-align: left; } }
 
 /* ============================================================
    CONTACT
