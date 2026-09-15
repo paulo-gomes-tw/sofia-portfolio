@@ -24,6 +24,7 @@
   --terracotta-d:#A9512F;   /* darker — for text on light */
   --olive:       #8C8A63;
   --gold:        #C8A96A;
+  --ice:         #D6E4F7;   /* pale blue — About badge & stat numbers */
 
   --accent:      var(--wine);
 
@@ -626,15 +627,15 @@ body.menu-open { overflow: hidden; }
   z-index: 4;
   width: 108px; height: 108px;
   border-radius: 50%;
-  background: var(--bg);
+  background: var(--ice);
   border: 1px solid var(--border);
   display: grid;
   place-content: center;
   text-align: center;
   box-shadow: 0 20px 40px -28px rgba(0,0,0,0.6);
 }
-.about__badge span { font-size: 0.66rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--muted); }
-.about__badge strong { font-family: var(--serif); font-size: 1.7rem; font-weight: 400; color: var(--wine); }
+.about__badge span { font-family: var(--serif); font-style: italic; font-size: 0.95rem; letter-spacing: 0; text-transform: none; color: var(--wine-d); }
+.about__badge strong { font-family: var(--serif); font-size: 1.7rem; font-weight: 400; color: var(--wine-d); }
 
 .about__title {
   font-family: var(--serif);
@@ -667,7 +668,7 @@ body.menu-open { overflow: hidden; }
   font-family: var(--serif);
   font-size: clamp(2.6rem, 6vw, 4rem);
   line-height: 1;
-  color: var(--cream);
+  color: var(--ice);
 }
 .stat__label {
   font-size: var(--step--1);
