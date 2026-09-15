@@ -1282,7 +1282,7 @@ body.menu-open { overflow: hidden; }
   width: 40px; height: 40px; border-radius: 50%;
   object-fit: cover;
 }
-.footer-brand__word { font-family: var(--brand); font-size: clamp(1.4rem, 3.4vw, 2rem); letter-spacing: 0.04em; text-transform: uppercase; }
+.footer-brand__word { font-family: var(--brand); font-size: clamp(1.4rem, 3.4vw, 2rem); letter-spacing: 0.04em; text-transform: uppercase; color: var(--wine); }
 .to-top {
   display: inline-flex; align-items: center; gap: 0.6rem;
   font-size: var(--step--1);
