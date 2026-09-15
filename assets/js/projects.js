@@ -159,9 +159,9 @@
     'dorian',
     'flor-de-lorien',
     'origin-rebranding-modular-homes-brand',
-    'off-the-record',
-    'kinsana',
-    'sorriso'
+    'rigueras-branding-and-visual-identity',
+    'sorriso',
+    'prime-lights'
   ];
   const BRAND_COUNT = 6;
 
