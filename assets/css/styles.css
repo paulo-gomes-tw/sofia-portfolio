@@ -263,17 +263,10 @@ em { font-style: italic; }
 
 .brand { display: inline-flex; align-items: center; gap: 0.7rem; }
 .brand__mark {
-  display: grid;
-  place-items: center;
+  display: block;
   width: 38px; height: 38px;
   border-radius: 50%;
-  background: var(--ink);
-  color: var(--bg);
-  font-family: var(--serif);
-  font-size: 1.05rem;
-  letter-spacing: 0.02em;
-  line-height: 1;
-  padding-top: 2px;
+  object-fit: cover;
 }
 .brand__name {
   font-family: var(--serif);
@@ -308,7 +301,6 @@ em { font-style: italic; }
 /* Before the first scroll the header floats over the dark hero photograph,
    so it flips to the cream-on-photo treatment. */
 .has-hero .site-header:not(.is-scrolled) { color: var(--cream); }
-.has-hero .site-header:not(.is-scrolled) .brand__mark { background: var(--cream); color: var(--wine); }
 .has-hero .site-header:not(.is-scrolled) .nav__link,
 .has-hero .site-header:not(.is-scrolled) .nav-social a { color: rgba(247,237,232,0.85); }
 .has-hero .site-header:not(.is-scrolled) .nav__link:hover,
@@ -1220,10 +1212,9 @@ body.menu-open { overflow: hidden; }
 }
 .footer-brand { display: inline-flex; align-items: center; gap: 0.8rem; }
 .footer-brand__mark {
-  display: grid; place-items: center;
+  display: block;
   width: 40px; height: 40px; border-radius: 50%;
-  background: var(--ink); color: var(--bg);
-  font-family: var(--serif); font-size: 1.1rem; padding-top: 2px;
+  object-fit: cover;
 }
 .footer-brand__word { font-family: var(--serif); font-size: clamp(1.6rem, 4vw, 2.4rem); }
 .to-top {
