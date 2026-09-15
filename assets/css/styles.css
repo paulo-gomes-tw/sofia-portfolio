@@ -752,7 +752,7 @@ body.menu-open { overflow: hidden; }
    local não existir em assets/img/ — nada quebra no layout. */
 .service-shot--branding {
   background-image:
-    url("../img/servico-branding.jpg"),
+    url("../img/servicos-1.png"),
     linear-gradient(140deg, #1f3a35, #0f211e 60%, #2c4b43);
 }
 .service-shot--social-1 {
