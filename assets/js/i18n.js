@@ -39,7 +39,7 @@
       'hero.cta1': 'I want an authentic brand',
       'hero.imageAlt': 'Hands sketching a brand mark on the studio desk',
 
-      'marquee.items': ['Strategy', 'Brand identity', 'Packaging', 'Social media design', 'Editorial'],
+      'marquee.items': ['Strategy', 'Brand identity', 'Packaging', 'Social media design'],
 
       'about.title': 'About',
       'about.p1': 'Hi! I’m Sofia Ferraz, a designer specialised in Branding and Visual Identity.',
@@ -157,7 +157,7 @@
       'hero.cta1': 'Quero uma marca autêntica',
       'hero.imageAlt': 'Mãos desenhando um esboço de marca sobre a mesa do estúdio',
 
-      'marquee.items': ['Estratégia', 'Identidade de marca', 'Embalagem', 'Design social mídia', 'Editorial'],
+      'marquee.items': ['Estratégia', 'Identidade de marca', 'Embalagem', 'Design social mídia'],
 
       'about.title': 'Sobre',
       'about.p1': 'Olá! Sou Sofia Ferraz, designer especializada em Branding e Identidade Visual.',
@@ -275,7 +275,7 @@
       'hero.cta1': 'Quiero una marca auténtica',
       'hero.imageAlt': 'Manos dibujando un boceto de marca sobre la mesa del estudio',
 
-      'marquee.items': ['Estrategia', 'Identidad de marca', 'Packaging', 'Diseño para redes sociales', 'Editorial'],
+      'marquee.items': ['Estrategia', 'Identidad de marca', 'Packaging', 'Diseño para redes sociales'],
 
       'about.title': 'Sobre mí',
       'about.p1': '¡Hola! Soy Sofia Ferraz, diseñadora especializada en Branding e Identidad Visual.',

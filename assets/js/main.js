@@ -48,7 +48,8 @@
     (root || document).querySelectorAll('[data-marquee]').forEach((el) => {
       const items = window.I18N.t('marquee.items');
       if (!Array.isArray(items)) return;
-      const one = items.map((i) => '<span class="marquee__item">' + escapeHtml(i) + '<span class="dot">•</span></span>').join('');
+      const seq = items.map((i) => '<span class="marquee__item">' + escapeHtml(i) + '<span class="dot" aria-hidden="true"></span></span>').join('');
+      const one = seq + seq; // repeated so a short list still fills wide screens
       el.innerHTML = one + one; // duplicated so the loop is seamless
     });
   }

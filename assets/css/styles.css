@@ -505,8 +505,6 @@ body.menu-open { overflow: hidden; }
   border-bottom: 1px solid var(--border);
   padding-block: clamp(0.9rem, 2vw, 1.35rem);
   overflow: hidden;
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
-  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
 }
 .marquee__track {
   display: flex;
@@ -523,7 +521,13 @@ body.menu-open { overflow: hidden; }
   gap: 1.4rem;
   margin-right: 1.4rem;
 }
-.marquee__track .dot { color: #b9d8fb; font-size: 1em; opacity: 1; }
+.marquee__track .dot {
+  width: 0.42em;
+  height: 0.42em;
+  border-radius: 50%;
+  background: #b9d8fb;
+  flex: none;
+}
 @keyframes marquee { to { transform: translateX(-50%); } }
 @media (prefers-reduced-motion: reduce) {
   .marquee__track { animation: none; }
