@@ -55,8 +55,8 @@
 
       <nav class="nav" aria-label="Primary">
         <ul class="nav__list">
-          <li><a class="nav__link" href="#about" data-i18n="nav.about">About</a></li>
           <li><a class="nav__link" href="#services" data-i18n="nav.services">Services</a></li>
+          <li><a class="nav__link" href="#about" data-i18n="nav.about">About</a></li>
           <li><a class="nav__link" href="#work" data-i18n="nav.work">Work</a></li>
           <li><a class="nav__link" href="#words" data-i18n="nav.words">Words</a></li>
         </ul>
@@ -151,8 +151,8 @@
   <!-- Mobile menu -->
   <div class="mobile-menu" id="mobile-menu" data-mobile-menu aria-hidden="true">
     <nav class="mobile-menu__nav" aria-label="Mobile">
-      <a class="mobile-menu__link" href="#about"><span>01</span> <i data-i18n="nav.about">About</i></a>
-      <a class="mobile-menu__link" href="#services"><span>02</span> <i data-i18n="nav.services">Services</i></a>
+      <a class="mobile-menu__link" href="#services"><span>01</span> <i data-i18n="nav.services">Services</i></a>
+      <a class="mobile-menu__link" href="#about"><span>02</span> <i data-i18n="nav.about">About</i></a>
       <a class="mobile-menu__link" href="#work"><span>03</span> <i data-i18n="nav.work">Work</i></a>
       <a class="mobile-menu__link" href="#words"><span>04</span> <i data-i18n="nav.words">Words</i></a>
       <a class="mobile-menu__link" href="#contact"><span>05</span> <i data-i18n="nav.contact">Contact</i></a>
@@ -266,6 +266,64 @@
       </div>
     </div>
 
+    <!-- ─────────────────────────  SERVICES  ───────────────────────── -->
+    <section class="services section" id="services" aria-labelledby="services-title">
+      <div class="shell">
+        <h2 class="services__title" id="services-title" data-reveal data-i18n="services.title">Serviços</h2>
+
+        <article class="service-block" data-reveal>
+          <div class="service-block__grid">
+            <div class="service-block__media service-block__media--single">
+              <span class="service-shot service-shot--branding" role="img"
+                    data-i18n-attr="aria-label:services.branding.imageAlt"
+                    aria-label="Rótulo de vela aromática Flor de Lórien"></span>
+            </div>
+            <div class="service-block__body">
+              <h3 class="service-block__title" data-i18n-html="services.branding.title">Branding e<br />Identidade Visual</h3>
+              <p class="service-block__desc" data-i18n="services.branding.desc">
+                Tenha uma marca reconhecida pela sua autenticidade. Com um processo
+                estratégico de branding e identidade visual, sua marca comunica seus
+                valores com clareza, fortalece seu posicionamento e cria conexões
+                duradouras com o público.
+              </p>
+            </div>
+          </div>
+          <div class="service-block__cta">
+            <a class="btn btn--solid" href="#contact" data-magnetic>
+              <span data-i18n="services.branding.cta">Quero uma marca autêntica</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="service-block" data-reveal>
+          <div class="service-block__grid">
+            <div class="service-block__media service-block__media--grid">
+              <span class="service-shot service-shot--social-1" aria-hidden="true"></span>
+              <span class="service-shot service-shot--social-2" aria-hidden="true"></span>
+              <span class="service-shot service-shot--social-3" aria-hidden="true"></span>
+              <span class="service-shot service-shot--social-4" aria-hidden="true"></span>
+              <span class="service-shot service-shot--social-5" aria-hidden="true"></span>
+              <span class="service-shot service-shot--social-6" aria-hidden="true"></span>
+            </div>
+            <div class="service-block__body">
+              <h3 class="service-block__title" data-i18n-html="services.social.title">Design para rede social</h3>
+              <p class="service-block__desc" data-i18n="services.social.desc">
+                As redes sociais são um dos principais pontos de contato da sua marca.
+                Crio designs alinhados à sua identidade visual para comunicar sua
+                mensagem com clareza, fortalecer seu posicionamento e gerar mais
+                reconhecimento.
+              </p>
+            </div>
+          </div>
+          <div class="service-block__cta">
+            <a class="btn btn--solid" href="#contact" data-magnetic>
+              <span data-i18n="services.social.cta">Quero designs de posts</span>
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
     <!-- ─────────────────────────  ABOUT  ───────────────────────── -->
     <section class="about section" id="about" aria-labelledby="about-title">
       <div class="shell about__inner">
@@ -326,106 +384,6 @@
           <span class="stat__label" data-i18n="about.stat3">Países atendidos</span>
         </li>
       </ul>
-    </section>
-
-    <!-- ─────────────────────────  SERVICES  ───────────────────────── -->
-    <section class="services section" id="services" aria-labelledby="services-title">
-      <div class="shell">
-        <div class="section-head">
-          <p class="eyebrow" data-reveal><span class="eyebrow__line"></span><span data-i18n="services.eyebrow">Services</span></p>
-          <h2 class="section-title" id="services-title" data-reveal data-i18n-html="services.title">
-            Five ways I help a brand
-            <em>arrive fully formed.</em>
-          </h2>
-        </div>
-
-        <ol class="services__list" data-reveal-group>
-          <li class="service" data-reveal>
-            <span class="service__no">01</span>
-            <div class="service__main">
-              <h3 class="service__title" data-i18n="services.1.title">Brand Identity</h3>
-              <p class="service__desc" data-i18n="services.1.desc">
-                Logotypes, marks, colour, and type systems built as a coherent
-                whole — the foundation every other decision rests upon.
-              </p>
-            </div>
-            <ul class="service__tags" data-i18n-list="services.1.tags">
-              <li>Logo &amp; Mark</li><li>Type System</li><li>Guidelines</li>
-            </ul>
-            <span class="service__arrow" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H5M13 3V11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
-          </li>
-
-          <li class="service" data-reveal>
-            <span class="service__no">02</span>
-            <div class="service__main">
-              <h3 class="service__title" data-i18n="services.2.title">Art Direction</h3>
-              <p class="service__desc" data-i18n="services.2.desc">
-                The look and feel across every touchpoint — photography, styling,
-                and composition directed with a single, unmistakable point of view.
-              </p>
-            </div>
-            <ul class="service__tags" data-i18n-list="services.2.tags">
-              <li>Photography</li><li>Styling</li><li>Campaigns</li>
-            </ul>
-            <span class="service__arrow" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H5M13 3V11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
-          </li>
-
-          <li class="service" data-reveal>
-            <span class="service__no">03</span>
-            <div class="service__main">
-              <h3 class="service__title" data-i18n="services.3.title">Editorial &amp; Print</h3>
-              <p class="service__desc" data-i18n="services.3.desc">
-                Books, magazines, and collateral where paper, grid, and typography
-                carry as much meaning as the words themselves.
-              </p>
-            </div>
-            <ul class="service__tags" data-i18n-list="services.3.tags">
-              <li>Layout</li><li>Typesetting</li><li>Production</li>
-            </ul>
-            <span class="service__arrow" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H5M13 3V11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
-          </li>
-
-          <li class="service" data-reveal>
-            <span class="service__no">04</span>
-            <div class="service__main">
-              <h3 class="service__title" data-i18n="services.4.title">Digital Experience</h3>
-              <p class="service__desc" data-i18n="services.4.desc">
-                Websites and interfaces that extend the identity online —
-                unhurried, tactile, and designed around how people actually read.
-              </p>
-            </div>
-            <ul class="service__tags" data-i18n-list="services.4.tags">
-              <li>Web Design</li><li>Prototyping</li><li>Motion</li>
-            </ul>
-            <span class="service__arrow" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H5M13 3V11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
-          </li>
-
-          <li class="service" data-reveal>
-            <span class="service__no">05</span>
-            <div class="service__main">
-              <h3 class="service__title" data-i18n="services.5.title">Creative Strategy</h3>
-              <p class="service__desc" data-i18n="services.5.desc">
-                Naming, positioning, and verbal identity — the thinking that gives
-                the visuals a reason to exist and a story worth telling.
-              </p>
-            </div>
-            <ul class="service__tags" data-i18n-list="services.5.tags">
-              <li>Naming</li><li>Positioning</li><li>Voice</li>
-            </ul>
-            <span class="service__arrow" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H5M13 3V11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
-          </li>
-        </ol>
-      </div>
     </section>
 
     <!-- ─────────────────────────  WORK (dynamic)  ───────────────────────── -->
@@ -650,8 +608,8 @@
           Brand &amp; art direction for houses that value elegance over noise.
         </p>
         <nav class="footer-nav" aria-label="Footer">
-          <a href="#about" data-i18n="nav.about">About</a>
           <a href="#services" data-i18n="nav.services">Services</a>
+          <a href="#about" data-i18n="nav.about">About</a>
           <a href="#work" data-i18n="nav.work">Work</a>
           <a href="#words" data-i18n="nav.words">Words</a>
           <a href="#contact" data-i18n="nav.contact">Contact</a>
