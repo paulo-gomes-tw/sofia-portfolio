@@ -756,22 +756,22 @@ body.menu-open { overflow: hidden; }
     linear-gradient(140deg, #1f3a35, #0f211e 60%, #2c4b43);
 }
 .service-shot--social-1 {
-  background-image: url("../img/servico-social-1.jpg"), linear-gradient(150deg, #f7c6d9, #eda6c2);
+  background-image: url("../img/social-1.png"), linear-gradient(150deg, #f7c6d9, #eda6c2);
 }
 .service-shot--social-2 {
-  background-image: url("../img/servico-social-2.jpg"), linear-gradient(150deg, #fbd7e5, #f3b2cd);
+  background-image: url("../img/social-2.png"), linear-gradient(150deg, #fbd7e5, #f3b2cd);
 }
 .service-shot--social-3 {
-  background-image: url("../img/servico-social-3.jpg"), linear-gradient(150deg, #ffffff, #f2dfe7);
+  background-image: url("../img/social-3.png"), linear-gradient(150deg, #ffffff, #f2dfe7);
 }
 .service-shot--social-4 {
-  background-image: url("../img/servico-social-4.jpg"), linear-gradient(150deg, #eef0f2, #dde3e6);
+  background-image: url("../img/social-4.png"), linear-gradient(150deg, #eef0f2, #dde3e6);
 }
 .service-shot--social-5 {
-  background-image: url("../img/servico-social-5.jpg"), linear-gradient(150deg, #bfe6dc, #8fd3c3);
+  background-image: url("../img/social-5.png"), linear-gradient(150deg, #bfe6dc, #8fd3c3);
 }
 .service-shot--social-6 {
-  background-image: url("../img/servico-social-6.jpg"), linear-gradient(150deg, #d9cdf0, #bda9e4);
+  background-image: url("../img/social-6.png"), linear-gradient(150deg, #d9cdf0, #bda9e4);
 }
 
 .service-block__title {
