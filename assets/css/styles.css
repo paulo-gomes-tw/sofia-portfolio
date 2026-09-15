@@ -274,6 +274,7 @@ em { font-style: italic; }
   font-size: 1.2rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
+  color: var(--wine);
 }
 
 .nav__list { display: flex; gap: clamp(1.1rem, 2.4vw, 2.4rem); }
@@ -303,6 +304,7 @@ em { font-style: italic; }
 /* Before the first scroll the header floats over the dark hero photograph,
    so it flips to the cream-on-photo treatment. */
 .has-hero .site-header:not(.is-scrolled) { color: var(--cream); }
+.has-hero .site-header:not(.is-scrolled) .brand__name { color: var(--cream); }
 .has-hero .site-header:not(.is-scrolled) .nav__link,
 .has-hero .site-header:not(.is-scrolled) .nav-social a { color: rgba(247,237,232,0.85); }
 .has-hero .site-header:not(.is-scrolled) .nav__link:hover,
