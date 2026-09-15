@@ -580,11 +580,11 @@ body.menu-open { overflow: hidden; }
 
 /* Distinct duotone compositions — evocative, palette-true */
 /* Studio portrait. As with the hero, the gradient is only a stand-in —
-   drop a real photograph at assets/img/about.jpg and it takes over. */
+   drop a real photograph at assets/img/about-foto.jpg and it takes over. */
 .media--about {
   aspect-ratio: 4 / 5;
   background-image:
-    url("../img/about.jpg"),
+    url("../img/about-foto.jpg"),
     radial-gradient(60% 55% at 30% 25%, rgba(255,231,214,0.55), transparent 62%),
     linear-gradient(155deg, #C79A7C 0%, #8E5B45 48%, #4A2A20 100%);
   background-size: cover;
@@ -666,8 +666,8 @@ body.menu-open { overflow: hidden; }
 }
 .stat { display: flex; flex-direction: column; gap: 0.15rem; }
 .stat__num {
-  font-family: var(--display);
-  font-weight: 700;
+  font-family: "Gravitas One", var(--display);
+  font-weight: 400;
   font-size: clamp(2.6rem, 6vw, 4rem);
   line-height: 1;
   color: var(--ice);
