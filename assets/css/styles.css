@@ -658,7 +658,7 @@ body.menu-open { overflow: hidden; }
   display: grid;
   gap: 1.1rem;
   max-width: 56ch;
-  font-size: calc(var(--step--1) + 0.5rem);
+  font-size: var(--step--1);
   line-height: 1.75;
   text-align: justify;
 }
