@@ -15,8 +15,8 @@
   --border:      #EEDFD8;
   --border-ink:  #E2CEC5;
 
-  --wine:        #7A0C1B;   /* deep burgundy — sections & accents */
-  --wine-d:      #5C0713;
+  --wine:        #6E1220;   /* deep burgundy — sections & accents */
+  --wine-d:      #570C18;
   --cream:       #F7EDE8;   /* text on wine / on the hero photo */
   --navy:        #17293B;   /* hero photograph base tone */
 
@@ -625,7 +625,7 @@ body.menu-open { overflow: hidden; }
   position: absolute;
   right: -18px; bottom: 26px;
   z-index: 4;
-  width: 108px; height: 108px;
+  width: 124px; height: 124px;
   border-radius: 50%;
   background: var(--ice);
   border: 1px solid var(--border);
@@ -634,8 +634,8 @@ body.menu-open { overflow: hidden; }
   text-align: center;
   box-shadow: 0 20px 40px -28px rgba(0,0,0,0.6);
 }
-.about__badge span { font-family: var(--serif); font-style: italic; font-size: 0.95rem; letter-spacing: 0; text-transform: none; color: var(--wine-d); }
-.about__badge strong { font-family: var(--serif); font-size: 1.7rem; font-weight: 400; color: var(--wine-d); }
+.about__badge span { font-family: var(--serif); font-style: italic; font-size: 1.05rem; letter-spacing: 0; text-transform: none; color: var(--wine-d); }
+.about__badge strong { font-family: var(--display); font-size: 2.15rem; font-weight: 700; line-height: 1.05; color: var(--wine-d); }
 
 .about__title {
   font-family: var(--sans);
@@ -666,7 +666,8 @@ body.menu-open { overflow: hidden; }
 }
 .stat { display: flex; flex-direction: column; gap: 0.15rem; }
 .stat__num {
-  font-family: var(--serif);
+  font-family: var(--display);
+  font-weight: 700;
   font-size: clamp(2.6rem, 6vw, 4rem);
   line-height: 1;
   color: var(--ice);
