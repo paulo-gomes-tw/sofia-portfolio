@@ -888,7 +888,16 @@ body.menu-open { overflow: hidden; }
    BRANDS grid — "Algumas marcas que nasceram aqui"
    ============================================================ */
 .brands__title {
-  margin: 0 0 clamp(2rem, 5vw, 3.5rem);
+  margin: 0;
+  font-family: var(--serif);
+  font-size: var(--step-3);
+  line-height: 1.04;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.brands__subtitle {
+  margin: 0.6rem 0 clamp(2rem, 5vw, 3.5rem);
   font-family: var(--sans);
   font-style: italic;
   font-weight: 800;
