@@ -582,7 +582,7 @@ body.menu-open { overflow: hidden; }
 /* Studio portrait. As with the hero, the gradient is only a stand-in —
    drop a real photograph at assets/img/about.jpg and it takes over. */
 .media--about {
-  aspect-ratio: 5 / 4;
+  aspect-ratio: 4 / 5;
   background-image:
     url("../img/about.jpg"),
     radial-gradient(60% 55% at 30% 25%, rgba(255,231,214,0.55), transparent 62%),
