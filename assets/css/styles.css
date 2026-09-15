@@ -638,8 +638,9 @@ body.menu-open { overflow: hidden; }
 .about__badge strong { font-family: var(--serif); font-size: 1.7rem; font-weight: 400; color: var(--wine-d); }
 
 .about__title {
-  font-family: var(--serif);
-  font-style: italic;
+  font-family: var(--sans);
+  font-weight: 700;
+  font-style: normal;
   font-size: clamp(2.2rem, 5vw, 3.4rem);
   line-height: 1.1;
   letter-spacing: -0.01em;
