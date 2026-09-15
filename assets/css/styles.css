@@ -1044,14 +1044,7 @@ body.menu-open { overflow: hidden; }
   line-height: 1.55;
   color: var(--depo-quote);
   margin: 0;
-  text-align: justify;
-  text-justify: inter-word;
-  /* hifenização (o idioma do <html> é definido pelo i18n) evita
-     "rios" de espaço e mantém o texto justificado natural */
-  hyphens: auto;
-  -webkit-hyphens: auto;
-  hyphenate-limit-chars: 7 4 3;
-  text-wrap: pretty;
+  text-align: left;
 }
 .review__by {
   display: flex;
