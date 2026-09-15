@@ -152,6 +152,66 @@
     }).join('');
   }
 
+  /* ----------  Brand grid (index page)  ----------
+     A six-tile grid of the brands born in the studio. Each tile links
+     straight to the project on Behance. */
+  const BRAND_ORDER = [
+    'off-the-record',
+    'flor-de-lorien',
+    'kinsana',
+    'rigueras-branding-and-visual-identity',
+    'sorriso',
+    'prime-lights'
+  ];
+  const BRAND_COUNT = 6;
+
+  function brandSelection(projects) {
+    const byId = new Map(projects.map((p) => [p.id, p]));
+    const picked = [];
+    BRAND_ORDER.forEach((id) => {
+      const p = byId.get(id);
+      if (p) { picked.push(p); byId.delete(id); }
+    });
+    // top up with whatever else is available, so the grid is never short
+    for (const p of projects) {
+      if (picked.length >= BRAND_COUNT) break;
+      if (byId.has(p.id)) { picked.push(p); byId.delete(p.id); }
+    }
+    return picked.slice(0, BRAND_COUNT);
+  }
+
+  function renderBrandGrid(mount, data) {
+    const t = global.I18N ? global.I18N.t : (k) => k;
+    const projects = brandSelection(data.projects);
+
+    if (!projects.length) {
+      const archive = safeUrl(data.profile && data.profile.url);
+      mount.innerHTML =
+        '<p class="work-empty">' + esc(t('work.empty')) + '</p>' +
+        (archive ? '<a class="btn btn--ghost" href="' + esc(archive) + '" target="_blank" rel="noopener noreferrer">' +
+                   '<span>' + esc(t('work.viewAll')) + '</span></a>' : '');
+      return;
+    }
+
+    mount.innerHTML = projects.map((p) => {
+      const title = field(p, 'title');
+      const behance = safeUrl(p.url);
+      const href = behance || ('project.html?p=' + encodeURIComponent(p.id));
+      const ext = behance ? ' target="_blank" rel="noopener noreferrer"' : '';
+      return '' +
+        '<article class="brand-card" data-reveal>' +
+          '<a class="brand-card__link" href="' + esc(href) + '"' + ext +
+            ' aria-label="' + esc(title) + ' — ' + esc(t('work.viewProject')) + '">' +
+            mediaMarkup(p, { alt: title }) +
+            '<span class="brand-card__reveal">' + esc(t('work.viewProject')) +
+              '<svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13L13 3M13 3H5M13 3V11" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
+            '</span>' +
+            '<span class="brand-card__name">' + esc(title) + '</span>' +
+          '</a>' +
+        '</article>';
+    }).join('');
+  }
+
   /* ----------  Detail (project page)  ---------- */
   function renderDetail(mount, data, id) {
     const t = global.I18N ? global.I18N.t : (k) => k;
@@ -261,6 +321,7 @@
     load: load,
     field: field,
     renderGallery: renderGallery,
+    renderBrandGrid: renderBrandGrid,
     renderDetail: renderDetail
   };
 })(window);

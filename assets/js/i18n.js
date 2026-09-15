@@ -62,7 +62,7 @@
       'services.social.cta': 'I want post designs',
 
       'work.eyebrow': 'Selected work',
-      'work.title': 'A few worlds<br />built with care.',
+      'work.title': 'Some brands that were born here',
       'work.note': 'Each project is a long conversation about restraint. A small selection of recent identities, chosen for the range they show.',
       'work.viewProject': 'View project',
       'work.loading': 'Loading projects…',
@@ -171,7 +171,7 @@
       'services.social.cta': 'Quero designs de posts',
 
       'work.eyebrow': 'Projetos selecionados',
-      'work.title': 'Alguns mundos<br />feitos com cuidado.',
+      'work.title': 'Algumas marcas que nasceram aqui',
       'work.note': 'Cada projeto é uma longa conversa sobre contenção. Uma pequena seleção de identidades recentes, escolhidas pela amplitude que revelam.',
       'work.viewProject': 'Ver projeto',
       'work.loading': 'Carregando projetos…',
@@ -280,7 +280,7 @@
       'services.social.cta': 'Quiero diseños de posts',
 
       'work.eyebrow': 'Proyectos seleccionados',
-      'work.title': 'Algunos mundos<br />hechos con cuidado.',
+      'work.title': 'Algunas marcas que nacieron aquí',
       'work.note': 'Cada proyecto es una larga conversación sobre la contención. Una pequeña selección de identidades recientes, elegidas por el rango que muestran.',
       'work.viewProject': 'Ver proyecto',
       'work.loading': 'Cargando proyectos…',

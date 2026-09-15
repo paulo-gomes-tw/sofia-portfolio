@@ -224,6 +224,7 @@
      Work gallery / project detail
      ============================================================ */
   const gallery = document.querySelector('[data-work-gallery]');
+  const brandGrid = document.querySelector('[data-brand-grid]');
   const projectMount = document.querySelector('[data-project-mount]');
   let projectData = null;
 
@@ -248,6 +249,13 @@
       bindMagnetic(gallery);
     }
 
+    if (brandGrid) {
+      window.SFProjects.renderBrandGrid(brandGrid, projectData);
+      brandGrid.setAttribute('aria-busy', 'false');
+      observeReveals(brandGrid);
+      bindMagnetic(brandGrid);
+    }
+
     if (projectMount) {
       window.SFProjects.renderDetail(projectMount, projectData, currentProjectId());
       if (window.I18N) window.I18N.apply(projectMount);
@@ -256,7 +264,7 @@
     }
   }
 
-  if (window.SFProjects && (gallery || projectMount)) {
+  if (window.SFProjects && (gallery || brandGrid || projectMount)) {
     window.SFProjects.load().then((data) => {
       projectData = data;
       applyProfileLinks(data);
