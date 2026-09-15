@@ -10,6 +10,45 @@ window.__SF_PROJECTS = {
   },
   "projects": [
     {
+      "id": "dorian",
+      "behanceId": 252568999,
+      "url": "https://www.behance.net/gallery/252568999/Dorian",
+      "year": "",
+      "featured": false,
+      "placeholder": "02",
+      "cover": {
+        "src": "assets/img/projeto-1.png"
+      },
+      "gallery": [],
+      "meta": {
+        "client": "Dorian",
+        "role": "Brand Identity",
+        "services": [
+          "Brand Identity"
+        ]
+      },
+      "i18n": {
+        "en-US": {
+          "title": "Dorian",
+          "category": "Brand Identity · Fashion",
+          "summary": "",
+          "body": []
+        },
+        "pt-BR": {
+          "title": "Dorian",
+          "category": "Identidade de Marca · Moda",
+          "summary": "",
+          "body": []
+        },
+        "es-ES": {
+          "title": "Dorian",
+          "category": "Identidad de Marca · Moda",
+          "summary": "",
+          "body": []
+        }
+      }
+    },
+    {
       "id": "flor-de-lorien",
       "behanceId": 252337527,
       "url": "https://www.behance.net/gallery/252337527/Flor-de-Lorien",
@@ -17,7 +56,7 @@ window.__SF_PROJECTS = {
       "featured": true,
       "placeholder": "01",
       "cover": {
-        "src": "https://mir-s3-cdn-cf.behance.net/projects/original/9d2aca223209815.Y3JvcCwyMzUwLDE4MzgsMjQ0LDE3NA.jpg"
+        "src": "assets/img/projeto-2.jpg"
       },
       "gallery": [
         {
@@ -153,7 +192,7 @@ window.__SF_PROJECTS = {
       "featured": false,
       "placeholder": "02",
       "cover": {
-        "src": "https://mir-s3-cdn-cf.behance.net/projects/404/3d8b87244700639.Y3JvcCwxNTk4LDEyNDksMTY2LDA.png"
+        "src": "assets/img/projeto-3.png"
       },
       "gallery": [],
       "meta": {

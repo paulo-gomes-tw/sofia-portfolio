@@ -156,12 +156,12 @@
      A six-tile grid of the brands born in the studio. Each tile links
      straight to the project on Behance. */
   const BRAND_ORDER = [
-    'off-the-record',
+    'dorian',
     'flor-de-lorien',
+    'origin-rebranding-modular-homes-brand',
+    'off-the-record',
     'kinsana',
-    'rigueras-branding-and-visual-identity',
-    'sorriso',
-    'prime-lights'
+    'sorriso'
   ];
   const BRAND_COUNT = 6;
 
