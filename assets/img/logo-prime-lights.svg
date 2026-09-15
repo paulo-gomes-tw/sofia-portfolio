@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Prime Lights">
+  <circle cx="60" cy="60" r="60" fill="#0B0B0B"/>
+  <path d="M60 28 L84 60 L60 92 L36 60 Z" fill="#9CE64B"/>
+  <path d="M60 28 L60 92 L36 60 Z" fill="#6FBF2E"/>
+</svg>
