@@ -16,7 +16,7 @@
     /* ───────────────────────────  ENGLISH (US)  ─────────────────────────── */
     'en-US': {
       'meta.title': 'Sofia Ferraz — Brand & Art Direction Studio',
-      'meta.description': 'Sofia Ferraz is an independent brand and art director based in Lisbon, shaping considered visual identities for houses that value elegance, intention, and lasting presence.',
+      'meta.description': 'Sofia Ferraz is an independent brand and art director based in Porto, shaping considered visual identities for houses that value elegance, intention, and lasting presence.',
 
       'lang.label': 'Language',
       'lang.current': 'English',
@@ -88,7 +88,7 @@
       'contact.title': 'Let’s make something <em>timeless.</em>',
       'contact.lede': 'I take on a small number of projects each season so each one gets my full attention. Tell me a little about yours.',
       'contact.basedIn': 'Based in',
-      'contact.basedInValue': 'Lisbon, Portugal',
+      'contact.basedInValue': 'Porto, Portugal',
       'contact.availability': 'Availability',
       'contact.availabilityValue': 'Booking Q1 2026',
       'form.name': 'Your name',
@@ -103,7 +103,7 @@
       'footer.tag': 'Brand & art direction for houses that value elegance over noise.',
       'footer.toTop': 'Back to top',
       'footer.rights': 'Sofia Ferraz Studio. All rights reserved.',
-      'footer.madeIn': 'Designed & art-directed in Lisbon.',
+      'footer.madeIn': 'Designed & art-directed in Porto.',
       'footer.backHome': 'Sofia Ferraz — back to top',
 
       'project.back': 'All work',
@@ -124,7 +124,7 @@
     /* ─────────────────────────  PORTUGUÊS (BRASIL)  ───────────────────────── */
     'pt-BR': {
       'meta.title': 'Sofia Ferraz — Estúdio de Marca e Direção de Arte',
-      'meta.description': 'Sofia Ferraz é diretora independente de marca e arte, baseada em Lisboa, criando identidades visuais pensadas para casas que valorizam elegância, intenção e presença duradoura.',
+      'meta.description': 'Sofia Ferraz é diretora independente de marca e arte, baseada em Porto, criando identidades visuais pensadas para casas que valorizam elegância, intenção e presença duradoura.',
 
       'lang.label': 'Idioma',
       'lang.current': 'Português',
@@ -196,7 +196,7 @@
       'contact.title': 'Vamos criar algo <em>atemporal.</em>',
       'contact.lede': 'Aceito um número reduzido de projetos por temporada para dar atenção total a cada um. Conte-me um pouco sobre o seu.',
       'contact.basedIn': 'Baseada em',
-      'contact.basedInValue': 'Lisboa, Portugal',
+      'contact.basedInValue': 'Porto, Portugal',
       'contact.availability': 'Disponibilidade',
       'contact.availabilityValue': 'Agendando 1º tri. 2026',
       'form.name': 'Seu nome',
@@ -211,7 +211,7 @@
       'footer.tag': 'Marca e direção de arte para casas que valorizam elegância acima do ruído.',
       'footer.toTop': 'Voltar ao topo',
       'footer.rights': 'Sofia Ferraz Studio. Todos os direitos reservados.',
-      'footer.madeIn': 'Projetado e dirigido em Lisboa.',
+      'footer.madeIn': 'Projetado e dirigido em Porto.',
       'footer.backHome': 'Sofia Ferraz — voltar ao topo',
 
       'project.back': 'Todos os projetos',
@@ -232,7 +232,7 @@
     /* ────────────────────────────  ESPAÑOL (ES)  ──────────────────────────── */
     'es-ES': {
       'meta.title': 'Sofia Ferraz — Estudio de Marca y Dirección de Arte',
-      'meta.description': 'Sofia Ferraz es directora independiente de marca y arte, con base en Lisboa, creando identidades visuales cuidadas para casas que valoran la elegancia, la intención y una presencia duradera.',
+      'meta.description': 'Sofia Ferraz es directora independiente de marca y arte, con base en Porto, creando identidades visuales cuidadas para casas que valoran la elegancia, la intención y una presencia duradera.',
 
       'lang.label': 'Idioma',
       'lang.current': 'Español',
@@ -304,7 +304,7 @@
       'contact.title': 'Creemos algo <em>atemporal.</em>',
       'contact.lede': 'Acepto un número reducido de proyectos cada temporada para dedicar a cada uno toda mi atención. Cuéntame un poco sobre el tuyo.',
       'contact.basedIn': 'Con base en',
-      'contact.basedInValue': 'Lisboa, Portugal',
+      'contact.basedInValue': 'Porto, Portugal',
       'contact.availability': 'Disponibilidad',
       'contact.availabilityValue': 'Agenda 1.er trim. 2026',
       'form.name': 'Tu nombre',
@@ -319,7 +319,7 @@
       'footer.tag': 'Marca y dirección de arte para casas que valoran la elegancia por encima del ruido.',
       'footer.toTop': 'Volver arriba',
       'footer.rights': 'Sofia Ferraz Studio. Todos los derechos reservados.',
-      'footer.madeIn': 'Diseñado y dirigido en Lisboa.',
+      'footer.madeIn': 'Diseñado y dirigido en Porto.',
       'footer.backHome': 'Sofia Ferraz — volver arriba',
 
       'project.back': 'Todos los proyectos',

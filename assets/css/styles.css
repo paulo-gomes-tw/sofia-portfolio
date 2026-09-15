@@ -993,9 +993,9 @@ body.menu-open { overflow: hidden; }
 }
 .pull__quote { margin: 0; }
 .pull__quote p {
-  font-family: var(--serif);
+  font-family: var(--tiro);
   font-style: italic;
-  font-weight: 600;
+  font-weight: 400;
   font-size: var(--step-3);
   line-height: 1.14;
   letter-spacing: -0.005em;
