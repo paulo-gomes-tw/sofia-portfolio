@@ -71,7 +71,7 @@
       'work.viewAll': 'View full archive on Behance',
       'work.sourceNote': 'Synced from Behance',
 
-      'pull.quote': '“Good design should feel <em>inevitable</em> — as if the brand could never have looked any other way.”',
+      'pull.quote': '“Brands of value don’t need to ask for <em>attention</em>. They are <em>perceived</em>.”',
 
       'words.eyebrow': 'Kind words',
       'words.title': 'Trusted by founders who <em>sweat the small things.</em>',
@@ -181,7 +181,7 @@
       'work.viewAll': 'Ver arquivo completo no Behance',
       'work.sourceNote': 'Sincronizado do Behance',
 
-      'pull.quote': '“O bom design deve parecer <em>inevitável</em> — como se a marca nunca pudesse ter sido de outra forma.”',
+      'pull.quote': '“Marcas de valor não precisam pedir <em>atenção</em>. Elas são <em>percebidas</em>.”',
 
       'words.eyebrow': 'Depoimentos',
       'words.title': 'Escolhida por fundadores que <em>cuidam dos detalhes.</em>',
@@ -291,7 +291,7 @@
       'work.viewAll': 'Ver archivo completo en Behance',
       'work.sourceNote': 'Sincronizado desde Behance',
 
-      'pull.quote': '“El buen diseño debe sentirse <em>inevitable</em> — como si la marca nunca hubiera podido ser de otra manera.”',
+      'pull.quote': '“Las marcas de valor no necesitan pedir <em>atención</em>. Son <em>percibidas</em>.”',
 
       'words.eyebrow': 'Testimonios',
       'words.title': 'Elegida por fundadores que <em>cuidan cada detalle.</em>',
