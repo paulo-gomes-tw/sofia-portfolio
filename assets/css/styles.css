@@ -981,19 +981,21 @@ body.menu-open { overflow: hidden; }
    PULL QUOTE banner
    ============================================================ */
 .pull {
-  background: var(--ink);
-  color: var(--bg);
+  background: var(--wine-d);
+  color: var(--cream);
   padding-block: clamp(4rem, 9vw, 8rem);
 }
 .pull__quote { margin: 0; }
 .pull__quote p {
   font-family: var(--serif);
+  font-style: italic;
+  font-weight: 600;
   font-size: var(--step-3);
   line-height: 1.14;
   letter-spacing: -0.005em;
   max-width: 20ch;
 }
-.pull__quote em { color: var(--gold); }
+.pull__quote em { color: var(--ice); font-style: italic; }
 
 /* ============================================================
    WORDS / reviews
