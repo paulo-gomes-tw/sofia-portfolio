@@ -959,8 +959,9 @@ body.menu-open { overflow: hidden; }
   transition: opacity 0.5s var(--ease), transform 0.5s var(--ease);
 }
 
-/* the category (or the studio's own one-liner) rides the same reveal as the
-   name — more for a reader to go on, with the resting art direction untouched */
+/* the caption rides the same reveal as the name — more for a reader to go on,
+   with the resting art direction untouched. A category is a label and is set
+   as one; the studio's own sentence is prose and gets read, not scanned. */
 .brand-card__cat {
   display: block;
   margin-top: 0.22rem;
@@ -968,6 +969,14 @@ body.menu-open { overflow: hidden; }
   letter-spacing: 0.04em;
   text-transform: uppercase;
   opacity: 0.82;
+}
+.brand-card__cat--note {
+  margin-top: 0.3rem;
+  font-size: 0.76rem;
+  line-height: 1.35;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  opacity: 0.9;
 }
 
 @media (hover: hover) {
