@@ -1298,14 +1298,13 @@ body.menu-open { overflow: hidden; }
 
 .site-footer__grid {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   gap: 2rem;
   flex-wrap: wrap;
-  padding-block: clamp(2rem, 4vw, 3rem);
+  padding-block: clamp(1.5rem, 3vw, 2.25rem);
   border-top: 1px solid var(--border);
 }
-.footer-tag { font-family: var(--serif); font-size: var(--step-1); max-width: 22ch; line-height: 1.25; }
-.footer-nav { display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: center; }
+.footer-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem 2rem; align-items: center; }
 .footer-nav a { color: var(--muted); font-size: var(--step--1); letter-spacing: 0.03em; transition: color 0.35s var(--ease); }
 .footer-nav a:hover { color: var(--ink); }
 
