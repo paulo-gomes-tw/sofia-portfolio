@@ -75,6 +75,21 @@
     'vea el caso de estudio completo en behance.'
   ];
 
+  /* The tile caption sits over artwork and has to stay short enough not to
+     climb the image. The full sentence is never lost — it goes to the link's
+     accessible name and to the JSON-LD, neither of which has a length limit. */
+  const TILE_LIMIT = 90;
+
+  function tileBlurb(project) {
+    const summary = realSummary(project);
+    if (!summary) return { text: field(project, 'category'), isNote: false };
+    if (summary.length <= TILE_LIMIT) return { text: summary, isNote: true };
+    const cut = summary.slice(0, TILE_LIMIT);
+    const space = cut.lastIndexOf(' ');
+    const trimmed = (space > 45 ? cut.slice(0, space) : cut).replace(/[\s,;:.\u2014-]+$/, '');
+    return { text: trimmed + '…', isNote: true };
+  }
+
   function realSummary(project, locale) {
     const summary = field(project, 'summary', locale);
     if (typeof summary !== 'string') return '';
@@ -218,13 +233,13 @@
       const behance = safeUrl(p.url) || archive;
       const href = behance || ('project.html?p=' + encodeURIComponent(p.id));
       const ext = behance ? ' target="_blank" rel="noopener noreferrer"' : '';
-      // The tile shows the category: short, set in caps, consistent down the
-      // grid. A full sentence would break that rhythm, so where the studio has
-      // written one it goes to the accessible name instead — read aloud by a
-      // screen reader, read as description by a crawler, and under no length
-      // pressure in either case.
+      // The tile carries the studio's own sentence — what the brand actually
+      // is — falling back to the category for a project with none. It is
+      // trimmed to fit over the artwork; the accessible name below keeps the
+      // sentence whole.
       const cat = field(p, 'category');
       const summary = realSummary(p);
+      const blurb = tileBlurb(p);
       const label = [title, summary || cat].filter(Boolean).join(' — ');
       return '' +
         '<article class="brand-card" data-reveal>' +
@@ -235,7 +250,10 @@
               '<svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13L13 3M13 3H5M13 3V11" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
             '</span>' +
             '<span class="brand-card__name">' + esc(title) +
-              (cat ? '<span class="brand-card__cat">' + esc(cat) + '</span>' : '') +
+              (blurb.text
+                ? '<span class="brand-card__cat' + (blurb.isNote ? ' brand-card__cat--note' : '') +
+                  '">' + esc(blurb.text) + '</span>'
+                : '') +
             '</span>' +
           '</a>' +
         '</article>';
