@@ -6,8 +6,9 @@
 User-agent: *
 Allow: /
 
-# The query-string renderer is kept only so older links keep working; the
-# indexable copy of every project lives at /projetos/<id>.html.
+# Renders a project from a ?p= query string and is kept only so older links
+# keep working. The case studies live on Behance; the homepage is the canonical
+# page here.
 Disallow: /project.html
 
 Sitemap: https://sofiaferrazdesign.com/sitemap.xml
