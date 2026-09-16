@@ -15,8 +15,8 @@
   const DICT = {
     /* ───────────────────────────  ENGLISH (US)  ─────────────────────────── */
     'en-US': {
-      'meta.title': 'Sofia Ferraz — Brand & Art Direction Studio',
-      'meta.description': 'Sofia Ferraz is an independent brand and art director based in Porto, shaping considered visual identities for houses that value elegance, intention, and lasting presence.',
+      'meta.title': 'Sofia Ferraz — Brand Identity & Strategic Design Studio',
+      'meta.description': 'Sofia Ferraz is a brand identity designer based in Porto. Strategic positioning and visual identity for brands that want to be perceived as luxury in their market.',
 
       'lang.label': 'Language',
       'lang.current': 'English',
@@ -73,7 +73,7 @@
 
       'pull.quote': '“Brands of value don’t need to ask for <em>attention</em>. They are <em>perceived</em>.”',
 
-      'words.eyebrow': 'Depoimentos',
+      'words.eyebrow': 'Testimonials',
       'words.1.quote': '“Gostaria de expressar meu mais profundo apreço pela Sofia. Sua capacidade de superar expectativas é notável, criando uma arte de identidade visual que está exatamente dentro do que foi proposto e ainda assim excedeu nossas expectativas. Demonstrou empatia, compreensão e uma dedicação excepcional, sempre prestativa e criativa. Suas formas de trabalho inovadoras beneficiaram enormemente nossa equipe. Recomendo fortemente para qualquer projeto futuro.”',
       'words.1.name': 'Gabriel',
       'words.1.role': 'Prime Lights',
@@ -119,8 +119,8 @@
 
     /* ─────────────────────────  PORTUGUÊS (BRASIL)  ───────────────────────── */
     'pt-BR': {
-      'meta.title': 'Sofia Ferraz — Estúdio de Marca e Direção de Arte',
-      'meta.description': 'Sofia Ferraz é diretora independente de marca e arte, baseada em Porto, criando identidades visuais pensadas para casas que valorizam elegância, intenção e presença duradoura.',
+      'meta.title': 'Sofia Ferraz — Branding e Identidade Visual | Design Estratégico',
+      'meta.description': 'Sofia Ferraz é designer de branding e identidade visual no Porto. Posicionamento estratégico e identidades visuais para marcas que querem ser percebidas como luxo no seu mercado.',
 
       'lang.label': 'Idioma',
       'lang.current': 'Português',
@@ -223,8 +223,8 @@
 
     /* ────────────────────────────  ESPAÑOL (ES)  ──────────────────────────── */
     'es-ES': {
-      'meta.title': 'Sofia Ferraz — Estudio de Marca y Dirección de Arte',
-      'meta.description': 'Sofia Ferraz es directora independiente de marca y arte, con base en Porto, creando identidades visuales cuidadas para casas que valoran la elegancia, la intención y una presencia duradera.',
+      'meta.title': 'Sofia Ferraz — Branding e Identidad Visual | Diseño Estratégico',
+      'meta.description': 'Sofia Ferraz es diseñadora de branding e identidad visual en Oporto. Posicionamiento estratégico e identidad visual para marcas que quieren ser percibidas como lujo en su mercado.',
 
       'lang.label': 'Idioma',
       'lang.current': 'Español',
@@ -281,7 +281,7 @@
 
       'pull.quote': '“Las marcas de valor no necesitan pedir <em>atención</em>. Son <em>percibidas</em>.”',
 
-      'words.eyebrow': 'Depoimentos',
+      'words.eyebrow': 'Testimonios',
       'words.1.quote': '“Gostaria de expressar meu mais profundo apreço pela Sofia. Sua capacidade de superar expectativas é notável, criando uma arte de identidade visual que está exatamente dentro do que foi proposto e ainda assim excedeu nossas expectativas. Demonstrou empatia, compreensão e uma dedicação excepcional, sempre prestativa e criativa. Suas formas de trabalho inovadoras beneficiaram enormemente nossa equipe. Recomendo fortemente para qualquer projeto futuro.”',
       'words.1.name': 'Gabriel',
       'words.1.role': 'Prime Lights',
@@ -416,6 +416,10 @@
       if (ogD) ogD.setAttribute('content', t('meta.description'));
       const ogL = document.querySelector('meta[property="og:locale"]');
       if (ogL) ogL.setAttribute('content', current.replace('-', '_'));
+      const twT = document.querySelector('meta[name="twitter:title"]');
+      if (twT) twT.setAttribute('content', t('meta.title'));
+      const twD = document.querySelector('meta[name="twitter:description"]');
+      if (twD) twD.setAttribute('content', t('meta.description'));
     }
   }
 
