@@ -15,8 +15,8 @@
   const DICT = {
     /* ───────────────────────────  ENGLISH (US)  ─────────────────────────── */
     'en-US': {
-      'meta.title': 'Sofia Ferraz — Brand Identity & Strategic Design Studio',
-      'meta.description': 'Sofia Ferraz is a brand identity designer based in Porto. Strategic positioning and visual identity for brands that want to be perceived as luxury in their market.',
+      'meta.title': 'Brand Identity Designer in Porto | Sofia Ferraz',
+      'meta.description': 'Sofia Ferraz — brand identity design and branding in Porto, Portugal. Strategic positioning for brands that want to be perceived as luxury.',
 
       'lang.label': 'Language',
       'lang.current': 'English',
@@ -42,7 +42,7 @@
       'marquee.items': ['Strategy', 'Brand identity', 'Packaging', 'Social media design'],
 
       'about.title': 'About',
-      'about.p1': 'Hi! I’m Sofia Ferraz, a designer specialised in Branding and Visual Identity.',
+      'about.p1': 'Hi! I’m Sofia Ferraz, a brand identity and branding designer based in Porto, Portugal.',
       'about.p2': 'I believe a strong brand goes beyond a beautiful aesthetic: it has to communicate its essence, convey value, and build a genuine connection with its audience. That’s why I develop strategic, original visual identities for brands that want to position themselves in a more sophisticated, authentic, and memorable way.',
       'about.p3': 'My process brings together strategy, creativity, and close attention to detail to turn stories, values, and goals into unique visual systems — from symbols and typography to every element that builds a consistent brand presence.',
       'about.p4': 'Along the way I’ve developed projects for brands in Brazil, the United States, Portugal, and Sweden, helping businesses strengthen their image and be perceived as more valuable by their audience.',
@@ -53,6 +53,7 @@
       'about.imageAlt': 'Sofia Ferraz working on her laptop in the studio',
 
       'services.title': 'Services',
+      'services.subtitle': 'Brand identity and branding, from a studio in Porto.',
       'services.branding.title': 'Branding &amp;<br />Visual Identity',
       'services.branding.desc': 'Have a brand recognised for its authenticity. With a strategic branding and visual identity process, your brand communicates its values clearly, strengthens its positioning and builds lasting connections with your audience.',
       'services.branding.cta': 'I want an authentic brand',
@@ -119,8 +120,8 @@
 
     /* ─────────────────────────  PORTUGUÊS (BRASIL)  ───────────────────────── */
     'pt-BR': {
-      'meta.title': 'Sofia Ferraz — Branding e Identidade Visual | Design Estratégico',
-      'meta.description': 'Sofia Ferraz é designer de branding e identidade visual no Porto. Posicionamento estratégico e identidades visuais para marcas que querem ser percebidas como luxo no seu mercado.',
+      'meta.title': 'Designer de Identidade Visual no Porto | Sofia Ferraz',
+      'meta.description': 'Sofia Ferraz — criação de identidade visual e branding no Porto, Portugal. Posicionamento estratégico para marcas que querem ser percebidas como luxo.',
 
       'lang.label': 'Idioma',
       'lang.current': 'Português',
@@ -146,7 +147,7 @@
       'marquee.items': ['Estratégia', 'Identidade de marca', 'Embalagem', 'Design social mídia'],
 
       'about.title': 'Sobre',
-      'about.p1': 'Olá! Sou Sofia Ferraz, designer especializada em Branding e Identidade Visual.',
+      'about.p1': 'Olá! Sou Sofia Ferraz, designer de identidade visual e branding, baseada no Porto.',
       'about.p2': 'Acredito que uma marca forte vai além de uma estética bonita: ela precisa comunicar sua essência, transmitir valor e criar uma conexão verdadeira com o público. Por isso, desenvolvo identidades visuais estratégicas e autorais para marcas que desejam se posicionar de forma mais sofisticada, autêntica e memorável no mercado.',
       'about.p3': 'Meu processo une estratégia, criatividade e um olhar atento aos detalhes para transformar histórias, valores e objetivos em sistemas visuais únicos, desde símbolos e tipografias até todos os elementos que constroem uma presença de marca consistente.',
       'about.p4': 'Ao longo da minha trajetória, desenvolvi projetos para marcas do Brasil, Estados Unidos, Portugal e Suécia, ajudando negócios a fortalecerem sua imagem e a serem percebidos com mais valor pelo público.',
@@ -157,6 +158,7 @@
       'about.imageAlt': 'Sofia Ferraz trabalhando no notebook em seu estúdio',
 
       'services.title': 'Serviços',
+      'services.subtitle': 'Criação de identidade visual e branding, a partir do Porto.',
       'services.branding.title': 'Branding e<br />Identidade Visual',
       'services.branding.desc': 'Tenha uma marca reconhecida pela sua autenticidade. Com um processo estratégico de branding e identidade visual, sua marca comunica seus valores com clareza, fortalece seu posicionamento e cria conexões duradouras com o público.',
       'services.branding.cta': 'Quero uma marca autêntica',
@@ -223,8 +225,8 @@
 
     /* ────────────────────────────  ESPAÑOL (ES)  ──────────────────────────── */
     'es-ES': {
-      'meta.title': 'Sofia Ferraz — Branding e Identidad Visual | Diseño Estratégico',
-      'meta.description': 'Sofia Ferraz es diseñadora de branding e identidad visual en Oporto. Posicionamiento estratégico e identidad visual para marcas que quieren ser percibidas como lujo en su mercado.',
+      'meta.title': 'Diseñadora de Identidad Visual en Oporto | Sofia Ferraz',
+      'meta.description': 'Sofia Ferraz — creación de identidad visual y branding en Oporto, Portugal. Posicionamiento estratégico para marcas que quieren ser percibidas como lujo.',
 
       'lang.label': 'Idioma',
       'lang.current': 'Español',
@@ -250,7 +252,7 @@
       'marquee.items': ['Estrategia', 'Identidad de marca', 'Packaging', 'Diseño para redes sociales'],
 
       'about.title': 'Sobre mí',
-      'about.p1': '¡Hola! Soy Sofia Ferraz, diseñadora especializada en Branding e Identidad Visual.',
+      'about.p1': '¡Hola! Soy Sofia Ferraz, diseñadora de identidad visual y branding, con base en Oporto.',
       'about.p2': 'Creo que una marca fuerte va más allá de una estética bonita: necesita comunicar su esencia, transmitir valor y crear una conexión verdadera con el público. Por eso desarrollo identidades visuales estratégicas y de autor para marcas que desean posicionarse de forma más sofisticada, auténtica y memorable en el mercado.',
       'about.p3': 'Mi proceso une estrategia, creatividad y una mirada atenta al detalle para transformar historias, valores y objetivos en sistemas visuales únicos, desde símbolos y tipografías hasta todos los elementos que construyen una presencia de marca consistente.',
       'about.p4': 'A lo largo de mi trayectoria he desarrollado proyectos para marcas de Brasil, Estados Unidos, Portugal y Suecia, ayudando a los negocios a fortalecer su imagen y a ser percibidos con más valor por su público.',
@@ -261,6 +263,7 @@
       'about.imageAlt': 'Sofia Ferraz trabajando en su portátil en el estudio',
 
       'services.title': 'Servicios',
+      'services.subtitle': 'Creación de identidad visual y branding, desde Oporto.',
       'services.branding.title': 'Branding e<br />Identidad Visual',
       'services.branding.desc': 'Ten una marca reconocida por su autenticidad. Con un proceso estratégico de branding e identidad visual, tu marca comunica sus valores con claridad, fortalece su posicionamiento y crea conexiones duraderas con el público.',
       'services.branding.cta': 'Quiero una marca auténtica',

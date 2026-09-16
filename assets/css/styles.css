@@ -896,7 +896,8 @@ body.menu-open { overflow: hidden; }
 
 /* supporting line, in the same muted body voice as .contact__lede
    and .section-head__note */
-.brands__subtitle {
+.brands__subtitle,
+.services__subtitle {
   margin: 0.7rem 0 clamp(2rem, 5vw, 3.5rem);
   max-width: 46ch;
   color: var(--muted);
