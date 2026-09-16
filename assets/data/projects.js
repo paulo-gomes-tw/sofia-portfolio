@@ -17,7 +17,7 @@ window.__SF_PROJECTS = {
       "featured": false,
       "placeholder": "02",
       "cover": {
-        "src": "assets/img/projeto-1.png"
+        "src": "assets/img/projeto-1.webp"
       },
       "gallery": [],
       "meta": {
@@ -56,7 +56,7 @@ window.__SF_PROJECTS = {
       "featured": true,
       "placeholder": "01",
       "cover": {
-        "src": "assets/img/projeto-2.jpg"
+        "src": "assets/img/projeto-2.webp"
       },
       "gallery": [
         {
@@ -192,7 +192,7 @@ window.__SF_PROJECTS = {
       "featured": false,
       "placeholder": "02",
       "cover": {
-        "src": "assets/img/projeto-3.png"
+        "src": "assets/img/projeto-3.webp"
       },
       "gallery": [],
       "meta": {

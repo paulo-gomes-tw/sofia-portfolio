@@ -436,13 +436,13 @@ body.menu-open { overflow: hidden; }
 }
 
 /* Photographic backdrop. The gradient is the fallback layer: drop a real
-   photograph at assets/img/hero.png and it takes over automatically. */
+   photograph at assets/img/hero.webp and it takes over automatically. */
 .hero__bg {
   position: absolute;
   inset: 0;
   z-index: -2;
   background-image:
-    url("../img/hero.png"),
+    url("../img/hero.webp"),
     radial-gradient(75% 90% at 68% 22%, rgba(126,158,178,0.55), transparent 62%),
     radial-gradient(60% 70% at 18% 82%, rgba(12,22,32,0.9), transparent 65%),
     linear-gradient(150deg, #24405A 0%, #17293B 48%, #0D1926 100%);
@@ -582,12 +582,12 @@ body.menu-open { overflow: hidden; }
 
 /* Distinct duotone compositions — evocative, palette-true */
 /* Studio portrait. As with the hero, the gradient is only a stand-in —
-   drop a real photograph at assets/img/about-foto.jpg and it takes over. */
+   drop a real photograph at assets/img/about-foto.webp and it takes over. */
 .media--about {
   height: 100%;
   width: 100%;
   background-image:
-    url("../img/about-foto.jpg"),
+    url("../img/about-foto.webp"),
     radial-gradient(60% 55% at 30% 25%, rgba(255,231,214,0.55), transparent 62%),
     linear-gradient(155deg, #C79A7C 0%, #8E5B45 48%, #4A2A20 100%);
   background-size: cover;
@@ -755,26 +755,26 @@ body.menu-open { overflow: hidden; }
    local não existir em assets/img/ — nada quebra no layout. */
 .service-shot--branding {
   background-image:
-    url("../img/servicos-1.png"),
+    url("../img/servicos-1.webp"),
     linear-gradient(140deg, #1f3a35, #0f211e 60%, #2c4b43);
 }
 .service-shot--social-1 {
-  background-image: url("../img/social-1.png"), linear-gradient(150deg, #f7c6d9, #eda6c2);
+  background-image: url("../img/social-1.webp"), linear-gradient(150deg, #f7c6d9, #eda6c2);
 }
 .service-shot--social-2 {
-  background-image: url("../img/social-2.png"), linear-gradient(150deg, #fbd7e5, #f3b2cd);
+  background-image: url("../img/social-2.webp"), linear-gradient(150deg, #fbd7e5, #f3b2cd);
 }
 .service-shot--social-3 {
-  background-image: url("../img/social-3.png"), linear-gradient(150deg, #ffffff, #f2dfe7);
+  background-image: url("../img/social-3.webp"), linear-gradient(150deg, #ffffff, #f2dfe7);
 }
 .service-shot--social-4 {
-  background-image: url("../img/social-4.png"), linear-gradient(150deg, #eef0f2, #dde3e6);
+  background-image: url("../img/social-4.webp"), linear-gradient(150deg, #eef0f2, #dde3e6);
 }
 .service-shot--social-5 {
-  background-image: url("../img/social-5.png"), linear-gradient(150deg, #bfe6dc, #8fd3c3);
+  background-image: url("../img/social-5.webp"), linear-gradient(150deg, #bfe6dc, #8fd3c3);
 }
 .service-shot--social-6 {
-  background-image: url("../img/social-6.png"), linear-gradient(150deg, #d9cdf0, #bda9e4);
+  background-image: url("../img/social-6.webp"), linear-gradient(150deg, #d9cdf0, #bda9e4);
 }
 
 .service-block__title {

@@ -229,6 +229,9 @@
   let projectData = null;
 
   function currentProjectId() {
+    // A prerendered page under /projetos/ names its project in the markup, so
+    // rehydration (and language switching) works without a query string.
+    if (projectMount && projectMount.dataset.projectId) return projectMount.dataset.projectId;
     try {
       const q = new URLSearchParams(window.location.search).get('p');
       if (q) return q;

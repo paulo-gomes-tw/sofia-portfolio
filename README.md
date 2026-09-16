@@ -210,6 +210,58 @@ grain) whenever a project has no `cover.src`, so the page never shows a broken
 image. A synced Behance cover — or any URL you put in `cover.src` — replaces the
 placeholder automatically.
 
+---
+
+## SEO & GEO
+
+The site is tuned for two audiences that are no longer the same thing: search
+engines, and the crawlers behind AI answers (GPTBot, ClaudeBot,
+PerplexityBot, Applebot-Extended). The difference that matters is that Google
+runs JavaScript and the answer-engine crawlers generally do not — so anything
+rendered in the browser is, to them, a page that says "Loading projects…".
+
+Two commands keep both happy:
+
+```bash
+npm run build:seo         # prerender + crawler files — run after every data sync
+npm run optimize:images   # re-encode anything new dropped into assets/img/
+```
+
+### What `build:seo` does
+
+It runs the site's own renderers (`assets/js/projects.js`, `assets/js/i18n.js`)
+inside Node, so the generated markup can never drift from what the browser
+produces, and writes:
+
+| Output | Why |
+| --- | --- |
+| `projetos/<id>.html` | One real, crawlable page per project — title, copy, metadata and JSON-LD in the HTML as served |
+| `index.html` brand grid | Baked between `SEO:BRAND-GRID` markers, so the homepage links to those pages instead of leaving them orphaned |
+| Static copy | Rewritten to the indexed locale (`pt-BR`), because crawlers read the markup before any language switch runs |
+| `sitemap.xml` | Every canonical URL |
+| `robots.txt` | Opens the site to both kinds of crawler; keeps `project.html` out of the index |
+| `llms.txt` | A plain-text brief an answer engine can read end to end |
+
+The script is idempotent — run it as often as you like. It warns instead of
+publishing when a translation key has no dictionary entry.
+
+`project.html?p=<id>` still works for old links, but it is `noindex, follow`:
+the indexable copy of a project is its prerendered page.
+
+### Changing the domain
+
+`SITE` at the top of `scripts/build-seo.mjs` is the single source of truth for
+canonical URLs, and the `https://sofiaferrazdesign.com` strings in
+`index.html`'s head mirror it. Change both, re-run `build:seo`.
+
+### Images
+
+Design-tool exports run 4000–8000 px wide; the folder was 79 MB before
+`optimize-images.py`, and Largest Contentful Paint is a ranking signal.
+The script resizes each asset to the largest size it is actually displayed at
+and writes WebP — 79 MB → 1.7 MB, with no visible loss. Drop new art into
+`assets/img/`, add it to `PLAN` in the script, and re-run.
+
 ## Structure
 
 ```
@@ -224,9 +276,15 @@ assets/
   data/projects.json    # canonical project data
   data/projects.js      # generated wrapper
   favicon.svg
+projetos/               # generated — one static page per project
+robots.txt              # generated
+sitemap.xml             # generated
+llms.txt                # generated
 scripts/
   sync-behance.mjs      # Behance API → projects.json
   build-data.mjs        # projects.json → projects.js
+  build-seo.mjs         # prerender projects + robots/sitemap/llms.txt
+  optimize-images.py    # resize & re-encode assets/img to WebP
 ```
 
 ---

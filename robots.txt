@@ -1,0 +1,13 @@
+# https://sofiaferrazdesign.com
+# Everything here is public portfolio work — search crawlers and the crawlers
+# behind AI answers are both welcome. Being quotable in an answer is how this
+# studio gets found now.
+
+User-agent: *
+Allow: /
+
+# The query-string renderer is kept only so older links keep working; the
+# indexable copy of every project lives at /projetos/<id>.html.
+Disallow: /project.html
+
+Sitemap: https://sofiaferrazdesign.com/sitemap.xml

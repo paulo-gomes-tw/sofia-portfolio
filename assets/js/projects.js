@@ -73,12 +73,45 @@
       .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
   }
 
+  /* Every project has a prerendered page at /projetos/<id>.html (see
+     scripts/build-seo.mjs). Link to it rather than to the query-string
+     renderer: it is the URL search engines index, and it is what gives the
+     generated pages the internal links they need to be found at all. */
+  /* How far the current page sits below the site root. The renderers run both
+     at the root (index.html) and one level down (projetos/<id>.html), and every
+     path they emit — assets, the homepage, sibling projects — has to be correct
+     in both places. */
+  function rootPrefix() {
+    try {
+      return /\/projetos\//.test(global.location.pathname) ? '../' : '';
+    } catch (e) { return ''; }
+  }
+
+  function projectHref(id) {
+    return (rootPrefix() ? '' : 'projetos/') + encodeURIComponent(id) + '.html';
+  }
+
+  function homeHref(hash) {
+    return rootPrefix() + 'index.html' + (hash || '');
+  }
+
   // Only allow http(s) URLs through to href/src attributes.
-  function safeUrl(url) {
+  function safeUrl(url, base) {
     if (!url) return '';
     try {
-      const u = new URL(url, global.location.href);
+      const u = new URL(url, base || global.location.href);
       return (u.protocol === 'http:' || u.protocol === 'https:') ? u.href : '';
+    } catch (e) { return ''; }
+  }
+
+  /* Asset paths in projects.json ("assets/img/…") are written relative to the
+     site root, so they need resolving against the root — not against a project
+     page one level down. Still goes through safeUrl, so a javascript: URL in
+     the data can never reach an attribute. */
+  function assetUrl(src) {
+    if (!src) return '';
+    try {
+      return safeUrl(src, new URL(rootPrefix() || './', global.location.href));
     } catch (e) { return ''; }
   }
 
@@ -100,7 +133,7 @@
 
   function mediaMarkup(project, opts) {
     const o = opts || {};
-    const cover = project.cover && safeUrl(project.cover.src || project.cover);
+    const cover = project.cover && assetUrl(project.cover.src || project.cover);
     const alt = esc(o.alt || field(project, 'title'));
     const cls = 'media media--' + esc(project.placeholder || '01');
     if (cover) {
@@ -132,7 +165,7 @@
       const title = field(p, 'title');
       const cat = field(p, 'category');
       const wide = p.featured ? ' work-card--wide' : '';
-      const href = 'project.html?p=' + encodeURIComponent(p.id);
+      const href = projectHref(p.id);
       return '' +
         '<article class="work-card' + wide + '" data-reveal>' +
           '<a class="work-card__link" href="' + esc(href) + '" aria-label="' + esc(title + ' — ' + cat) + '">' +
@@ -195,9 +228,11 @@
 
     mount.innerHTML = projects.map((p) => {
       const title = field(p, 'title');
-      const behance = safeUrl(p.url);
-      const href = behance || ('project.html?p=' + encodeURIComponent(p.id));
-      const ext = behance ? ' target="_blank" rel="noopener noreferrer"' : '';
+      // The tile used to jump straight to Behance, which spent the homepage's
+      // authority off-site and left the project pages with no inbound links.
+      // The Behance link still lives on the project page itself.
+      const href = projectHref(p.id);
+      const ext = '';
       return '' +
         '<article class="brand-card" data-reveal>' +
           '<a class="brand-card__link" href="' + esc(href) + '"' + ext +
@@ -222,7 +257,7 @@
       mount.innerHTML =
         '<div class="shell project-missing">' +
           '<h1 class="project-missing__title">' + esc(t('project.notFound')) + '</h1>' +
-          '<a class="btn btn--solid" href="index.html#work"><span>' + esc(t('project.notFoundCta')) + '</span></a>' +
+          '<a class="btn btn--solid" href="' + esc(homeHref('#work')) + '"><span>' + esc(t('project.notFoundCta')) + '</span></a>' +
         '</div>';
       return null;
     }
@@ -246,13 +281,13 @@
     ].filter(Boolean);
 
     const gallery = (p.gallery || [])
-      .map((g) => safeUrl(g.src || g))
+      .map((g) => assetUrl(g.src || g))
       .filter(Boolean);
 
     mount.innerHTML = '' +
       '<article class="project">' +
         '<header class="project__head shell">' +
-          '<a class="project__back" href="index.html#work">' +
+          '<a class="project__back" href="' + esc(homeHref('#work')) + '">' +
             '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M13 8H3M3 8L7 4M3 8L7 12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
             esc(t('project.back')) +
           '</a>' +
@@ -302,7 +337,7 @@
           : '') +
 
         '<nav class="project__next shell" aria-label="' + esc(t('project.next')) + '">' +
-          '<a class="project__next-link" href="project.html?p=' + esc(encodeURIComponent(next.id)) + '">' +
+          '<a class="project__next-link" href="' + esc(projectHref(next.id)) + '">' +
             '<span class="project__next-label">' + esc(t('project.next')) + '</span>' +
             '<span class="project__next-title">' + esc(field(next, 'title')) + '</span>' +
           '</a>' +
@@ -310,7 +345,7 @@
 
         '<section class="project__cta shell">' +
           '<p class="project__cta-text">' + esc(t('project.cta')) + '</p>' +
-          '<a class="btn btn--solid" href="index.html#contact" data-magnetic><span>' + esc(t('project.ctaLink')) + '</span></a>' +
+          '<a class="btn btn--solid" href="' + esc(homeHref('#contact')) + '" data-magnetic><span>' + esc(t('project.ctaLink')) + '</span></a>' +
         '</section>' +
       '</article>';
 
@@ -320,6 +355,7 @@
   global.SFProjects = {
     load: load,
     field: field,
+    projectHref: projectHref,
     renderGallery: renderGallery,
     renderBrandGrid: renderBrandGrid,
     renderDetail: renderDetail
