@@ -15,8 +15,8 @@
   const DICT = {
     /* ───────────────────────────  ENGLISH (US)  ─────────────────────────── */
     'en-US': {
-      'meta.title': 'Sofia Ferraz — Brand Identity & Strategic Design Studio',
-      'meta.description': 'Sofia Ferraz is a brand identity designer based in Porto. Strategic positioning and visual identity for brands that want to be perceived as luxury in their market.',
+      'meta.title': 'Brand Identity Designer in Porto | Sofia Ferraz',
+      'meta.description': 'Sofia Ferraz — brand identity design and branding in Porto, Portugal. Strategic positioning for brands that want to be perceived as luxury.',
 
       'lang.label': 'Language',
       'lang.current': 'English',
@@ -119,8 +119,8 @@
 
     /* ─────────────────────────  PORTUGUÊS (BRASIL)  ───────────────────────── */
     'pt-BR': {
-      'meta.title': 'Sofia Ferraz — Branding e Identidade Visual | Design Estratégico',
-      'meta.description': 'Sofia Ferraz é designer de branding e identidade visual no Porto. Posicionamento estratégico e identidades visuais para marcas que querem ser percebidas como luxo no seu mercado.',
+      'meta.title': 'Designer de Identidade Visual no Porto | Sofia Ferraz',
+      'meta.description': 'Sofia Ferraz — criação de identidade visual e branding no Porto, Portugal. Posicionamento estratégico para marcas que querem ser percebidas como luxo.',
 
       'lang.label': 'Idioma',
       'lang.current': 'Português',
@@ -223,8 +223,8 @@
 
     /* ────────────────────────────  ESPAÑOL (ES)  ──────────────────────────── */
     'es-ES': {
-      'meta.title': 'Sofia Ferraz — Branding e Identidad Visual | Diseño Estratégico',
-      'meta.description': 'Sofia Ferraz es diseñadora de branding e identidad visual en Oporto. Posicionamiento estratégico e identidad visual para marcas que quieren ser percibidas como lujo en su mercado.',
+      'meta.title': 'Diseñadora de Identidad Visual en Oporto | Sofia Ferraz',
+      'meta.description': 'Sofia Ferraz — creación de identidad visual y branding en Oporto, Portugal. Posicionamiento estratégico para marcas que quieren ser percibidas como lujo.',
 
       'lang.label': 'Idioma',
       'lang.current': 'Español',
