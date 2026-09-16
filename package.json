@@ -14,7 +14,8 @@
     "optimize:images": "python3 scripts/optimize-images.py",
     "sync:behance": "node scripts/sync-behance.mjs",
     "sync:behance:dry": "node scripts/sync-behance.mjs --dry-run --detail",
-    "import:behance": "node scripts/import-behance-export.mjs"
+    "import:behance": "node scripts/import-behance-export.mjs",
+    "import:summaries": "node scripts/import-summaries.mjs"
   },
   "keywords": [
     "portfolio",

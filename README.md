@@ -256,13 +256,39 @@ page — which is exactly why everything a crawler needs about the work has to b
 `project.html?p=<id>` still renders a project client-side so older links keep
 working, but it is `noindex, follow`.
 
-**The one thing worth adding:** most projects have no `summary` in
-`projects.json`, so the homepage can only offer their category. A sentence per
-project — what the brand needed, what you decided — is the only thing an answer
-engine can actually quote about the work. Add it to `projects.json` and re-run
-`build:seo`; the tiles, the schema and `llms.txt` all pick it up. (The Behance
-import writes "Veja o estudo de caso completo no Behance." as a stand-in; that
-string is filtered out rather than published as a description.)
+### The sentences
+
+Most projects have no `summary` in `projects.json`, so the homepage can only
+offer their category. A sentence per project — what the brand is, what it
+needed — is the only thing an answer engine can actually quote about the work,
+and it has to come from the studio: the Behance sync brings back titles, covers
+and categories, but almost never body copy.
+
+Collect them however suits, then:
+
+```bash
+npm run import:summaries -- frases.json --dry-run   # preview
+npm run import:summaries -- frases.json             # write
+npm run build:data && npm run build:seo             # regenerate
+```
+
+`frases.json` is keyed by project id, in either shape:
+
+```json
+{ "dorian": "Uma marca de moda que…" }
+{ "dorian": { "pt-BR": "…", "en-US": "…", "es-ES": "…" } }
+```
+
+The tiles, the JSON-LD and `llms.txt` all pick the sentences up on the next
+`build:seo`.
+
+**Two things the importer knows.** The Behance import writes "Veja o estudo de
+caso completo no Behance." when a project has no case-study text; that is a call
+to action, not a description, so it is refused on the way in and filtered on the
+way out rather than published as one. And a later Behance sync preserves every
+locale except its source (`en-US`), whose summary it overwrites from the case
+study's first paragraph — so `pt-BR` and `es-ES` sentences are safe permanently,
+while an `en-US` one lasts until a detail file for that project arrives.
 
 ### Changing the domain
 
@@ -299,6 +325,7 @@ scripts/
   sync-behance.mjs      # Behance API → projects.json
   build-data.mjs        # projects.json → projects.js
   build-seo.mjs         # bake grid + schema, robots/sitemap/llms.txt
+  import-summaries.mjs  # written sentences → projects.json
   optimize-images.py    # resize & re-encode assets/img to WebP
 ```
 
