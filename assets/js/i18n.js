@@ -98,7 +98,6 @@
       'form.error': 'Please add your name, a valid email, and a short note.',
       'form.success': 'Thank you — your note is on its way. I’ll reply within two business days.',
 
-      'footer.tag': 'Brand & art direction for houses that value elegance over noise.',
       'footer.toTop': 'Back to top',
       'footer.rights': 'Sofia Ferraz Studio. All rights reserved.',
       'footer.backHome': 'Sofia Ferraz — back to top',
@@ -203,7 +202,6 @@
       'form.error': 'Informe seu nome, um e-mail válido e uma breve mensagem.',
       'form.success': 'Obrigada — sua mensagem está a caminho. Responderei em até dois dias úteis.',
 
-      'footer.tag': 'Marca e direção de arte para casas que valorizam elegância acima do ruído.',
       'footer.toTop': 'Voltar ao topo',
       'footer.rights': 'Sofia Ferraz Studio. Todos os direitos reservados.',
       'footer.backHome': 'Sofia Ferraz — voltar ao topo',
@@ -308,7 +306,6 @@
       'form.error': 'Añade tu nombre, un correo válido y una nota breve.',
       'form.success': 'Gracias — tu mensaje está en camino. Responderé en un plazo de dos días laborables.',
 
-      'footer.tag': 'Marca y dirección de arte para casas que valoran la elegancia por encima del ruido.',
       'footer.toTop': 'Volver arriba',
       'footer.rights': 'Sofia Ferraz Studio. Todos los derechos reservados.',
       'footer.backHome': 'Sofia Ferraz — volver arriba',
