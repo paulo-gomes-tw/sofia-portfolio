@@ -235,18 +235,34 @@ produces, and writes:
 
 | Output | Why |
 | --- | --- |
-| `projetos/<id>.html` | One real, crawlable page per project — title, copy, metadata and JSON-LD in the HTML as served |
-| `index.html` brand grid | Baked between `SEO:BRAND-GRID` markers, so the homepage links to those pages instead of leaving them orphaned |
+| `index.html` brand grid | Baked between `SEO:BRAND-GRID` markers, so project names and categories are in the HTML as served, not assembled by JavaScript |
+| `index.html` project schema | An `ItemList` of every project between `SEO:PROJECT-SCHEMA` markers — names, categories, clients and Behance URLs, for a crawler that will not follow the link |
 | Static copy | Rewritten to the indexed locale (`pt-BR`), because crawlers read the markup before any language switch runs |
-| `sitemap.xml` | Every canonical URL |
+| `sitemap.xml` | The one canonical URL |
 | `robots.txt` | Opens the site to both kinds of crawler; keeps `project.html` out of the index |
-| `llms.txt` | A plain-text brief an answer engine can read end to end |
+| `llms.txt` | A plain-text brief an answer engine can read end to end, each project pointing at its Behance case study |
 
 The script is idempotent — run it as often as you like. It warns instead of
-publishing when a translation key has no dictionary entry.
+publishing when a translation key has no dictionary entry, and it reports which
+projects still have no `summary` in `projects.json`.
 
-`project.html?p=<id>` still works for old links, but it is `noindex, follow`:
-the indexable copy of a project is its prerendered page.
+### Where the case studies live
+
+On Behance. The homepage tiles link straight there, so this site is a single
+page — which is exactly why everything a crawler needs about the work has to be
+*on* that page rather than one hop away. That is what the baked grid and the
+`ItemList` are for.
+
+`project.html?p=<id>` still renders a project client-side so older links keep
+working, but it is `noindex, follow`.
+
+**The one thing worth adding:** most projects have no `summary` in
+`projects.json`, so the homepage can only offer their category. A sentence per
+project — what the brand needed, what you decided — is the only thing an answer
+engine can actually quote about the work. Add it to `projects.json` and re-run
+`build:seo`; the tiles, the schema and `llms.txt` all pick it up. (The Behance
+import writes "Veja o estudo de caso completo no Behance." as a stand-in; that
+string is filtered out rather than published as a description.)
 
 ### Changing the domain
 
@@ -276,14 +292,13 @@ assets/
   data/projects.json    # canonical project data
   data/projects.js      # generated wrapper
   favicon.svg
-projetos/               # generated — one static page per project
 robots.txt              # generated
 sitemap.xml             # generated
 llms.txt                # generated
 scripts/
   sync-behance.mjs      # Behance API → projects.json
   build-data.mjs        # projects.json → projects.js
-  build-seo.mjs         # prerender projects + robots/sitemap/llms.txt
+  build-seo.mjs         # bake grid + schema, robots/sitemap/llms.txt
   optimize-images.py    # resize & re-encode assets/img to WebP
 ```
 

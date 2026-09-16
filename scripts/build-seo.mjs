@@ -11,16 +11,20 @@
    same assets/js/projects.js the browser uses, so the markup
    can never drift — and writes the result to disk:
 
-     projetos/<id>.html   one real page per project
-     index.html           brand grid baked between markers
+     index.html           brand grid + project ItemList baked
+                          between markers
      sitemap.xml
      robots.txt
      llms.txt             plain-language summary for answer engines
 
+   The case studies themselves live on Behance, so the homepage is the
+   single page this site puts forward — which is why everything a crawler
+   needs about the work has to be *on it*, not one click away.
+
    Run it after every data sync:  npm run build:seo
    ============================================================ */
 
-import { readFileSync, writeFileSync, mkdirSync, rmSync, existsSync, readdirSync } from 'node:fs';
+import { readFileSync, writeFileSync, rmSync, existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import vm from 'node:vm';
@@ -28,7 +32,7 @@ import vm from 'node:vm';
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const SITE = 'https://sofiaferrazdesign.com';
 const LOCALE = 'pt-BR';          // the language we publish for indexing
-const OUT_DIR = join(ROOT, 'projetos');
+const LEGACY_PAGES = join(ROOT, 'projetos');
 
 const read = (p) => readFileSync(join(ROOT, p), 'utf8');
 const write = (p, s) => { writeFileSync(join(ROOT, p), s, 'utf8'); return s.length; };
@@ -137,11 +141,6 @@ const esc = (s) => String(s ?? '')
   .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
   .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 
-/* The generated pages live one directory down, so every document-relative
-   link in the shared chrome needs a hop up. Absolute URLs, anchors, mailto:
-   and the like are left alone. */
-const upOneLevel = (html) => relative(html, '../');
-
 /* The renderers resolve every asset against location.href, which in this
    sandbox is the production origin — so they hand back absolute URLs. Those
    work, but they hardcode the domain into the markup and break local preview.
@@ -152,157 +151,6 @@ const relative = (html, prefix) =>
     .replace(new RegExp(`\\b(href|src)="${SITE}/`, 'gi'), `$1="${prefix}`)
     .replace(/\b(href|src)="(?!https?:|mailto:|tel:|data:|#|\/|\.\.\/)([^"]+)"/gi,
              (m, attr, path) => `${attr}="${prefix}${path}"`);
-
-function chromeFrom(projectHtml) {
-  const headerStart = projectHtml.indexOf('</head>') + '</head>'.length;
-  const mainStart = projectHtml.indexOf('<main');
-  const mainEnd = projectHtml.indexOf('</main>') + '</main>'.length;
-  return {
-    header: upOneLevel(projectHtml.slice(headerStart, mainStart)),
-    footer: upOneLevel(projectHtml.slice(mainEnd)),
-  };
-}
-
-function headFor({ title, description, canonical, image, id, jsonLd }) {
-  const fonts = read('project.html').match(/<link href="https:\/\/fonts\.googleapis[^>]+>/)[0];
-  return `<!doctype html>
-<html lang="${LOCALE}" class="no-js">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>${esc(title)}</title>
-  <meta name="description" content="${esc(description)}" />
-  <meta name="author" content="Sofia Ferraz" />
-  <meta name="theme-color" content="#F8F7F4" />
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
-  <link rel="canonical" href="${canonical}" />
-
-  <meta property="og:type" content="article" />
-  <meta property="og:site_name" content="Sofia Ferraz" />
-  <meta property="og:url" content="${canonical}" />
-  <meta property="og:title" content="${esc(title)}" />
-  <meta property="og:description" content="${esc(description)}" />
-  <meta property="og:locale" content="${LOCALE.replace('-', '_')}" />
-  <meta property="og:image" content="${image}" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="${esc(title)}" />
-  <meta name="twitter:description" content="${esc(description)}" />
-  <meta name="twitter:image" content="${image}" />
-
-  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
-  <link rel="icon" href="../assets/img/logo-s.png" type="image/png" />
-  <link rel="apple-touch-icon" href="../assets/img/logo-s.png" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  ${fonts}
-
-  <link rel="stylesheet" href="../assets/css/styles.css" />
-
-  <script type="application/ld+json">
-${JSON.stringify(jsonLd, null, 2)}
-  </script>
-
-  <script>
-    document.documentElement.classList.remove('no-js');
-    document.documentElement.classList.add('js');
-    window.addEventListener('load', function () {
-      window.setTimeout(function () {
-        if (!window.__sfReady) {
-          document.querySelectorAll('[data-reveal]').forEach(function (el) { el.classList.add('is-in'); });
-        }
-      }, 800);
-    });
-  </script>
-</head>
-<body class="is-project" data-project="${esc(id)}">
-  <a class="skip-link" href="#main">Saltar para o conteúdo</a>
-  <div class="grain" aria-hidden="true"></div>
-`;
-}
-
-function buildProjectPages({ sandbox, data }) {
-  const { SFProjects, I18N } = sandbox;
-  const chrome = chromeFrom(read('project.html'));
-
-  // Rebuild the folder so a project removed upstream leaves no stale page
-  // behind for a crawler to keep visiting.
-  if (existsSync(OUT_DIR)) rmSync(OUT_DIR, { recursive: true });
-  mkdirSync(OUT_DIR, { recursive: true });
-
-  const pages = [];
-
-  for (const project of data.projects) {
-    // Capture what the real renderer produces, then relocate its links.
-    let body = '';
-    const mount = { set innerHTML(v) { body = v; }, get innerHTML() { return body; } };
-    SFProjects.renderDetail(mount, data, project.id);
-    if (!body) continue;
-
-    // Sibling project pages sit next to this one, so the hop up that
-    // upOneLevel added to every relative link is one hop too many here.
-    body = upOneLevel(body).replace(/href="\.\.\/projetos\//g, 'href="');
-
-    const title = SFProjects.field(project, 'title', LOCALE);
-    const category = SFProjects.field(project, 'category', LOCALE);
-    const summary = SFProjects.field(project, 'summary', LOCALE);
-    const bodyText = SFProjects.field(project, 'body', LOCALE);
-    const paragraphs = Array.isArray(bodyText) ? bodyText : (bodyText ? [bodyText] : []);
-    const cover = project.cover && (project.cover.src || project.cover);
-    const image = cover
-      ? (/^https?:/.test(cover) ? cover : `${SITE}/${cover}`)
-      : `${SITE}/assets/img/hero.webp`;
-    const canonical = `${SITE}/projetos/${project.id}.html`;
-
-    const description = (summary || paragraphs[0] ||
-      `${title} — projeto de ${category || 'identidade visual'} por Sofia Ferraz, ` +
-      'designer de branding e identidade visual no Porto.').slice(0, 300);
-
-    const jsonLd = {
-      '@context': 'https://schema.org',
-      '@graph': [
-        {
-          '@type': 'CreativeWork',
-          '@id': `${canonical}#projeto`,
-          name: title,
-          headline: title,
-          url: canonical,
-          image,
-          inLanguage: LOCALE,
-          description,
-          genre: category || undefined,
-          creator: { '@type': 'Person', '@id': `${SITE}/#sofia-ferraz`, name: 'Sofia Ferraz' },
-          about: project.meta?.client
-            ? { '@type': 'Organization', name: project.meta.client }
-            : undefined,
-          keywords: (project.meta?.services || []).join(', ') || undefined,
-          dateCreated: project.year || undefined,
-          sameAs: project.url || undefined,
-          isPartOf: { '@id': `${SITE}/#website` },
-        },
-        {
-          '@type': 'BreadcrumbList',
-          itemListElement: [
-            { '@type': 'ListItem', position: 1, name: 'Início', item: `${SITE}/` },
-            { '@type': 'ListItem', position: 2, name: 'Projetos', item: `${SITE}/#work` },
-            { '@type': 'ListItem', position: 3, name: title, item: canonical },
-          ],
-        },
-      ],
-    };
-
-    const head = headFor({ title: `${title} — ${category || 'Projeto'} | Sofia Ferraz`, description, canonical, image, id: project.id, jsonLd });
-
-    // data-project-id lets the browser renderer re-hydrate (and re-translate)
-    // this page without a ?p= query string.
-    const main = `  <main id="main" data-project-mount data-project-id="${esc(project.id)}">\n${body}\n  </main>\n`;
-
-    writeFileSync(join(OUT_DIR, `${project.id}.html`), head + chrome.header + main + chrome.footer, 'utf8');
-    pages.push({ id: project.id, title, canonical, description, url: project.url, category, paragraphs });
-  }
-
-  return pages;
-}
 
 /* ────────────────────────────────────────────────────────────
    4. Bake the homepage brand grid
@@ -336,22 +184,87 @@ function injectBrandGrid({ sandbox, data }) {
    5. robots.txt · sitemap.xml · llms.txt
    ──────────────────────────────────────────────────────────── */
 
+function projectList({ sandbox, data }) {
+  const { SFProjects } = sandbox;
+  return data.projects.map((project) => {
+    const title = SFProjects.field(project, 'title', LOCALE);
+    const category = SFProjects.field(project, 'category', LOCALE);
+    const summary = SFProjects.realSummary(project, LOCALE);
+    const cover = project.cover && (project.cover.src || project.cover);
+    return {
+      id: project.id,
+      title,
+      category,
+      summary,
+      url: project.url || '',
+      client: project.meta?.client || '',
+      services: project.meta?.services || [],
+      year: project.year || '',
+      image: cover ? (/^https?:/.test(cover) ? cover : `${SITE}/${cover}`) : '',
+    };
+  });
+}
+
+/* The work is the reason anyone is here, and every case study is one hop away
+   on Behance. Structured data is what keeps the work legible to a machine that
+   will not take that hop: names, categories and destinations, on the homepage
+   itself. */
+function injectProjectSchema(pages) {
+  const graph = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    '@id': `${SITE}/#projetos`,
+    name: 'Projetos de Sofia Ferraz',
+    numberOfItems: pages.length,
+    itemListOrder: 'https://schema.org/ItemListOrderAscending',
+    itemListElement: pages.map((p, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      item: {
+        '@type': 'CreativeWork',
+        name: p.title,
+        genre: p.category || undefined,
+        description: p.summary || undefined,
+        url: p.url || undefined,
+        image: p.image || undefined,
+        dateCreated: p.year || undefined,
+        keywords: p.services.join(', ') || undefined,
+        about: p.client ? { '@type': 'Organization', name: p.client } : undefined,
+        creator: { '@id': `${SITE}/#sofia-ferraz` },
+        isPartOf: { '@id': `${SITE}/#website` },
+      },
+    })),
+  };
+
+  const START = '<!-- SEO:PROJECT-SCHEMA:START — generated by npm run build:seo -->';
+  const END = '<!-- SEO:PROJECT-SCHEMA:END -->';
+  const block = `${START}\n  <script type="application/ld+json">\n` +
+                `${JSON.stringify(graph, null, 2)}\n  </script>\n  ${END}`;
+
+  let html = read('index.html');
+  const existing = new RegExp(`${START.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}[\\s\\S]*?${END}`);
+  if (existing.test(html)) {
+    html = html.replace(existing, block);
+  } else {
+    const anchor = '  <link rel="stylesheet" href="assets/css/styles.css" />\n';
+    if (!html.includes(anchor)) throw new Error('stylesheet anchor not found in index.html');
+    html = html.replace(anchor, anchor + '\n  ' + block + '\n', 1);
+  }
+  write('index.html', html);
+  return pages.length;
+}
+
 function buildCrawlerFiles(pages) {
   const today = new Date().toISOString().slice(0, 10);
 
-  const urls = [
-    { loc: `${SITE}/`, priority: '1.0', changefreq: 'monthly' },
-    ...pages.map((p) => ({ loc: p.canonical, priority: '0.8', changefreq: 'yearly' })),
-  ];
-
+  // One page, one URL. project.html renders from a query string and is not a
+  // canonical address for anything, so it does not belong here.
   write('sitemap.xml',
     '<?xml version="1.0" encoding="UTF-8"?>\n' +
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
-    urls.map((u) =>
-      `  <url>\n    <loc>${u.loc}</loc>\n    <lastmod>${today}</lastmod>\n` +
-      `    <changefreq>${u.changefreq}</changefreq>\n    <priority>${u.priority}</priority>\n  </url>`
-    ).join('\n') +
-    '\n</urlset>\n');
+    `  <url>\n    <loc>${SITE}/</loc>\n    <lastmod>${today}</lastmod>\n` +
+    '    <changefreq>monthly</changefreq>\n    <priority>1.0</priority>\n  </url>\n' +
+    '</urlset>\n');
 
   write('robots.txt',
 `# https://sofiaferrazdesign.com
@@ -362,15 +275,17 @@ function buildCrawlerFiles(pages) {
 User-agent: *
 Allow: /
 
-# The query-string renderer is kept only so older links keep working; the
-# indexable copy of every project lives at /projetos/<id>.html.
+# Renders a project from a ?p= query string and is kept only so older links
+# keep working. The case studies live on Behance; the homepage is the canonical
+# page here.
 Disallow: /project.html
 
 Sitemap: ${SITE}/sitemap.xml
 `);
 
   // llms.txt — an emerging convention: a plain-text brief an answer engine can
-  // read end to end, with no markup to wade through.
+  // read end to end, with no markup to wade through. Projects point at Behance,
+  // because that is where each case study actually is.
   write('llms.txt',
 `# Sofia Ferraz
 
@@ -405,7 +320,12 @@ tipografia a cada elemento que constrói uma presença de marca consistente.
 
 ## Projetos
 
-${pages.map((p) => `- [${p.title}](${p.canonical})${p.category ? ` — ${p.category}` : ''}`).join('\n')}
+Os estudos de caso completos estão no Behance.
+
+${pages.map((p) => {
+  const bits = [p.category, p.summary].filter(Boolean).join(' — ');
+  return `- **${p.title}**${bits ? ` — ${bits}` : ''}${p.url ? `\n  ${p.url}` : ''}`;
+}).join('\n')}
 
 ## Páginas
 
@@ -413,7 +333,7 @@ ${pages.map((p) => `- [${p.title}](${p.canonical})${p.category ? ` — ${p.categ
 - [Sitemap](${SITE}/sitemap.xml)
 `);
 
-  return urls.length;
+  return 1;
 }
 
 /* ────────────────────────────────────────────────────────────
@@ -433,7 +353,23 @@ for (const file of ['index.html', 'project.html']) {
   }
 }
 
-const pages = buildProjectPages(site);
-console.log(`  prerendered   projetos/ — ${pages.length} pages`);
+// An earlier build published a page per project. The case studies moved to
+// Behance, so those pages would now be orphans — clear them out rather than
+// leave crawlers revisiting URLs nothing links to.
+if (existsSync(LEGACY_PAGES)) {
+  rmSync(LEGACY_PAGES, { recursive: true });
+  console.log('  removed       projetos/ — case studies live on Behance now');
+}
+
+const pages = projectList(site);
 console.log(`  brand grid    ${injectBrandGrid(site)} bytes baked into index.html`);
-console.log(`  crawler files robots.txt · sitemap.xml (${buildCrawlerFiles(pages)} urls) · llms.txt\n`);
+console.log(`  project data  ${injectProjectSchema(pages)} projects described in JSON-LD`);
+console.log(`  crawler files robots.txt · sitemap.xml (${buildCrawlerFiles(pages)} url) · llms.txt`);
+
+const thin = pages.filter((p) => !p.summary);
+if (thin.length) {
+  console.warn(`\n  ⚠ ${thin.length}/${pages.length} projects have no summary in projects.json, so the` +
+    `\n    homepage can only offer their category. A sentence each is the one thing` +
+    `\n    an answer engine could actually quote: ${thin.map((p) => p.id).join(', ')}`);
+}
+console.log('');

@@ -958,6 +958,17 @@ body.menu-open { overflow: hidden; }
   transition: opacity 0.5s var(--ease), transform 0.5s var(--ease);
 }
 
+/* the category (or the studio's own one-liner) rides the same reveal as the
+   name — more for a reader to go on, with the resting art direction untouched */
+.brand-card__cat {
+  display: block;
+  margin-top: 0.22rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  opacity: 0.82;
+}
+
 @media (hover: hover) {
   .brand-card__link:hover {
     transform: translateY(-4px);
